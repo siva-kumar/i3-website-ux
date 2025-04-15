@@ -504,7 +504,7 @@ h2, h3, p {
     background-image: url("././../images/mesh-bg.png");
     background-repeat: no-repeat;
     background-position: bottom center;
-    background-position-x: left;
+    background-position-x: left;`
     background-position-y: bottom;
 
     p {
@@ -526,22 +526,24 @@ h2, h3, p {
     .who-we-work-slide {
         background: #1F72CC;
         padding: 20px !important;
-        margin: 20px !important;
+        margin: 20px 0px !important;
         border-radius: 15px;
 
         h3 {
-            text-align: center;
             font-size: 34px;
         }
 
         p {
+            font-size: 22px;
+        }
+
+        .description {
             font-size: 20px;
-            text-align: center;
         }
 
         img {
-            width: 100%;
-            margin-top: 40px;
+            width: 95%;
+            height: 250px;
             border-radius: 15px;
         }
     }
@@ -812,6 +814,12 @@ h2, h3, p {
         font-size: 22px;
         font-weight: bold;
         transition: 0.3s;
+    }
+
+    button {
+        background: grey;
+        font-size: 20px;
+        padding: 5px 30px;
     }
 }
 
