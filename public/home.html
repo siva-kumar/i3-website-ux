@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="./assets/css/styles.css" rel="stylesheet"/>
+</head>
+
+<style>
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none !important;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+
+            li {
+                margin: 10px 0;
+            }
+        }
+
+        .nav-links.active {
+            display: flex !important;
+        }
+
+        .hamburger {
+            display: block !important;
+        }
+
+        .block-section {
+            padding: 30px;
+        }
+
+        .block-section {
+            &.left {
+                .media-section {
+                    video,
+                    img {
+                        margin-left: 0px !important;
+                    }
+                }
+            }
+        }
+
+        .media-section {
+            padding-top: 0px !important;
+        }
+
+        .build-ai-button {
+            margin-top: 170px !important;
+        }
+
+        .our-beliefs {
+            .col {
+                flex: auto !important;
+            }
+        }
+
+        .our-beliefs-container {
+            margin: 0px !important;
+        }
+
+        .engineering {
+            height: fit-content !important;
+
+            .product-slide {
+                margin-left: 0px !important;
+                flex: none !important;
+            }
+        }
+
+        .what-we-do {
+            height: fit-content !important;
+
+            .custom-tabs {
+                padding-top: 20px !important;
+            }
+
+            .slider-content {
+                margin: 0px !important;
+            }
+        }
+
+        .slide {
+            .pl-10 {
+                padding-left: 10px !important;
+            }
+
+            h3 {
+                margin-top: 20px !important;
+            }
+        }
+
+        .slider-image {
+            width: 100% !important;
+            margin-left: 0px !important;
+            padding: 0px !important;
+        }
+
+        .who-we-work {
+            height: fit-content !important;
+
+            .who-we-work-slide {
+                flex: none !important;
+                margin-left: 0px !important;
+            }
+        }
+
+        .valley-proof {
+            height: fit-content !important;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .contact-us {
+            height: fit-content !important;
+
+            h3 {
+                padding-top: 40px !important;
+            }
+        }
+
+        .footer {
+            height: fit-content !important;
+        }
+    }
+</style>
+
+<body>
+<nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <a href="/"><img src="./assets/images/i3-logo.png" alt="Company Logo"></a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="#what-we-do">Services</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="#">Career</a></li>
+        <li class="contact-button"><a href="#contact-us">Contact Us →</a></li>
+    </ul>
+</nav>
+
+<div class="row block-section build-ai left pt-5">
+    <div class="row">
+        <div class="col-md-6 text-section">
+            <h2>We Build Systems That Endure and Deliver Value</h2>
+            <p>With a 30+ year track record of real-world solutions, i3 now leverages AI to maximize strategic
+                impact-helping you build systems that scale, endure, and deliver immediate returns.</p>
+        </div>
+        <div class="col-md-6 media-section video">
+            <video
+                    id="ai-intro-video"
+                    muted
+                    loop
+                    controls
+                    src="./assets/images/i3-hero-video.mp4"
+                    onended="videoEnd('ai-intro')"></video>
+            <img id="ai-intro-poster"
+                 src="./assets/images/hero-video-image.jpg"
+                 alt="i3 branding"
+                 onclick="posterClick('ai-intro')"
+                 onkeydown="{(e) => {
+                  if (e.keyCode === 13) posterClick('ai-intro');
+                }}"
+            />
+        </div>
+    </div>
+
+    <div class="row justify-content-center build-ai-button pt-10">
+        <div class="pl-0">
+            <a class="round-button" href="#contact-us">Let’s Build Something Strategic</a>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section engineering">
+    <div class="row text-section">
+        <h2>30+ Years of Engineering Excellence</h2>
+        <p>We are there when enterprise needed scale, We're here now as AI demands precision.</p>
+    </div>
+
+    <div class="row g-3">
+        <div class="col product-slide">
+            <img src="./assets/images/why-i3/why-i3-image-3.jpg" alt="Reliability"/>
+            <h3 class="col-md-12">Decades of Mission-Critical Reliability</h3>
+        </div>
+
+        <div class="col product-slide">
+            <img src="./assets/images/why-i3/why-i3-image-2.jpg" alt="Financial Transactions"/>
+            <h3 class="col-md-12">$10s of Billions in Financial Transactions</h3>
+        </div>
+
+        <div class="col product-slide">
+            <img src="./assets/images/why-i3/why-i3-image-1.jpg" alt="Healthcare Logistics"/>
+            <h3 class="col-md-12">Powering Healthcare Logistics</h3>
+        </div>
+    </div>
+
+    <div class="row text-section pt-4">
+        <h3>We Now Bring That Same Engineering Discipline into the AI Era</h3>
+    </div>
+
+    <div class="row justify-content pt-4">
+        <div class="col-auto">
+            <a class="round-button" href="#contact-us">Let’s Build Something Strategic</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="row block-section our-beliefs">
+    <div class="row text-section">
+        <h2>Our Beliefs</h2>
+        <p>Quick insights into our innovative approach and lasting impact.</p>
+    </div>
+
+    <div class="row our-beliefs-container mx-15 g-3">
+        <div class="belief-slide col">
+            <img src="./assets/images/our-belief/belief-image-1.png" alt="Engineering over hype"/>
+            <h3>Engineering over hype</h3>
+        </div>
+
+        <div class="belief-slide col">
+            <img src="./assets/images/our-belief/belief-image-2.png" alt="Clarity over complexity">
+            <h3>Clarity over complexity</h3>
+        </div>
+
+        <div class="belief-slide col">
+            <img src="./assets/images/our-belief/belief-image-3.png" alt="Build for long term">
+            <h3>Building for the long term</h3>
+        </div>
+    </div>
+</div>
+
+<div id="what-we-do" class="row block-section what-we-do">
+    <div class="row text-section">
+        <div class="row">
+            <div class="col-md-10">
+                <h2 class="mb-0">What We Build</h2>
+                <p class="mt-0">Solutions designed to drive efficiency and empower growth.</p>
+            </div>
+            <div class="col-md-2 view-all">
+                <button class="round-button">View All</button>
+            </div>
+        </div>
+
+        <div class="row what-we-do-slider">
+            <div class="custom-tabs">
+                <button class="tab-btn active" data-index="0">Strategic Systems</button>
+                <button class="tab-btn" data-index="1">Custom AI Systems</button>
+                <button class="tab-btn" data-index="2">SmashSupport.AI</button>
+                <button class="tab-btn" data-index="3">Valley-Proof</button>
+            </div>
+
+            <div class="slider-content">
+                <div class="col-md-12 slide active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-1.jpg"
+                                 alt="Strategic Systems">"/>
+                        </div>
+                        <div class="col-md-8 pl-10">
+                            <h3>Strategic Systems</h3>
+                            <p>We design and implement large-scale, long-term solutions that align technology with your
+                                business vision. From enterprise architecture to strategic road-mapping, we build
+                                integrated systems that stand the test of time.</p>
+
+                            <p class="ideal">Ideal For:</p>
+                            <ul>
+                                <li>Enterprises seeking holistic, future-proof solutions</li>
+                                <li>Organizations needing alignment between technology and business strategy</li>
+                                <li>Leaders who value sustainable, data-driven growth</li>
+                            </ul>
+
+                            <div class="row justify-content pt-2">
+                                <div class="col-auto">
+                                    <button class="round-button">Discuss Your Strategy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 slide">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-2.png"
+                                 alt="Custom AI Systems"/>
+                        </div>
+                        <div class="col-md-8 pl-10">
+                            <h3>CUSTOM AI SYSTEMS</h3>
+                            <p>We choose a handful of high-impact projects each year-from healthcare optimization to
+                                financial reconciliation and decision support. If you need scale, speed, or clarity,
+                                we're
+                                interested.</p>
+
+                            <p class="ideal">Ideal For:</p>
+                            <ul>
+                                <li>Enterprises seeking tailored, strategic AI solutions</li>
+                                <li>Organizations with complex, mission-critical needs</li>
+                            </ul>
+
+                            <div class="row justify-content pt-2">
+                                <div class="col-auto">
+                                    <button class="round-button">Let’s Talk AI</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 slide">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-3.jpg"
+                                 alt="SmashSupport.AI"/>
+                        </div>
+                        <div class="col-md-8 pl-10">
+                            <h3>SmashSupport.AI</h3>
+                            <p>An AI support agent that cut support volume by 90% for Smash Your Fitness-integrated,
+                                cost-saving, and fast, with built-in brand protection.</p>
+
+                            <p class="ideal">Ideal For:</p>
+                            <ul>
+                                <li>Startups scaling support</li>
+                                <li>Mid-size companies frustrated with clunky ticketing systems</li>
+                                <li>Organizations seeking better customer experience at lower cost</li>
+                            </ul>
+
+                            <div class="row justify-content pt-2">
+                                <div class="col-auto">
+                                    <button class="round-button">Learn About SmashSupport.AI</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 slide">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-4.jpg"
+                                 alt="Valley Proof"/>
+                        </div>
+                        <div class="col-md-8 pl-10">
+                            <h3>Valley-Proof</h3>
+                            <p>Cash flow systems for founders who can’t afford mistakes. Forged through decades of
+                                market volatility, it’s a toolset and mindset for staying liquid when it matters most.
+                                Launching as a SaaS and book in 2025.</p>
+
+                            <p class="ideal">Ideal For:</p>
+                            <ul>
+                                <li>Founders and small business leaders</li>
+                                <li>Organizations prioritizing precise cash flow management</li>
+                            </ul>
+
+                            <div class="row justify-content pt-2">
+                                <div class="col-auto">
+                                    <button class="round-button">Get Valley-Proof</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dots">
+                <div class="arrow left" data-direction="prev">←</div>
+                <div class="dot active" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
+                <div class="dot" data-index="3"></div>
+                <div class="arrow right" data-direction="next">→</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section language-translator">
+    <div class="row text-section">
+        <h2><b>We Do the Hard Stuff:</b> Scaling Your Business Across Borders</h2>
+    </div>
+
+    <div class="row translator-description mt-4">
+        <div class="col-md-6">
+            <p class="pt-1">From localization to cross-border transactions, we’ve got the experience and AI-driven
+                tools, such as a universal translator, to take your business anywhere. Integrate seamlessly, communicate
+                effectively, and transact confidently with our global solutions.</pclass>
+
+            <ul class="mt-5">
+                <li><b>Localization:</b> Multilingual support, cultural nuances, international user experience</li>
+                <li><b>Transactions:</b> Payment gateways, currency conversion, compliance & security</li>
+                <li><b>Integration:</b> Ensuring all systems—HR, finance, customer support—work together globally</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <img src="./assets/images/business-across-borders.jpg" alt="Business Across Borders"/>
+        </div>
+    </div>
+
+    <div class="row justify-content pt-5">
+        <div class="col-auto">
+            <button class="round-button">Start Translating</button>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section who-we-work">
+    <div class="row text-section">
+        <h2>Who We Work With</h2>
+        <p class="introduction">We don’t do volume. We do alignment.</p>
+    </div>
+
+    <div class="row g-3">
+        <div class="col who-we-work-slide">
+            <h3>Founders</h3>
+            <p>Boldly building resiliently through hard seasons</p>
+            <img src="./assets/images/who-we-work/who-we-work-image-1.jpg" alt="Founders"/>
+        </div>
+
+        <div class="col who-we-work-slide">
+            <h3>Product Leader</h3>
+            <p>Thoughtfully embedding AI with clear purpose</p>
+            <img src="./assets/images/who-we-work/who-we-work-image-2.jpg" alt="Product Leader"/>
+        </div>
+
+        <div class="col who-we-work-slide">
+            <h3>Operators</h3>
+            <p>Reducing costs and elevating customer experience</p>
+            <img src="./assets/images/who-we-work/who-we-work-image-3.jpg" alt="Operators"/>
+        </div>
+    </div>
+
+    <div class="row">
+        <h4>Not For</h4>
+
+        <ul class="pt-2">
+            <li><b>Quick-Flip MVP Seekers:</b> Teams chasing short-term gains</li>
+            <li><b>Bolt-On Vendors:</b> Those who simply add AI without true transformation</li>
+        </ul>
+    </div>
+</div>
+
+<div class="row block-section ai-agent">
+    <div class="row g-5">
+        <div class="col-md-5">
+            <img src="./assets/images/ai-agent-image.png" alt="AI agent"/>
+        </div>
+        <div class="col-md-7">
+            <h2>What are AI Agents, and Why Do You Need Them?</h2>
+
+            <p class="pt-5">AI agents automate tasks and <b>boost productivity</b> by up to 50%. Imagine a support agent
+                handling 80% of
+                routine inquiries instantly, letting your team <b>focus on complex challenges</b>.</p>
+
+            <div class="row justify-content pt-5">
+                <div class="col-auto">
+                    <button class="round-button">Join the AI Revolution</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section valley-proof">
+    <div class="row text-center"><h2 class="title">Coming 2025</h2></div>
+    <div class="row g-5 mt-0">
+        <div class="col-md-7">
+            <h2>Valley-Proof</h2>
+            <p>(Book & Toolset)</p>
+
+            <p>Coming 2025: Valley-Proof: How Real Founders Survive the Tough Years and Build Something That Lasts</p>
+
+            <p class="pt-5">It’s a founder’s guide to managing cash flow, momentum, and mindsets during the not-so-up
+                years. Based on
+                30 years of doing it for real. Part playbook, part philosophy, part tool. Follow along or join the early
+                access group.</p>
+        </div>
+        <div class="col-md-5">
+            <img src="./assets/images/book-valley-proof.jpg" alt="Valley Proof"/>
+        </div>
+    </div>
+
+    <div class="row justify-content pt-4">
+        <div class="col-auto pl-0">
+            <button class="round-button">Sign up for early access &#10140;</button>
+        </div>
+    </div>
+</div>
+
+<div class="block-section testimonial">
+    <div class="row text-section mb-3">
+        <h2 class="offset-md-1 col-md-11 mb-0">Success Stories Of Our Clients</h2>
+        <p class="offset-md-1 col-md-11 mt-0">Discover firsthand how our tech solutions have revolutionized customer
+            satisfaction.</p>
+
+        <div class="row">
+            <div class="offset-md-1 col-md-10">
+                <div class="row testimonial-container">
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/graeme-crothal.png"
+                                     alt="Grame Crothal"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"Improvement Interactive built and implemented <br/>software of
+                                    strategic importance to our operations"</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Graeme Crothal</b></p>
+                                <p class="mt-0">CEO, Crothal Service Group</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/barner-compass.jpg"
+                                     alt="Mike Barner"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"I have used improvement interactive for the past 14 <br/>years with
+                                    great
+                                    success "</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Mike Barner</b></p>
+                                <p class="mt-0">Sr. VP, Compass Group</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/dennis-adsit.png"
+                                     alt="Denis Adsit"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"Improvement Interactive worked with Intuit to enhance <br/>employee and
+                                    operational performance"</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Denis Adsit</b></p>
+                                <p class="mt-0">Sr. VP, Intuit. Inc</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/greg-aramark.png"
+                                     alt="Greg Ross"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"Improvement Interactive team translated our vision into <br/>software
+                                    that
+                                    improved satisfaction"</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Greg Ross</b></p>
+                                <p class="mt-0">VP Interserv, Aramark</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/jade-washmon.png"
+                                     alt="Jade Washmon"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"With Improvement Interactive we were able to develop <br/>a uniquely
+                                    effective system for our offshore platform"</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Jade Washmon</b></p>
+                                <p class="mt-0">Shell international, Exploration & Production</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/doyle-lexmark.png"
+                                     alt="Doyle Lexmark"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"Improvement Interactive has provided Lexmark with a tool to <br/>deliver
+                                    training, track and manage training progress <br/>of our authorized service provider
+                                    worldwide "</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Greg Doyle</b></p>
+                                <p class="mt-0">Manager, Lexmark Worldwide, Mobile Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row d-flex justify-content-center align-items-center mt-3">
+                    <div class="col-auto testimonial-page-container">
+                        <span class="testimonial-page active" onclick="nextSlide(0)"></span>
+                        <span class="testimonial-page" onclick="nextSlide(1)"></span>
+                        <span class="testimonial-page" onclick="nextSlide(2)"></span>
+                        <span class="testimonial-page" onclick="nextSlide(3)"></span>
+                        <span class="testimonial-page" onclick="nextSlide(4)"></span>
+                        <span class="testimonial-page" onclick="nextSlide(5)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section contact-us" id="contact-us">
+    <div class="row">
+        <div class="col-md-6 text-section">
+            <h2 class="mb-0">Let's Build Together</h2>
+
+            <p class="mt-0 mb-0">Contact us:</p>
+
+            <div class="row contact-details">
+                <div class="d-flex pt-2">
+                    <i class="fa-solid fa-phone-volume pt-2 me-2"></i>
+                    <p class="mt-0 mb-0 mx-15">+001.520.579.5666</p>
+                </div>
+
+                <div class="d-flex pt-2">
+                    <i class="fa-solid fa-envelope pt-2 me-2"></i>
+                    <p class="mt-0 mb-0 mx-15">hq@i3.io</p>
+                </div>
+
+                <div class="d-flex pt-2">
+                    <i class="fa-solid fa-location-dot pt-2 me-2"></i>
+                    <p class="mt-0 mb-0 mx-15"><b>Corporate Headquarters</b><br/> 8987 E. Tanque Verde Rd, Suite 309
+                        #325, Tucson
+                        AZ 85749</p>
+                </div>
+
+                <div class="d-flex pt-2">
+                    <i class="fa-solid fa-location-dot pt-2 me-2"></i>
+                    <p class="mt-0 mb-0 mx-15"><b>II India</b><br/> 301/302 3rd Floor, Saket Callipolis Sarjapur Main
+                        Rd,
+                        Doddakannelli, Bengaluru, Karnataka 560035 India</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="social-icons pt-4">
+                    <a href="https://www.facebook.com/Improvement-Interactive-LLC-180472716265/" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/improvement-interactive" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Whether you’re building, scaling, or stuck-we’ll listen.</h3>
+
+            <div class="row">
+                <form id="contact-form" class="pt-5">
+                    <div id="successMessage" class="row mt-3"></div>
+                    <div class="row mb-4">
+                        <div class="col pl-0">
+                            <input type="text" name="firstName" id="firstName" class="form-control"
+                                   placeholder="First Name">
+                        </div>
+                        <div class="col pr-0">
+                            <input type="text" name="lastName" id="lastName" class="form-control"
+                                   placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <textarea name="message" id="message" class="form-control" rows="4"
+                                  placeholder="Message"></textarea>
+                    </div>
+
+                    <div class="row justify-content">
+                        <div class="col-auto pl-0">
+                            <button type="submit" class="round-button">Submit</button>
+                        </div>
+                    </div>
+
+                    <p class="mt-3 terms">
+                        By clicking Submit you're confirming that you agree with our
+                        <a href="#" class="text-decoration-none">Terms and Conditions</a>.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section clients">
+    <div class="row text-section text-center mb-4">
+        <h3>Trusted By The World's Most Ambitious Leaders</h3>
+    </div>
+
+    <div class="row client-slider">
+        <div class="logo mx-2">
+            <img src="./assets/images/clients/crothal.png" alt="Crothal Logo"/>
+        </div>
+
+        <div class="logo mx-2">
+            <img src="./assets/images/clients/carvana.png" alt="Carvana Logo"/>
+        </div>
+
+        <div class="logo mx-2">
+            <img src="./assets/images/clients/compass.png" alt="Compass Logo"/>
+        </div>
+
+        <div class="logo mx-2">
+            <img src="./assets/images/clients/aramark.png" alt="Aramark Logo"/>
+        </div>
+
+        <div class="logo mx-2">
+            <img src="./assets/images/clients/shell.png" alt="Shell Logo"/>
+        </div>
+
+        <div class="logo mx-2">
+            <img src="./assets/images/clients/intuit.png" alt="Intuit Logo"/>
+        </div>
+
+        <div class="logo mx-2">
+            <img src="./assets/images/clients/tucson.png" alt="Tucson Logo"/>
+        </div>
+
+        <div class="logo mx-2">
+            <img src="./assets/images/clients/taproot.png" alt="Taproot Logo"/>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section faq">
+    <div class="row text-section text-center">
+        <h2>FAQs</h2>
+        <p>Find answers to commonly asked questions about Improvement Interactive and its services.</p>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span>How can I get started with Improvement Interactive?</span>
+                <span class="faq-toggle">-</span>
+            </div>
+            <div class="faq-answer" style="display: block;">
+                Simply reach out via our contact page or schedule a consultation. We’ll assess your requirements and
+                guide you through the best AI solutions to help achieve your goals.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span>Which AI solutions does Improvement Interactive offer?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                We provide a range of AI agents, including customer support, help desk, universal translator, virtual
+                administrative assistants, and more—all tailored to meet unique business needs.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span>Are your solutions scalable for large enterprises?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Absolutely. Our AI agents are built to handle high volumes of queries, transactions, and complex
+                workflows—making them suitable for organizations of all sizes, from startups to global enterprises.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span>Why should I choose Improvement Interactive for AI solutions?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                We combine deep technical expertise with a user-centric approach, ensuring our AI agents deliver
+                measurable results. Our proven track record includes decades of innovation, hundreds of successful
+                deployments, and large-scale transaction handling.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span>What industries can benefit from Improvement Interactive’s solutions?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Virtually any sector that handles repetitive tasks or needs intelligent automation can benefit. Common
+                industries include e-commerce, finance, healthcare, hospitality, and enterprise-level operations.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section footer">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="offset-md-1 col-md-11">
+                <div class="footer-logo">
+                    <img src="./assets/images/i3-logo.png" alt="i3 logo"/>
+                </div>
+
+                <p class="pt-2">Improvement Interactive combines software development and process improvement to
+                    provide solution for your business Improvement Interactive stays with you for the long-haul helping
+                    you to manage change and achieve success.</p>
+
+                <div class="social-icons pt-2">
+                    <a href="https://www.facebook.com/Improvement-Interactive-LLC-180472716265/" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/improvement-interactive" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 sitemap">
+            <div class="row pt-10">
+                <a class="col">Quick links</a>
+                <a class="col">Support</a>
+                <a class="col">Company</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col">About Us</a>
+                <a class="col">Terms & Conditions</a>
+                <a class="col">Careers</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col">Team</a>
+                <a class="col">Privacy Policy</a>
+                <a class="col">Updates</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col">Services</a>
+                <a class="col">FAQs</a>
+                <a class="col">Press</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col">Contact Us</a>
+                <a class="col">Support Center</a>
+                <a class="col">Announcement</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center text-center pt-5">
+        <p>ALL RIGHTS RESERVED. COPYRIGHT &copy; Improvement Interactive 2020</p>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="./assets/js/scripts.js"></script>
+
+<script>
+    let index = 0;
+
+    function showSlide() {
+        const slides = document.querySelectorAll('.client-testimonial');
+        const testimonialPages = document.querySelectorAll('.testimonial-page');
+
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'flex' : 'none';
+            testimonialPages[i].classList.toggle('active', i === index); // Adds 'active' class only to the current dot
+        });
+    }
+
+    function nextSlide(slideIndex) {
+        const slides = document.querySelectorAll('.client-testimonial');
+
+        index = slideIndex % slides.length;
+
+        showSlide();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".what-we-do-slider").forEach(slider => new ContentSlider(slider));
+
+        const slides = document.querySelectorAll('.client-testimonial');
+        const testimonialPages = document.querySelectorAll('.testimonial-page');
+
+        slides.forEach((slide, i) => {
+            slide.style.display = 'none';
+            testimonialPages[i].classList.remove('active');
+        });
+
+        showSlide();
+
+        setInterval(function () {
+            nextSlide(index + 1);
+        }, 3000);
+    });
+</script>
