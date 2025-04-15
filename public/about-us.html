@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="./assets/css/styles.css" rel="stylesheet"/>
+</head>
+
+<style>
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none !important;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+
+            li {
+                margin: 10px 0;
+            }
+        }
+
+        .nav-links.active {
+            display: flex !important;
+        }
+
+        .hamburger {
+            display: block !important;
+        }
+
+        .block-section {
+            padding: 30px;
+        }
+
+        .about-us {
+            img {
+                width: 100%;
+            }
+        }
+
+        .company-legacy-container {
+            margin-left: 0px !important;
+        }
+
+        .company-legacy-slide {
+            flex: none !important;
+            margin: 10px !important;
+            width: 96% !important;
+        }
+
+        .our-ceo {
+            .text-section {
+                padding: 0px !important;
+            }
+
+            img {
+                width: 100% !important;
+            }
+
+            .col-8 {
+                padding-left: 15px !important;
+
+                .expertise {
+                    margin-top: 15px !important;
+                    font-size: 15px !important;
+                }
+            }
+        }
+
+        .valley-proof {
+            img {
+                width: 100%;
+            }
+        }
+
+        .contact-us {
+            h3 {
+                padding-top: 40px !important;
+            }
+        }
+    }
+</style>
+
+<body>
+<nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <a href="/"><img src="./assets/images/i3-logo.png" alt="Company Logo"></a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="home.html#what-we-do">Services</a></li>
+        <li><a href="about-us.html" class="active">About Us</a></li>
+        <li><a href="#">Career</a></li>
+        <li class="contact-button"><a href="home.html#contact-us">Contact Us →</a></li>
+    </ul>
+</nav>
+
+<div class="row block-section about-us pt-10">
+    <div class="col-md-12 text-center text-section pt-4">
+        <h2>Empowering Global Business with Intelligent Solutions</h2>
+        <p>At i3, our scalable AI transforms support and cash flow - empowering businesses to thrive.</p>
+
+        <img src="./assets/images/about-us-hero-image.png" alt="About Us Intro">
+    </div>
+</div>
+
+<div class="row block-section company-legacy">
+    <div class="col-md-12 text-center text-section">
+        <h2>Over 30 Years of Innovation, Billions in Transactions, One Unwavering Commitment</h2>
+        <p>Building enduring relationships and delivering real-world impact since 1993.</p>
+    </div>
+
+    <div class="row company-legacy-container mx-15 g-3">
+        <div class="company-legacy-slide col">
+            <img src="./assets/images/company-legacy/intro-image-1.png" alt="Years of Service"/>
+            <h3>30+ Years of Service</h3>
+            <p>A proven track record of reliability and adaptability.</p>
+        </div>
+
+        <div class="company-legacy-slide col">
+            <img src="./assets/images/company-legacy/intro-image-2.png" alt="Billions in Transactions"/>
+            <h3>Billions in Transactions</h3>
+            <p>Trusted by enterprises worldwide to handle critical operations</p>
+        </div>
+
+        <div class="company-legacy-slide col">
+            <img src="./assets/images/company-legacy/intro-image-3.png" alt="Loyalty">
+            <h3>Loyalty to Our Clients</h3>
+            <p>We prioritize long-term partnerships built on integrity and results.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section our-ceo">
+    <div class="col-md-12 text-section">
+        <h2 class="text-center">Meet Our CEO</h2>
+
+        <div class="row">
+            <div class="col-md-6 mx-auto d-flex ceo-container">
+                <div class="col-4">
+                    <img src="./assets/images/ceo.jpg" alt="Frank Garcia"/>
+                </div>
+                <div class="col-8">
+                    <h4>Frank Garcia</h4>
+                    <p>Founder and CEO</p>
+                    <p class="expertise">Combining decades of expertise with a commitment to innovation and lasting
+                        impact.</p>
+
+                    <div class="ceo-social-icons pt-2">
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="ceo-message-title"><b>A Message from Our CEO: </b></p>
+
+        <p class="ceo-message">"Hi, I'm Frank Garcia. Since founding Improvement Interactive in 1993, I've dedicated
+            myself to empowering
+            global business with innovative technology. I'm passionate about delivering intelligent solutions that truly
+            make a difference. Together, we are building a future where technology and human ingenuity propel success
+            worldwide."</p>
+    </div>
+</div>
+
+<div class="row block-section valley-proof">
+    <div class="row text-center"><h2 class="title">Coming 2025</h2></div>
+    <div class="row g-5 mt-0">
+        <div class="col-md-7">
+            <h2>Valley-Proof</h2>
+            <p>(Book & Toolset)</p>
+
+            <p>Coming 2025: Valley-Proof: How Real Founders Survive the Tough Years and Build Something That Lasts</p>
+
+            <p class="pt-5">It’s a founder’s guide to managing cash flow, momentum, and mindsets during the not-so-up
+                years. Based on
+                30 years of doing it for real. Part playbook, part philosophy, part tool. Follow along or join the early
+                access group.</p>
+        </div>
+        <div class="col-md-5">
+            <img src="./assets/images/book-valley-proof.jpg" alt="Valley Proof"/>
+        </div>
+    </div>
+
+    <div class="row justify-content pt-4">
+        <div class="col-auto pl-0">
+            <button class="round-button">Sign up for early access &#10140;</button>
+        </div>
+    </div>
+</div>
+
+<div class="block-section testimonial">
+    <div class="row text-section mb-3">
+        <h2 class="offset-md-1 col-md-11 mb-0">Success Stories Of Our Clients</h2>
+        <p class="offset-md-1 col-md-11 mt-0">Discover firsthand how our tech solutions have revolutionized customer
+            satisfaction.</p>
+
+        <div class="row">
+            <div class="offset-md-1 col-md-10">
+                <div class="row testimonial-container">
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/graeme-crothal.png"
+                                     alt="Grame Crothal"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"Improvement Interactive built and implemented <br/>software of
+                                    strategic importance to our operations"</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Graeme Crothal</b></p>
+                                <p class="mt-0">CEO, Crothal Service Group</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/barner-compass.jpg"
+                                     alt="Mike Barner"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"I have used improvement interactive for the past 14 <br/>years with
+                                    great
+                                    success "</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Mike Barner</b></p>
+                                <p class="mt-0">Sr. VP, Compass Group</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/dennis-adsit.png"
+                                     alt="Denis Adsit"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"Improvement Interactive worked with Intuit to enhance <br/>employee and
+                                    operational performance"</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Denis Adsit</b></p>
+                                <p class="mt-0">Sr. VP, Intuit. Inc</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/greg-aramark.png"
+                                     alt="Greg Ross"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"Improvement Interactive team translated our vision into <br/>software
+                                    that
+                                    improved satisfaction"</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Greg Ross</b></p>
+                                <p class="mt-0">VP Interserv, Aramark</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/jade-washmon.png"
+                                     alt="Jade Washmon"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"With Improvement Interactive we were able to develop <br/>a uniquely
+                                    effective system for our offshore platform"</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Jade Washmon</b></p>
+                                <p class="mt-0">Shell international, Exploration & Production</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row client-testimonial">
+                        <div class="col-md-3">
+                            <div class="row justify-content-center mt-4 mb-4">
+                                <img class="client-profile" src="./assets/images/testimonials/doyle-lexmark.png"
+                                     alt="Doyle Lexmark"/>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="row">
+                                <p class="mt-0">"Improvement Interactive has provided Lexmark with a tool to <br/>deliver
+                                    training, track and manage training progress <br/>of our authorized service provider
+                                    worldwide "</p>
+                            </div>
+
+                            <div class="row">
+                                <p class="mb-0"><b>Greg Doyle</b></p>
+                                <p class="mt-0">Manager, Lexmark Worldwide, Mobile Director</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row d-flex justify-content-center align-items-center mt-3">
+                    <div class="col-auto testimonial-page-container">
+                        <span class="testimonial-page active" onclick="nextSlide(0)"></span>
+                        <span class="testimonial-page" onclick="nextSlide(1)"></span>
+                        <span class="testimonial-page" onclick="nextSlide(2)"></span>
+                        <span class="testimonial-page" onclick="nextSlide(3)"></span>
+                        <span class="testimonial-page" onclick="nextSlide(4)"></span>
+                        <span class="testimonial-page" onclick="nextSlide(5)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contact-us" class="row block-section contact-us">
+    <div class="row">
+        <div class="col-md-6 text-section">
+            <h2 class="mb-0">Let's Build Together</h2>
+
+            <p class="mt-0 mb-0">Contact us:</p>
+
+            <div class="row contact-details">
+                <div class="d-flex pt-2">
+                    <i class="fa-solid fa-phone-volume pt-2 me-2"></i>
+                    <p class="mt-0 mb-0 mx-15">+001.520.579.5666</p>
+                </div>
+
+                <div class="d-flex pt-2">
+                    <i class="fa-solid fa-envelope pt-2 me-2"></i>
+                    <p class="mt-0 mb-0 mx-15">hq@i3.io</p>
+                </div>
+
+                <div class="d-flex pt-2">
+                    <i class="fa-solid fa-location-dot pt-2 me-2"></i>
+                    <p class="mt-0 mb-0 mx-15"><b>Corporate Headquarters</b><br/> 8987 E. Tanque Verde Rd, Suite 309
+                        #325, Tucson
+                        AZ 85749</p>
+                </div>
+
+                <div class="d-flex pt-2">
+                    <i class="fa-solid fa-location-dot pt-2 me-2"></i>
+                    <p class="mt-0 mb-0 mx-15"><b>II India</b><br/> 301/302 3rd Floor, Saket Callipolis Sarjapur Main
+                        Rd,
+                        Doddakannelli, Bengaluru, Karnataka 560035 India</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="social-icons pt-4">
+                    <a href="https://www.facebook.com/Improvement-Interactive-LLC-180472716265/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/improvement-interactive" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <h3>Whether you’re building, scaling, or stuck-we’ll listen.</h3>
+
+            <div class="row">
+                <form id="contact-form" class="pt-5">
+                    <div id="successMessage" class="row mt-3"></div>
+                    <div class="row mb-4">
+                        <div class="col pl-0">
+                            <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name">
+                        </div>
+                        <div class="col pr-0">
+                            <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message"></textarea>
+                    </div>
+
+                    <div class="row justify-content">
+                        <div class="col-auto pl-0">
+                            <button type="submit" class="round-button">Submit</button>
+                        </div>
+                    </div>
+
+                    <p class="mt-3 terms">
+                        By clicking Submit you're confirming that you agree with our
+                        <a href="#" class="text-decoration-none">Terms and Conditions</a>.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section faq">
+    <div class="row text-section text-center">
+        <h2>FAQs</h2>
+        <p>Find answers to commonly asked questions about Improvement Interactive and its services.</p>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span>How can I get started with Improvement Interactive?</span>
+                <span class="faq-toggle">-</span>
+            </div>
+            <div class="faq-answer" style="display: block;">
+                Simply reach out via our contact page or schedule a consultation. We’ll assess your requirements and
+                guide you through the best AI solutions to help achieve your goals.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span>Which AI solutions does Improvement Interactive offer?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                We provide a range of AI agents, including customer support, help desk, universal translator, virtual
+                administrative assistants, and more—all tailored to meet unique business needs.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span>Are your solutions scalable for large enterprises?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Absolutely. Our AI agents are built to handle high volumes of queries, transactions, and complex
+                workflows—making them suitable for organizations of all sizes, from startups to global enterprises.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span>Why should I choose Improvement Interactive for AI solutions?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                We combine deep technical expertise with a user-centric approach, ensuring our AI agents deliver
+                measurable results. Our proven track record includes decades of innovation, hundreds of successful
+                deployments, and large-scale transaction handling.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span>What industries can benefit from Improvement Interactive’s solutions?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                Virtually any sector that handles repetitive tasks or needs intelligent automation can benefit. Common
+                industries include e-commerce, finance, healthcare, hospitality, and enterprise-level operations.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row block-section footer">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="offset-md-1 col-md-11">
+                <div class="footer-logo">
+                    <img src="./assets/images/i3-logo.png" alt="i3 logo"/>
+                </div>
+
+                <p class="pt-2">Improvement Interactive combines software development and process improvement to
+                    provide solution for your business Improvement Interactive stays with you for the long-haul helping
+                    you to manage change and achieve success.</p>
+
+                <div class="social-icons pt-2">
+                    <a href="https://www.facebook.com/Improvement-Interactive-LLC-180472716265/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/improvement-interactive" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 sitemap">
+            <div class="row pt-10">
+                <a class="col">Quick links</a>
+                <a class="col">Support</a>
+                <a class="col">Company</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col">About Us</a>
+                <a class="col">Terms & Conditions</a>
+                <a class="col">Careers</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col">Team</a>
+                <a class="col">Privacy Policy</a>
+                <a class="col">Updates</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col">Services</a>
+                <a class="col">FAQs</a>
+                <a class="col">Press</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col">Contact Us</a>
+                <a class="col">Support Center</a>
+                <a class="col">Announcement</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center text-center pt-5">
+        <p>ALL RIGHTS RESERVED. COPYRIGHT &copy; Improvement Interactive 2020</p>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="./assets/js/scripts.js"></script>
+
+<script>
+    let index = 0;
+
+    function showSlide() {
+        const slides = document.querySelectorAll('.client-testimonial');
+        const testimonialPages = document.querySelectorAll('.testimonial-page');
+
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'flex' : 'none';
+            testimonialPages[i].classList.toggle('active', i === index); // Adds 'active' class only to the current dot
+        });
+    }
+
+    function nextSlide(slideIndex) {
+        const slides = document.querySelectorAll('.client-testimonial');
+
+        index = slideIndex % slides.length;
+
+        showSlide();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const slides = document.querySelectorAll('.client-testimonial');
+        const testimonialPages = document.querySelectorAll('.testimonial-page');
+
+        slides.forEach((slide, i) => {
+            slide.style.display = 'none';
+            testimonialPages[i].classList.remove('active');
+        });
+
+        showSlide();
+
+        setInterval(function () {
+            nextSlide(index + 1);
+        }, 3000);
+    });
+</script>
