@@ -752,7 +752,8 @@ h2, h3, p {
     .client-slider {
         display: flex;
         width: max-content;
-        animation: scroll 10s linear infinite;
+        height: 80px;
+        animation: scroll 15s linear infinite;
     }
 
     .logo {
@@ -760,6 +761,7 @@ h2, h3, p {
         display: flex;
         align-items: center;
         justify-content: center;
+        object-fit: contain;
     }
 
     .logo img {
