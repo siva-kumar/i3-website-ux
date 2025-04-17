@@ -743,41 +743,39 @@ h2, h3, p {
 
 .clients {
     border-bottom: 1px solid #000000;
+    .slider-wrapper {
+        padding: 0px;
+        overflow: hidden;
+        width: 100%
+    }
+
     .client-slider {
-        animation: slidein 15s linear infinite;
-        white-space: nowrap;
-        display: inline-block !important;
+        display: flex;
+        width: max-content;
+        animation: scroll 9s linear infinite;
+    }
 
-        .logo {
-            width: 248px;
-            height: 80px;
-            display: inline-block;
-            border-radius: 15px;
+    .logo {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-            img {
-                width: 235px;
-                height: 80px;
-                animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
-            }
-        }
+    .logo img {
+        width: 235px;
+        height: 80px;
+        margin: 0 20px;
     }
 }
 
-@keyframes slidein {
-    from {
-        transform: translate3d(0, 0, 0);
-    }
-    to {
-        transform: translate3d(-50%, 0, 0);
-    }
-}
-
-@keyframes fade-in {
+/* Animation Keyframes */
+@keyframes scroll {
     0% {
-        opacity: 0;
+        transform: translateX(0);
     }
     100% {
-        opacity: 1;
+        transform: translateX(-50%);
     }
 }
 
