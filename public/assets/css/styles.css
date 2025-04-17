@@ -752,7 +752,7 @@ h2, h3, p {
     .client-slider {
         display: flex;
         width: max-content;
-        animation: scroll 9s linear infinite;
+        animation: scroll 10s linear infinite;
     }
 
     .logo {
