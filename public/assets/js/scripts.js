@@ -60,13 +60,13 @@ class ContentSlider {
         this.tabs.forEach(tab => tab.addEventListener('click', () => {
             this.stopAutoSlide();
             this.showSlide(parseInt(tab.dataset.index));
-            this.startAutoSlide();
+            //this.startAutoSlide();
         }));
 
         this.dots.forEach(dot => dot.addEventListener('click', () => {
             this.stopAutoSlide();
             this.showSlide(parseInt(dot.dataset.index));
-            this.startAutoSlide();
+            //this.startAutoSlide();
         }));
 
         this.startAutoSlide();

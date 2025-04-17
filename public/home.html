@@ -6,8 +6,7 @@
     <title>i3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -54,6 +53,12 @@
 
         .media-section {
             padding-top: 0px !important;
+
+            video, img {
+                width: -webkit-fill-available;
+                width: -moz-available;
+                height: auto;
+            }
         }
 
         .build-ai-button {
@@ -113,6 +118,25 @@
             .who-we-work-slide {
                 flex: none !important;
                 margin-left: 0px !important;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .language-translator {
+            .translator-description {
+                div {
+                    padding-left: 0px !important;
+                    padding-right: 0px !important;
+                }
+            }
+        }
+
+        .ai-agent {
+            div {
+                padding: 0px !important;
             }
         }
 
@@ -188,7 +212,7 @@
     </div>
 
     <div class="row justify-content-center build-ai-button pt-10">
-        <div class="pl-0">
+        <div class="px-0">
             <a class="round-button" href="#contact-us">Let’s Build Something Strategic</a>
         </div>
     </div>
@@ -197,10 +221,10 @@
 <div class="row block-section engineering">
     <div class="row text-section">
         <h2>30+ Years of Engineering Excellence</h2>
-        <p>We are there when enterprise needed scale, We're here now as AI demands precision.</p>
+        <p>We’ve been there when enterprises needed scale, and now we’re here as AI demands precision.</p>
     </div>
 
-    <div class="row g-3">
+    <div class="row g-3 mt-0">
         <div class="col product-slide">
             <img src="./assets/images/why-i3/why-i3-image-3.jpg" alt="Reliability"/>
             <h3 class="col-md-12">Decades of Mission-Critical Reliability</h3>
@@ -213,16 +237,16 @@
 
         <div class="col product-slide">
             <img src="./assets/images/why-i3/why-i3-image-1.jpg" alt="Healthcare Logistics"/>
-            <h3 class="col-md-12">Powering Healthcare Logistics</h3>
+            <h3 class="col-md-12">Mission Critical Logistics <br/>(like Healthcare)</h3>
         </div>
     </div>
 
-    <div class="row text-section pt-4">
+    <div class="row text-section">
         <h3>We Now Bring That Same Engineering Discipline into the AI Era</h3>
     </div>
 
     <div class="row justify-content pt-4">
-        <div class="col-auto">
+        <div class="col-auto px-0">
             <a class="round-button" href="#contact-us">Let’s Build Something Strategic</a>
         </div>
     </div>
@@ -403,7 +427,7 @@
         <div class="col-md-6">
             <p class="pt-1">From localization to cross-border transactions, we’ve got the experience and AI-driven
                 tools, such as a universal translator, to take your business anywhere. Integrate seamlessly, communicate
-                effectively, and transact confidently with our global solutions.</pclass>
+                effectively, and transact confidently with our global solutions.</p>
 
             <ul class="mt-5">
                 <li><b>Localization:</b> Multilingual support, cultural nuances, international user experience</li>
@@ -432,8 +456,8 @@
     <div class="row who-we-work-slide">
         <div class="col-md-8 text-section">
             <h3>Business Leaders</h3>
-            <p><b>Grow Your Business Through Tech Innovation</b></p>
-            <p class="description">We help you align technological capabilities with strategic goals, ensuring
+            <p class="pt-1"><b>Grow Your Business Through Tech Innovation</b></p>
+            <p class="description pt-3">We help you align technological capabilities with strategic goals, ensuring
                 sustainable growth, streamlined processes, and immediate ROI. Trust our track record-recognized by
                 Global 500 companies for award‑winning innovation.</p>
         </div>
@@ -445,8 +469,8 @@
     <div class="row who-we-work-slide">
         <div class="col-md-8 text-section">
             <h3>Operators</h3>
-            <p><b>Elevate Operations & Reduce Costs</b></p>
-            <p class="description">Our AI-driven solutions streamline workflows, cut overhead, and enhance customer
+            <p class="pt-1"><b>Elevate Operations & Reduce Costs</b></p>
+            <p class="description pt-3">Our AI-driven solutions streamline workflows, cut overhead, and enhance customer
                 experiences. Turn routine tasks into strategic advantages with i3’s decades of engineering
                 expertise.</p>
         </div>
@@ -458,8 +482,8 @@
     <div class="row who-we-work-slide">
         <div class="col-md-8 text-section">
             <h3>Founders</h3>
-            <p><b>Build Resilient Foundations</b></p>
-            <p class="description">Whether you’re pioneering a new market or standing out in a crowded field, we take
+            <p class="pt-1"><b>Build Resilient Foundations</b></p>
+            <p class="description pt-3">Whether you’re pioneering a new market or standing out in a crowded field, we take
                 you from MVP to scalable solutions—empowering startups to overcome growth hurdles and thrive, even in
                 challenging markets.</p>
         </div>
@@ -471,8 +495,8 @@
     <div class="row who-we-work-slide">
         <div class="col-md-8 text-section">
             <h3>Project Managers</h3>
-            <p><b>Implement AI with Clarity & Precision</b></p>
-            <p class="description">We partner with project managers to plan, execute, and optimize AI initiatives. With
+            <p class="pt-1"><b>Implement AI with Clarity & Precision</b></p>
+            <p class="description pt-3">We partner with project managers to plan, execute, and optimize AI initiatives. With
                 proven frameworks and transparent communication, your projects stay on schedule, on budget, and deliver
                 measurable results.</p>
         </div>
@@ -493,10 +517,10 @@
 
 <div class="row block-section ai-agent">
     <div class="row g-5">
-        <div class="col-md-5">
+        <div class="col-md-5 pl-0">
             <img src="./assets/images/ai-agent-image.png" alt="AI agent"/>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 pr-0">
             <h2>What are AI Agents, and Why Do You Need Them?</h2>
 
             <p class="pt-5">AI agents automate tasks and <b>boost productivity</b> by up to 50%. Imagine a support agent
@@ -515,7 +539,7 @@
 <div class="row block-section valley-proof">
     <div class="row text-center"><h2 class="title">Coming 2025</h2></div>
     <div class="row g-5 mt-0">
-        <div class="col-md-7">
+        <div class="col-md-7 px-0">
             <h2>Valley-Proof</h2>
             <p>(Book & Toolset)</p>
 
@@ -526,8 +550,8 @@
                 30 years of doing it for real. Part playbook, part philosophy, part tool. Follow along or join the early
                 access group.</p>
         </div>
-        <div class="col-md-5">
-            <img src="./assets/images/book-valley-proof.jpg" alt="Valley Proof"/>
+        <div class="col-md-5 px-0">
+            <img class="float-end" src="./assets/images/book-valley-proof.jpg" alt="Valley Proof"/>
         </div>
     </div>
 
@@ -544,7 +568,7 @@
         <p class="offset-md-1 col-md-11 mt-0">Discover firsthand how our tech solutions have revolutionized customer
             satisfaction.</p>
 
-        <div class="row">
+        <div class="row mt-2">
             <div class="offset-md-1 col-md-10">
                 <div class="row testimonial-container">
                     <div class="row client-testimonial">
