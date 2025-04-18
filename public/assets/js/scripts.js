@@ -1,22 +1,3 @@
-function posterClick(section) {
-    const poster = document.getElementById(section + "-poster");
-    const video = document.getElementById(section + "-video");
-
-    if (poster && video) {
-        video.play();
-        poster.style.opacity = "0";
-        setTimeout(() => {
-            poster.style.display = "none";
-        }, 2000);
-    }
-}
-
-function videoEnd(section) {
-    const poster = document.getElementById(section + "-poster");
-    poster.style.opacity = "1";
-    poster.style.display = "block";
-}
-
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
@@ -56,6 +37,15 @@ class ContentSlider {
         this.dots = sliderElement.querySelectorAll('.dot');
         this.currentIndex = 0;
         this.timer = null;
+
+        const slide = document.getElementById('slide-1');
+        if (slide) {
+            const height = slide.offsetHeight;
+
+            this.slides.forEach(slide => {
+                slide.style.height = height + 'px';
+            });
+        }
 
         this.tabs.forEach(tab => tab.addEventListener('click', () => {
             this.stopAutoSlide();

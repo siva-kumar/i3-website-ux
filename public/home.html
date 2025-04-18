@@ -15,7 +15,7 @@
 </head>
 
 <style>
-    @media (max-width: 768px) {
+    @media screen and (max-width: 1064px) {
         .nav-links {
             display: none !important;
             width: 100%;
@@ -40,29 +40,19 @@
             padding: 30px;
         }
 
-        .block-section {
-            &.left {
-                .media-section {
-                    video,
-                    img {
-                        margin-left: 0px !important;
-                    }
-                }
+
+        .build-ai {
+            .col-md-6 {
+                width: 100% !important;
             }
-        }
 
-        .media-section {
-            padding-top: 0px !important;
-            margin-top: 10px !important;
-
-            video, img {
-                width: 85.5%;
-                height: auto;
+            .media-section {
+                padding-top: 20px !important;
             }
-        }
 
-        .build-ai-button {
-            margin-top: 60px !important;
+            .build-ai-button {
+                margin-top: 25px !important;
+            }
         }
 
         .our-beliefs {
@@ -97,8 +87,8 @@
         }
 
         .slide {
-            .pl-10 {
-                padding-left: 10px !important;
+            .pl-5 {
+                padding-left: 15px !important;
             }
 
             h3 {
@@ -132,6 +122,10 @@
                     padding-right: 0px !important;
                 }
             }
+
+            .business-container {
+                margin-left: 0px !important;
+            }
         }
 
         .ai-agent {
@@ -160,6 +154,59 @@
             height: fit-content !important;
         }
     }
+
+    /*
+    @media (max-width: 1064px) {
+        .block-section {
+            &.left {
+                .media-section {
+                    right: 0;
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+        }
+
+        .media-section {
+            position: relative !important;
+            width: 100%;
+            height: 42vw !important;
+            padding-top: 0px !important;
+            margin-top: 10px !important;
+
+            video, img {
+                position: absolute !important;
+                top: 0;
+                width: 100% !important;
+                height: auto !important;
+                margin-left: 0px !important;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1280px) and (orientation: portrait) {
+        .block-section {
+            padding: 30px;
+        }
+
+        .media-section {
+            video, img {
+                width: 43% !important;
+                height: auto;
+                margin-left: 20px !important;
+            }
+        }
+    }
+
+    @media screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+        .media-section {
+            video, img {
+                width: 43% !important;
+                height: auto;
+                margin-left: 0px !important;
+            }
+        }
+    } */
 </style>
 
 <body>
@@ -192,26 +239,18 @@
             <p>With a 30+ year track record of real-world solutions, i3 now leverages AI to maximize strategic
                 impact-helping you build systems that scale, endure, and deliver immediate returns.</p>
         </div>
-        <div class="col-md-6 media-section video">
-            <video
-                    id="ai-intro-video"
-                    muted
-                    loop
-                    controls
-                    src="./assets/images/i3-hero-video.mp4"
-                    onended="videoEnd('ai-intro')"></video>
-            <img id="ai-intro-poster"
-                 src="./assets/images/hero-video-image.jpg"
-                 alt="i3 branding"
-                 onclick="posterClick('ai-intro')"
-                 onkeydown="{(e) => {
-                  if (e.keyCode === 13) posterClick('ai-intro');
-                }}"
-            />
+        <div class="col-md-6 media-section">
+            <div class="video-wrapper">
+                <video id="video" preload="none" controls>
+                    <source src="./assets/images/i3-hero-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="./assets/images/hero-video-image.jpg" alt="Play Video" id="video-overlay">
+            </div>
         </div>
     </div>
 
-    <div class="row justify-content-center build-ai-button pt-10">
+    <div class="row justify-content-center build-ai-button pt-2">
         <div class="px-0">
             <a class="round-button" href="#contact-us">Let’s Build Something Strategic</a>
         </div>
@@ -226,7 +265,7 @@
 
     <div class="row g-3 mt-0">
         <div class="col product-slide">
-            <img src="./assets/images/why-i3/why-i3-image-3.jpg" alt="Reliability"/>
+            <img src="./assets/images/why-i3/why-i3-image-1.jpg" alt="Reliability"/>
             <h3 class="col-md-12">Decades of Mission-Critical Reliability</h3>
         </div>
 
@@ -236,7 +275,7 @@
         </div>
 
         <div class="col product-slide">
-            <img src="./assets/images/why-i3/why-i3-image-1.jpg" alt="Healthcare Logistics"/>
+            <img src="./assets/images/why-i3/why-i3-image-3.jpg" alt="Healthcare Logistics"/>
             <h3 class="col-md-12">Mission Critical Logistics <br/>(like Healthcare)</h3>
         </div>
     </div>
@@ -295,13 +334,13 @@
             </div>
 
             <div class="slider-content">
-                <div class="col-md-12 slide active">
+                <div class="col-md-12 slide active" id="slide-1">
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-1.jpg"
+                            <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-1.png"
                                  alt="Strategic Systems">"/>
                         </div>
-                        <div class="col-md-8 pl-10">
+                        <div class="col-md-8 pl-5">
                             <h3>Strategic Systems</h3>
                             <p>We design and implement large-scale, long-term solutions that align technology with your
                                 business vision. From enterprise architecture to strategic road-mapping, we build
@@ -329,7 +368,7 @@
                             <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-2.png"
                                  alt="Custom AI Systems"/>
                         </div>
-                        <div class="col-md-8 pl-10">
+                        <div class="col-md-8 pl-5">
                             <h3>CUSTOM AI SYSTEMS</h3>
                             <p>We choose a handful of high-impact projects each year-from healthcare optimization to
                                 financial reconciliation and decision support. If you need scale, speed, or clarity,
@@ -354,10 +393,10 @@
                 <div class="col-md-12 slide">
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-3.jpg"
+                            <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-3.png"
                                  alt="SmashSupport.AI"/>
                         </div>
-                        <div class="col-md-8 pl-10">
+                        <div class="col-md-8 pl-5">
                             <h3>SmashSupport.AI</h3>
                             <p>An AI support agent that cut support volume by 90% for Smash Your Fitness-integrated,
                                 cost-saving, and fast, with built-in brand protection.</p>
@@ -381,10 +420,10 @@
                 <div class="col-md-12 slide">
                     <div class="row">
                         <div class="col-md-4">
-                            <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-4.jpg"
+                            <img class="slider-image" src="./assets/images/what-we-do/what-we-do-image-4.png"
                                  alt="Valley Proof"/>
                         </div>
-                        <div class="col-md-8 pl-10">
+                        <div class="col-md-8 pl-5">
                             <h3>Valley-Proof</h3>
                             <p>Cash flow systems for founders who can’t afford mistakes. Forged through decades of
                                 market volatility, it’s a toolset and mindset for staying liquid when it matters most.
@@ -428,15 +467,29 @@
             <p class="pt-1">From localization to cross-border transactions, we’ve got the experience and AI-driven
                 tools, such as a universal translator, to take your business anywhere. Integrate seamlessly, communicate
                 effectively, and transact confidently with our global solutions.</p>
-
-            <ul class="mt-5">
-                <li><b>Localization:</b> Multilingual support, cultural nuances, international user experience</li>
-                <li><b>Transactions:</b> Payment gateways, currency conversion, compliance & security</li>
-                <li><b>Integration:</b> Ensuring all systems—HR, finance, customer support—work together globally</li>
-            </ul>
         </div>
         <div class="col-md-6">
-            <img src="./assets/images/business-across-borders.jpg" alt="Business Across Borders"/>
+            <img src="./assets/images/scaling-business/business-across-borders.jpg" alt="Business Across Borders"/>
+        </div>
+    </div>
+
+    <div class="row business-container mx-15 g-3">
+        <div class="business-slide text-center col">
+            <img src="./assets/images/scaling-business/business-localization.png" alt="Localization"/>
+            <h3>Localization</h3>
+            <p>Multilingual support, cultural nuances, international user experience</p>
+        </div>
+
+        <div class="business-slide text-center col">
+            <img src="./assets/images/scaling-business/business-transaction.png" alt="Transactions">
+            <h3>Transactions</h3>
+            <p>Payment gateways, currency conversion, compliance & security</p>
+        </div>
+
+        <div class="business-slide text-center col">
+            <img src="./assets/images/scaling-business/business-integration.png" alt="Integration">
+            <h3>Integration</h3>
+            <p>Ensuring all systems-HR, finance, customer support-work together globally</p>
         </div>
     </div>
 
@@ -462,7 +515,7 @@
                 Global 500 companies for award‑winning innovation.</p>
         </div>
         <div class="col-md-4">
-            <img class="float-end" src="./assets/images/who-we-work/who-we-work-image-1.jpg" alt="Founders"/>
+            <img class="float-end" src="./assets/images/who-we-work/who-we-work-1.jpg" alt="Business Leaders"/>
         </div>
     </div>
 
@@ -475,7 +528,7 @@
                 expertise.</p>
         </div>
         <div class="col-md-4">
-            <img class="float-end" src="./assets/images/who-we-work/who-we-work-image-2.jpg" alt="Founders"/>
+            <img class="float-end" src="./assets/images/who-we-work/who-we-work-2.jpg" alt="Operators"/>
         </div>
     </div>
 
@@ -488,7 +541,7 @@
                 challenging markets.</p>
         </div>
         <div class="col-md-4">
-            <img class="float-end" src="./assets/images/who-we-work/who-we-work-image-3.jpg" alt="Founders"/>
+            <img class="float-end" src="./assets/images/who-we-work/who-we-work-3.jpg" alt="Founders"/>
         </div>
     </div>
 
@@ -501,7 +554,7 @@
                 measurable results.</p>
         </div>
         <div class="col-md-4">
-            <img class="float-end" src="./assets/images/who-we-work/who-we-work-image-4.jpg" alt="Founders"/>
+            <img class="float-end" src="./assets/images/who-we-work/who-we-work-4.jpg" alt="Project Managers"/>
         </div>
     </div>
 
@@ -518,16 +571,16 @@
 <div class="row block-section ai-agent">
     <div class="row g-5">
         <div class="col-md-5 pl-0">
-            <img src="./assets/images/ai-agent-image.png" alt="AI agent"/>
+            <img src="./assets/images/why-ai-agents.jpg" alt="AI agent"/>
         </div>
         <div class="col-md-7 pr-0">
             <h2>What are AI Agents, and Why Do You Need Them?</h2>
 
-            <p class="pt-5">AI agents automate tasks and <b>boost productivity</b> by up to 50%. Imagine a support agent
+            <p class="pt-4">AI agents automate tasks and <b>boost productivity</b> by up to 50%. Imagine a support agent
                 handling 80% of
                 routine inquiries instantly, letting your team <b>focus on complex challenges</b>.</p>
 
-            <div class="row justify-content pt-5">
+            <div class="row justify-content pt-4">
                 <div class="col-auto">
                     <button class="round-button">Join the AI Revolution</button>
                 </div>
@@ -539,7 +592,7 @@
 <div class="row block-section valley-proof">
     <div class="row text-center"><h2 class="title">Coming 2025</h2></div>
     <div class="row g-5 mt-0">
-        <div class="col-md-7 px-0">
+        <div class="col-md-6 px-0">
             <h2>Valley-Proof</h2>
             <p>(Book & Toolset)</p>
 
@@ -550,8 +603,8 @@
                 30 years of doing it for real. Part playbook, part philosophy, part tool. Follow along or join the early
                 access group.</p>
         </div>
-        <div class="col-md-5 px-0">
-            <img class="float-end" src="./assets/images/book-valley-proof.jpg" alt="Valley Proof"/>
+        <div class="col-md-6 px-0">
+            <img class="float-end" src="./assets/images/valley-proof.jpg" alt="Valley Proof"/>
         </div>
     </div>
 
@@ -574,7 +627,7 @@
                     <div class="row client-testimonial">
                         <div class="col-md-3">
                             <div class="row justify-content-center mt-4 mb-4">
-                                <img class="client-profile" src="./assets/images/testimonials/graeme-crothal.png"
+                                <img class="client-profile" src="./assets/images/testimonials/graeme-crothall.jpg"
                                      alt="Grame Crothal"/>
                             </div>
                         </div>
@@ -584,7 +637,7 @@
                                     strategic importance to our operations"</p>
                             </div>
 
-                            <div class="row">
+                            <div class="row pt-4">
                                 <p class="mb-0"><b>Graeme Crothal</b></p>
                                 <p class="mt-0">CEO, Crothal Service Group</p>
                             </div>
@@ -605,7 +658,7 @@
                                     success "</p>
                             </div>
 
-                            <div class="row">
+                            <div class="row pt-4">
                                 <p class="mb-0"><b>Mike Barner</b></p>
                                 <p class="mt-0">Sr. VP, Compass Group</p>
                             </div>
@@ -615,7 +668,7 @@
                     <div class="row client-testimonial">
                         <div class="col-md-3">
                             <div class="row justify-content-center mt-4 mb-4">
-                                <img class="client-profile" src="./assets/images/testimonials/dennis-adsit.png"
+                                <img class="client-profile" src="./assets/images/testimonials/dennis-adsit.jpg"
                                      alt="Denis Adsit"/>
                             </div>
                         </div>
@@ -625,7 +678,7 @@
                                     operational performance"</p>
                             </div>
 
-                            <div class="row">
+                            <div class="row pt-4">
                                 <p class="mb-0"><b>Denis Adsit</b></p>
                                 <p class="mt-0">Sr. VP, Intuit. Inc</p>
                             </div>
@@ -635,7 +688,7 @@
                     <div class="row client-testimonial">
                         <div class="col-md-3">
                             <div class="row justify-content-center mt-4 mb-4">
-                                <img class="client-profile" src="./assets/images/testimonials/greg-aramark.png"
+                                <img class="client-profile" src="./assets/images/testimonials/greg-aramark.jpg"
                                      alt="Greg Ross"/>
                             </div>
                         </div>
@@ -646,7 +699,7 @@
                                     improved satisfaction"</p>
                             </div>
 
-                            <div class="row">
+                            <div class="row pt-4">
                                 <p class="mb-0"><b>Greg Ross</b></p>
                                 <p class="mt-0">VP Interserv, Aramark</p>
                             </div>
@@ -656,7 +709,7 @@
                     <div class="row client-testimonial">
                         <div class="col-md-3">
                             <div class="row justify-content-center mt-4 mb-4">
-                                <img class="client-profile" src="./assets/images/testimonials/jade-washmon.png"
+                                <img class="client-profile" src="./assets/images/testimonials/jade-washmon.jpg"
                                      alt="Jade Washmon"/>
                             </div>
                         </div>
@@ -666,7 +719,7 @@
                                     effective system for our offshore platform"</p>
                             </div>
 
-                            <div class="row">
+                            <div class="row pt-4">
                                 <p class="mb-0"><b>Jade Washmon</b></p>
                                 <p class="mt-0">Shell international, Exploration & Production</p>
                             </div>
@@ -676,7 +729,7 @@
                     <div class="row client-testimonial">
                         <div class="col-md-3">
                             <div class="row justify-content-center mt-4 mb-4">
-                                <img class="client-profile" src="./assets/images/testimonials/doyle-lexmark.png"
+                                <img class="client-profile" src="./assets/images/testimonials/doyle-lexmark.jpg"
                                      alt="Doyle Lexmark"/>
                             </div>
                         </div>
@@ -687,7 +740,7 @@
                                     worldwide "</p>
                             </div>
 
-                            <div class="row">
+                            <div class="row pt-4">
                                 <p class="mb-0"><b>Greg Doyle</b></p>
                                 <p class="mt-0">Manager, Lexmark Worldwide, Mobile Director</p>
                             </div>
@@ -999,5 +1052,17 @@
         setInterval(function () {
             nextSlide(index + 1);
         }, 3000);
+    });
+
+    const video = document.getElementById('video');
+    const overlay = document.getElementById('video-overlay');
+
+    overlay.addEventListener('click', function () {
+        overlay.classList.add('hidden');
+        video.play();
+    });
+
+    video.addEventListener('pause', function () {
+        overlay.classList.remove('hidden');
     });
 </script>
