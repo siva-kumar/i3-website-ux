@@ -54,6 +54,7 @@
             }
 
             .build-ai-button {
+                padding: 0px !important;
                 margin-top: 25px !important;
             }
         }
@@ -191,7 +192,7 @@
         </div>
         <div class="col-md-6 media-section">
             <div class="video-wrapper">
-                <video id="video" preload="none" controls>
+                <video id="video" preload="none" controls muted>
                     <source src="./assets/images/i3-hero-video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
@@ -200,7 +201,7 @@
         </div>
     </div>
 
-    <div class="row justify-content-center build-ai-button pt-2">
+    <div class="row justify-content-center build-ai-button pt-5">
         <div class="px-0">
             <a class="round-button" href="#contact-us">Let’s Build Something Strategic</a>
         </div>
@@ -1007,12 +1008,19 @@
     const video = document.getElementById('video');
     const overlay = document.getElementById('video-overlay');
 
-    overlay.addEventListener('click', function () {
+    window.addEventListener('load', function () {
+        setTimeout(function () {
+            overlay.classList.add('hidden');
+            video.play();
+        }, 2000);
+    });
+
+    video.addEventListener('play', function () {
         overlay.classList.add('hidden');
-        video.play();
     });
 
     video.addEventListener('pause', function () {
         overlay.classList.remove('hidden');
     });
+
 </script>
