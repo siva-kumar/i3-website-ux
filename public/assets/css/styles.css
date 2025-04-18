@@ -383,7 +383,7 @@ h2, h3, p {
                 }
 
                 .slider-image {
-                    margin-left: 10px;
+                    margin-left: 20px;
                     border-radius: 15px;
                     width: 100%;
                 }
@@ -609,6 +609,10 @@ h2, h3, p {
         background-position-x: left;
         background-position-y: bottom;
 
+        .text-content {
+            padding-right: 20px !important;
+        }
+
         h2 {
             font-size: 52px;
             font-family: 'Roboto', sans-serif;
@@ -669,6 +673,12 @@ h2, h3, p {
                 color: #FFFFFF;
                 font-size: 20px;
                 line-height: 1.5;
+            }
+
+            img {
+                padding: 0px !important;
+                margin-left: 15px;
+                border-radius: 20px;
             }
         }
 
