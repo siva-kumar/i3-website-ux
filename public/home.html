@@ -1015,6 +1015,11 @@
         }, 2000);
     });
 
+    overlay.addEventListener('click', function () {
+        overlay.classList.add('hidden');
+        video.play();
+    });
+
     video.addEventListener('play', function () {
         overlay.classList.add('hidden');
     });
