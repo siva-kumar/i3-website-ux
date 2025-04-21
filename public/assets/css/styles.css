@@ -776,7 +776,7 @@ h2, h3, p {
             display: flex;
             width: max-content;
             height: 80px;
-            animation: scroll 15s linear infinite;
+            animation: scroll 10s linear infinite;
         }
 
         .logo {

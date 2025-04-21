@@ -186,12 +186,14 @@
         <li><a href="about-us.html">About Us</a></li>
         <li><a href="#">Career</a></li>
         <li class="contact-button"><a href="#contact-us">Contact Us →</a></li>
+        <li><button onclick="speakText()">🔊 Play</button>
+            <button onclick="muteVoice()">🔇 Mute</button></li>
     </ul>
 </nav>
 
 <div class="row block-section build-ai left pt-5">
     <div class="row">
-        <div class="col-md-6 text-section">
+        <div class="col-md-6 text-section" id="text-to-read">
             <h2>We Build Systems That Endure and Deliver Value</h2>
             <p>With a 30+ year track record of real-world solutions, i3 now leverages AI to maximize strategic
                 impact-helping you build systems that scale, endure, and deliver immediate returns.</p>
@@ -751,10 +753,11 @@
                 <div class="social-icons pt-4">
                     <a href="https://www.facebook.com/Improvement-Interactive-LLC-180472716265/" target="_blank"><i
                             class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.github.com/yourpage" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/company/improvement-interactive" target="_blank"><i
                             class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <!--a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a-->
                 </div>
             </div>
         </div>
@@ -824,9 +827,9 @@
             <div class="logo mx-2">
                 <img src="./assets/images/clients/intuit.png" alt="Intuit Logo"/>
             </div>
-            <div class="logo mx-2">
+            <!--div class="logo mx-2">
                 <img src="./assets/images/clients/tucson.png" alt="Tucson Logo"/>
-            </div>
+            </div-->
             <div class="logo mx-2">
                 <img src="./assets/images/clients/taproot.png" alt="Taproot Logo"/>
             </div>
@@ -834,7 +837,7 @@
     </div>
 </div>
 
-<div class="row block-section faq">
+<div class="row block-section faq" id="faqs-info">
     <div class="row text-section text-center">
         <h2>FAQs</h2>
         <p>Find answers to commonly asked questions about Improvement Interactive and its services.</p>
@@ -917,10 +920,11 @@
                 <div class="social-icons pt-2">
                     <a href="https://www.facebook.com/Improvement-Interactive-LLC-180472716265/" target="_blank"><i
                             class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.github.com/yourpage" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://www.linkedin.com/company/improvement-interactive" target="_blank"><i
                             class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <!--a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></--a>
+                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a-->
                 </div>
             </div>
         </div>
@@ -932,7 +936,7 @@
             </div>
 
             <div class="row pt-3">
-                <a class="col">About Us</a>
+                <a class="col" href="about-us.html">About Us</a>
                 <a class="col">Terms & Conditions</a>
                 <a class="col">Careers</a>
             </div>
@@ -944,13 +948,13 @@
             </div>
 
             <div class="row pt-3">
-                <a class="col">Services</a>
-                <a class="col">FAQs</a>
+                <a class="col" href="#what-we-do">Services</a>
+                <a class="col" href="#faqs-info">FAQs</a>
                 <a class="col">Press</a>
             </div>
 
             <div class="row pt-3">
-                <a class="col">Contact Us</a>
+                <a class="col" href="#contact-us">Contact Us</a>
                 <a class="col">Support Center</a>
                 <a class="col">Announcement</a>
             </div>
@@ -968,6 +972,44 @@
 
 <script>
     let index = 0;
+    let isMuted = false;
+    let utterance;
+    function muteVoice() {
+        console.log("muteVoice..." + utterance);
+        if (utterance) {
+            speechSynthesis.cancel(); // Immediately stop speaking
+            utterance.volume = 0;
+            isMuted = true;
+        }
+    }
+    let count = 0;
+    function speakText() {
+        count ++;
+console.log("Speak text count....." + count);
+        isMuted = false;
+        //   utterance.volume = 1;
+        //    speechSynthesis.speak(utterance);
+        if (isMuted) {
+            speechSynthesis.cancel(); // Immediately stop speaking
+            console.log("Voice is muted. Skipping speech.");
+            return;
+        }
+        const text = document.getElementById("text-to-read").textContent;
+        const speech = new SpeechSynthesisUtterance(text);
+
+        // Optional: Choose voice
+        const voices = window.speechSynthesis.getVoices();
+        speech.voice = voices.find(voice => voice.lang === 'en-US');
+
+        // Optional settings
+        speech.rate = 1;     // Speed (0.1 - 10)
+        speech.pitch = 1;    // Pitch (0 - 2)
+        utterance = new SpeechSynthesisUtterance(text);
+        utterance.volume = isMuted ? 0 : 1;
+        speechSynthesis.speak(utterance);
+
+        window.speechSynthesis.speak(speech);
+    }
 
     function showSlide() {
         const slides = document.querySelectorAll('.client-testimonial');
