@@ -166,3 +166,154 @@ form.querySelectorAll('input, textarea').forEach(input => {
         validateForm();
     });
 });
+
+const voiceButton = document.getElementById('voiceButton');
+const voiceBtnIcon = document.getElementById('voiceBtnIcon');
+
+let isPaused = false;
+let sentences = [];
+let speechIndex = 0;
+let selectedVoice = null;
+let activeSectionId = null;
+
+// Handle voice loading (for browsers like Chrome)
+if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = () => {
+        if (!selectedVoice) {
+            const voices = speechSynthesis.getVoices();
+            selectedVoice = voices.find(voice => voice.lang === 'en-US') || voices[0];
+        }
+    };
+}
+
+voiceButton.addEventListener('click', () => {
+    if (voiceBtnIcon.classList.contains('fa-volume-high')) {
+        voiceBtnIcon.classList.remove('fa-volume-high');
+        voiceBtnIcon.classList.add('fa-volume-xmark');
+        startVoice();
+    } else {
+        voiceBtnIcon.classList.remove('fa-volume-xmark');
+        voiceBtnIcon.classList.add('fa-volume-high');
+        pauseVoice();
+    }
+});
+
+function pauseVoice() {
+    if (speechSynthesis.speaking && !speechSynthesis.paused) {
+        speechSynthesis.pause();
+        isPaused = true;
+    }
+}
+
+function startVoice() {
+    // Resume if paused
+    if (speechSynthesis.paused) {
+        speechSynthesis.resume();
+        isPaused = false;
+        return;
+    }
+
+    let sectionId = getCurrentSection();
+    activeSectionId = sectionId;
+
+    const parentElement = document.getElementById(sectionId);
+    const elements = parentElement.querySelectorAll(".text-to-speech");
+
+    let fullText = "";
+
+    elements.forEach(el => {
+        const style = window.getComputedStyle(el);
+        if (style.display !== 'none' && style.visibility !== 'hidden') {
+            fullText += el.textContent.trim() + " ";
+        }
+    });
+
+    fullText = fullText.trim();
+    if (!fullText) {
+        console.warn("No text found to speak.");
+        return;
+    }
+
+    if (sentences.length === 0) {
+        elements.forEach(el => {
+            const text = el.textContent.trim();
+            if (text) {
+                sentences.push(text);
+            }
+        });
+    }
+
+    if (!selectedVoice) {
+        const voices = speechSynthesis.getVoices();
+        selectedVoice = voices.find(voice => voice.lang === 'en-US') || voices[0];
+    }
+
+    function speakNext() {
+        if (getCurrentSection() !== activeSectionId) {
+            speechSynthesis.cancel();
+            resetSpeech();
+            return;
+        }
+
+        if (speechIndex >= sentences.length) {
+            resetSpeech();
+            return;
+        }
+
+        const utterance = new SpeechSynthesisUtterance(sentences[speechIndex]);
+        utterance.voice = selectedVoice;
+        utterance.rate = 1;
+        utterance.pitch = 1;
+        utterance.volume = 1;
+
+        utterance.onend = () => {
+            if (!isPaused) {
+                speechIndex++;
+                speakNext();
+            }
+        };
+
+        speechSynthesis.speak(utterance);
+    }
+
+    speechSynthesis.cancel(); // Cancel any ongoing speech
+    isPaused = false;
+    speakNext(); // Start reading
+}
+
+function resetSpeech() {
+    speechIndex = 0;
+    sentences = [];
+    isPaused = false;
+    activeSectionId = null;
+
+    voiceBtnIcon.classList.remove('fa-volume-xmark');
+    voiceBtnIcon.classList.add('fa-volume-high');
+}
+
+// Stop speech on page unload
+window.onbeforeunload = () => {
+    speechSynthesis.cancel();
+};
+
+// Optional: Stop speech if section changes via scroll
+window.addEventListener('scroll', () => {
+    if (activeSectionId && getCurrentSection() !== activeSectionId) {
+        speechSynthesis.cancel();
+        resetSpeech();
+    }
+});
+
+function getCurrentSection() {
+    const button = document.getElementById("voiceButton");
+    const buttonRect = button.getBoundingClientRect();
+    const centerX = buttonRect.left + buttonRect.width / 2;
+    const centerY = buttonRect.top + buttonRect.height / 2;
+
+    button.style.pointerEvents = "none";
+    const element = document.elementFromPoint(centerX, centerY);
+    const section = element?.closest("section");
+    button.style.pointerEvents = "auto";
+
+    return section ? section.id : null;
+}
