@@ -187,13 +187,13 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
 }
 
 voiceButton.addEventListener('click', () => {
-    if (voiceBtnIcon.classList.contains('fa-volume-high')) {
-        voiceBtnIcon.classList.remove('fa-volume-high');
-        voiceBtnIcon.classList.add('fa-volume-xmark');
-        startVoice();
-    } else {
+    if (voiceBtnIcon.classList.contains('fa-volume-xmark')) {
         voiceBtnIcon.classList.remove('fa-volume-xmark');
         voiceBtnIcon.classList.add('fa-volume-high');
+        startVoice();
+    } else {
+        voiceBtnIcon.classList.remove('fa-volume-high');
+        voiceBtnIcon.classList.add('fa-volume-xmark');
         pauseVoice();
     }
 });
@@ -206,6 +206,11 @@ function pauseVoice() {
 }
 
 function startVoice() {
+
+    if (isVideoAudioPlaying()) {
+        return;
+    }
+
     // Resume if paused
     if (speechSynthesis.paused) {
         speechSynthesis.resume();
@@ -287,8 +292,8 @@ function resetSpeech() {
     isPaused = false;
     activeSectionId = null;
 
-    voiceBtnIcon.classList.remove('fa-volume-xmark');
-    voiceBtnIcon.classList.add('fa-volume-high');
+    voiceBtnIcon.classList.remove('fa-volume-high');
+    voiceBtnIcon.classList.add('fa-volume-xmark');
 }
 
 // Stop speech on page unload
@@ -303,6 +308,25 @@ window.addEventListener('scroll', () => {
         resetSpeech();
     }
 });
+
+function isVideoAudioPlaying() {
+    const videos = document.querySelectorAll('video');
+    for (let video of videos) {
+        if (
+            !video.paused &&
+            !video.muted &&
+            video.readyState >= 2 &&
+            video.volume > 0
+        ) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function isSpeechPlaying() {
+    return speechSynthesis.speaking && !speechSynthesis.paused;
+}
 
 function getCurrentSection() {
     const button = document.getElementById("voiceButton");

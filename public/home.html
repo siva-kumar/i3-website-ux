@@ -211,8 +211,6 @@
     <div class="row justify-content-center build-ai-button pt-4">
         <div class="px-0">
             <a class="round-button" href="#contact-us">Let’s Build Something Strategic</a>
-            <button onclick="speakText()">🔊</button>
-            <button onclick="muteVoice()">🔇</button>
         </div>
     </div>
 </section>
@@ -286,9 +284,9 @@
 
         <div class="row what-we-do-slider">
             <div class="custom-tabs">
-                <button class="tab-btn active" data-index="0"><a href="#contact-us">Strategic Systems</a></button>
-                <button class="tab-btn" data-index="1"><a href="#contact-us">Custom AI Systems</a></button>
-                <button class="tab-btn" data-index="2"><a href="#contact-us">SmashSupport.AI</a></button>
+                <button class="tab-btn active" data-index="0">Strategic Systems</button>
+                <button class="tab-btn" data-index="1">Custom AI Systems</button>
+                <button class="tab-btn" data-index="2">SmashSupport.AI</button>
                 <button class="tab-btn" data-index="3">Valley-Proof</button>
             </div>
 
@@ -551,7 +549,7 @@
 
             <div class="row justify-content pt-4">
                 <div class="col-auto">
-                    <button class="round-button">Join the AI Revolution</button>
+                    <a href="#contact-us"><button class="round-button">Join the AI Revolution</button></a>
                 </div>
             </div>
         </div>
@@ -559,7 +557,7 @@
 </section>
 
 <section id="valley-proof-section" class="row block-section valley-proof">
-    <div class="row text-center"><h2 class="title">Coming 2025</h2></div>
+    <div class="row text-center text-to-speech"><h2 class="title">Coming 2025</h2></div>
     <div class="row g-5 mt-0">
         <div class="col-md-7 text-content px-0 text-to-speech">
             <h2>Valley-Proof</h2>
@@ -757,14 +755,14 @@
 
                 <div class="d-flex pt-2">
                     <i class="fa-solid fa-location-dot pt-2 me-2"></i>
-                    <p class="mt-0 mb-0 mx-15 text-to-speech"><b>Corporate Headquarters</b><br/> 8987 E. Tanque Verde Rd, Suite 309
+                    <p class="mt-0 mb-0 mx-15"><b>Corporate Headquarters</b><br/> 8987 E. Tanque Verde Rd, Suite 309
                         #325, Tucson
                         AZ 85749</p>
                 </div>
 
                 <div class="d-flex pt-2">
                     <i class="fa-solid fa-location-dot pt-2 me-2"></i>
-                    <p class="mt-0 mb-0 mx-15 text-to-speech"><b>II India</b><br/> 301/302 3rd Floor, Saket Callipolis Sarjapur
+                    <p class="mt-0 mb-0 mx-15"><b>II India</b><br/> 301/302 3rd Floor, Saket Callipolis Sarjapur
                         Main
                         Rd,
                         Doddakannelli, Bengaluru, Karnataka 560035 India</p>
@@ -817,7 +815,7 @@
 
                     <p class="mt-3 terms">
                         By clicking Submit you're confirming that you agree with our
-                        <a href="#" class="text-decoration-none">Terms and Conditions</a>.
+                        <a class="text-decoration-none">Terms and Conditions</a>.
                     </p>
                 </form>
             </div>
@@ -922,7 +920,7 @@
                 systems, training, then full rollout.
             </div>
         </div>
-        
+
         <!-- <div class="row justify-content pt-4">
             <div class="col-auto mx-auto">
                 <button class="round-button">More FAQs</button>
@@ -938,7 +936,7 @@
                     <img src="./assets/images/i3-logo.png" alt="i3 logo"/>
                 </div>
 
-                <p class="pt-2 text-to-speech">Improvement Interactive combines software development and process
+                <p class="pt-2">Improvement Interactive combines software development and process
                     improvement to
                     provide solution for your business Improvement Interactive stays with you for the long-haul
                     helping
@@ -958,32 +956,32 @@
         <div class="col-md-6 sitemap">
             <div class="row pt-10">
                 <a class="col">Quick links</a>
-                <a class="col">Support</a>
-                <a class="col">Company</a>
+                <a class="col" href="#contact-us">Support</a>
+                <a class="col" href="#contact-us">Company</a>
             </div>
 
             <div class="row pt-3">
                 <a class="col" href="about-us.html">About Us</a>
                 <a class="col">Terms & Conditions</a>
-                <a class="col">Careers</a>
+                <a class="col" href="#contact-us">Careers</a>
             </div>
 
             <div class="row pt-3">
-                <a class="col">Team</a>
+                <a class="col" href="#contact-us">Team</a>
                 <a class="col">Privacy Policy</a>
-                <a class="col">Updates</a>
+                <a class="col" href="#contact-us">Updates</a>
             </div>
 
             <div class="row pt-3">
                 <a class="col" href="#what-we-do">Services</a>
                 <a class="col" href="#faqs-info">FAQs</a>
-                <a class="col">Press</a>
+                <a class="col" href="#contact-us">Press</a>
             </div>
 
             <div class="row pt-3">
                 <a class="col" href="#contact-us">Contact Us</a>
-                <a class="col">Support Center</a>
-                <a class="col">Announcement</a>
+                <a class="col" href="#contact-us">Support Center</a>
+                <a class="col" href="#contact-us">Announcement</a>
             </div>
         </div>
     </div>
@@ -995,7 +993,7 @@
 
 <!-- Floating Button -->
 <button id="voiceButton" class="btn btn-primary floating-btn d-flex align-items-center justify-content-center">
-    <i id="voiceBtnIcon" class="fa-solid fa-volume-high"></i>
+    <i id="voiceBtnIcon" class="fa-solid fa-volume-xmark"></i>
 </button>
 </body>
 </html>
@@ -1057,10 +1055,22 @@
     });
 
     video.addEventListener('play', function () {
+        if (isSpeechPlaying()) {
+            video.muted = true;
+        } else {
+            video.muted = false;
+        }
         overlay.classList.add('hidden');
     });
 
     video.addEventListener('pause', function () {
         overlay.classList.remove('hidden');
+    });
+
+    video.addEventListener('volumechange', function () {
+        if (!video.muted && video.volume > 0 && isSpeechPlaying()) {
+            speechSynthesis.cancel();
+            resetSpeech();
+        }
     });
 </script>
