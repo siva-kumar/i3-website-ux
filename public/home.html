@@ -1003,10 +1003,28 @@
     </div>
 </section>
 
-<!-- Floating Button -->
-<button id="voiceButton" class="btn btn-primary floating-btn d-flex align-items-center justify-content-center">
-    <i id="voiceBtnIcon" class="fa-solid fa-volume-xmark"></i>
-</button>
+    <!-- Floating Button -->
+    <button id="voiceButton" class="btn btn-primary floating-btn d-flex align-items-center justify-content-center">
+        <i id="voiceBtnIcon" class="fa-solid fa-volume-xmark"></i>
+    </button>
+
+    <!-- Toggle Button -->
+    <button id="chatbot-toggle"><i class="fas fa-comment"></i></button>
+
+    <!-- Chatbot Window -->
+    <div id="chatbot-window">
+        <div id="chatbot-header">
+            ChatBot
+            <i id="minimize-chat" class="fas fa-times" style="cursor: pointer;"></i>
+        </div>
+        <div id="chatbot-body">
+            <div class="chat-message chat-bot">Hi! How can I help you today?</div>
+        </div>
+        <div id="chatbot-input">
+            <input type="text" id="chat-input" placeholder="Type a message..." />
+            <button id="chat-send"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
 </body>
 </html>
 
@@ -1091,4 +1109,6 @@
             resetSpeech();
         }
     });
+
+
 </script>

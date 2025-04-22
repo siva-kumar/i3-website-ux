@@ -364,3 +364,58 @@ function autoDismissAlert(alertId, timeout = 2000) {
         }, timeout);
     }
 }
+
+/********Chat bot *********/
+const toggleBtn = document.getElementById("chatbot-toggle");
+const chatbotWindow = document.getElementById("chatbot-window");
+const minimizeBtn = document.getElementById("minimize-chat");
+const sendBtn = document.getElementById("chat-send");
+const chatInput = document.getElementById("chat-input");
+const chatBody = document.getElementById("chatbot-body");
+
+toggleBtn.addEventListener("click", () => {
+    chatbotWindow.style.display = "flex";
+    toggleBtn.style.display = "none";
+});
+
+minimizeBtn.addEventListener("click", () => {
+    chatbotWindow.style.display = "none";
+    toggleBtn.style.display = "block";
+});
+
+sendBtn.addEventListener("click", () => {
+    const userMsg = chatInput.value.trim();
+    if (userMsg !== "") {
+        appendMessage("You", userMsg, "chat-user");
+        respondToMessage(userMsg);
+        chatInput.value = "";
+    }
+});
+
+function appendMessage(sender, message, className) {
+    const msgDiv = document.createElement("div");
+    msgDiv.classList.add("chat-message", className);
+    msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+    chatBody.appendChild(msgDiv);
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function respondToMessage(userMsg) {
+    let botResponse = "I'm still learning it.";
+    if (userMsg.toLowerCase().includes("hello") || userMsg.toLowerCase().includes("hi") || userMsg.toLowerCase().includes("hey")) {
+        botResponse = "Hello! How can I assist you today?";
+    } else if (userMsg.toLowerCase().includes("help")) {
+        botResponse = "Sure, I'm here to help. Please describe your issue.";
+    } else if (userMsg.toLowerCase().includes("what you do") || userMsg.toLowerCase().includes("what you build")) {
+        botResponse = "We Build Systems That Endure and Deliver Value.";
+    } else if (userMsg.toLowerCase().includes("what we build") || userMsg.toLowerCase().includes("how we build")) {
+        botResponse = "Solutions designed to drive efficiency and empower growth.";
+    } else if (userMsg.toLowerCase().includes("who we work") || userMsg.toLowerCase().includes("how you work")) {
+        botResponse = "Business leaders, operators, founders and project managers";
+    } else if (userMsg.toLowerCase().includes("AI") || userMsg.toLowerCase().includes("Agents")) {
+        botResponse = "AI agents automate tasks and boost productivity by up to 50%. ";
+    }
+    setTimeout(() => {
+        appendMessage("Bot", botResponse, "chat-bot");
+    }, 600);
+}
