@@ -1042,35 +1042,52 @@
     const video = document.getElementById('video');
     const overlay = document.getElementById('video-overlay');
 
+    // Autoplay muted video after page load
     window.addEventListener('load', function () {
         setTimeout(function () {
+            video.muted = true;
+            video.play().catch(e => {
+                console.warn("Autoplay blocked:", e);
+            });
             overlay.classList.add('hidden');
-            video.play();
         }, 2000);
     });
 
+    // Overlay click to play video with sound
     overlay.addEventListener('click', function () {
+        video.muted = false;
+        video.play().catch(e => {
+            console.warn("Play failed:", e);
+        });
         overlay.classList.add('hidden');
-        video.play();
     });
 
+    // When video plays (do not unmute here — browser may block it)
     video.addEventListener('play', function () {
-        if (isSpeechPlaying()) {
-            video.muted = true;
-        } else {
-            video.muted = false;
-        }
         overlay.classList.add('hidden');
     });
 
+    // Show overlay when video is paused
     video.addEventListener('pause', function () {
         overlay.classList.remove('hidden');
     });
 
+    // Mute video if speech is playing
     video.addEventListener('volumechange', function () {
         if (!video.muted && video.volume > 0 && isSpeechPlaying()) {
             speechSynthesis.cancel();
             resetSpeech();
         }
     });
+
+    // Helper to check if video audio is playing
+    function isVideoAudioPlaying() {
+        const videos = document.querySelectorAll('video');
+        for (let video of videos) {
+            if (!video.paused && !video.muted && video.readyState >= 2 && video.volume > 0) {
+                return true;
+            }
+        }
+        return false;
+    }
 </script>

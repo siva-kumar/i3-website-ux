@@ -176,7 +176,7 @@ let speechIndex = 0;
 let selectedVoice = null;
 let activeSectionId = null;
 
-// Handle voice loading (for browsers like Chrome)
+// Load voice options
 if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = () => {
         if (!selectedVoice) {
@@ -186,6 +186,7 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
     };
 }
 
+// Toggle TTS on button click
 voiceButton.addEventListener('click', () => {
     if (voiceBtnIcon.classList.contains('fa-volume-xmark')) {
         voiceBtnIcon.classList.remove('fa-volume-xmark');
@@ -206,12 +207,10 @@ function pauseVoice() {
 }
 
 function startVoice() {
-
     if (isVideoAudioPlaying()) {
         return;
     }
 
-    // Resume if paused
     if (speechSynthesis.paused) {
         speechSynthesis.resume();
         isPaused = false;
@@ -225,7 +224,6 @@ function startVoice() {
     const elements = parentElement.querySelectorAll(".text-to-speech");
 
     let fullText = "";
-
     elements.forEach(el => {
         const style = window.getComputedStyle(el);
         if (style.display !== 'none' && style.visibility !== 'hidden') {
@@ -281,9 +279,9 @@ function startVoice() {
         speechSynthesis.speak(utterance);
     }
 
-    speechSynthesis.cancel(); // Cancel any ongoing speech
+    speechSynthesis.cancel();
     isPaused = false;
-    speakNext(); // Start reading
+    speakNext();
 }
 
 function resetSpeech() {
@@ -296,12 +294,12 @@ function resetSpeech() {
     voiceBtnIcon.classList.add('fa-volume-xmark');
 }
 
-// Stop speech on page unload
+// Cancel speech on page unload
 window.onbeforeunload = () => {
     speechSynthesis.cancel();
 };
 
-// Optional: Stop speech if section changes via scroll
+// Cancel speech when scrolling to a different section
 window.addEventListener('scroll', () => {
     if (activeSectionId && getCurrentSection() !== activeSectionId) {
         speechSynthesis.cancel();
@@ -309,25 +307,12 @@ window.addEventListener('scroll', () => {
     }
 });
 
-function isVideoAudioPlaying() {
-    const videos = document.querySelectorAll('video');
-    for (let video of videos) {
-        if (
-            !video.paused &&
-            !video.muted &&
-            video.readyState >= 2 &&
-            video.volume > 0
-        ) {
-            return true;
-        }
-    }
-    return false;
-}
-
+// Check if speech is playing
 function isSpeechPlaying() {
     return speechSynthesis.speaking && !speechSynthesis.paused;
 }
 
+// Determine which section the voice button is over
 function getCurrentSection() {
     const button = document.getElementById("voiceButton");
     const buttonRect = button.getBoundingClientRect();
