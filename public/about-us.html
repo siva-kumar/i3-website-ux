@@ -116,10 +116,23 @@
         <li><a href="home.html">Home</a></li>
         <li><a href="home.html#what-we-do">Services</a></li>
         <li><a href="about-us.html" class="active">About Us</a></li>
-        <li><a href="#">Career</a></li>
+        <li><a href="#">Careers</a></li>
         <li class="contact-button"><a href="home.html#contact-us">Contact Us →</a></li>
     </ul>
 </nav>
+
+<div id="loadingOverlayWrapper" class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+    <div id="loadingOverlay" class="text-center p-4 bg-white rounded shadow">
+        <div class="spinner-border text-primary mb-3" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div>
+            <strong>Saving your details and sending the email...</strong>
+            <p class="text-muted small mb-0">This may take few seconds</p>
+        </div>
+    </div>
+</div>
+
 
 <section id="intro-section" class="row block-section about-us pt-10">
     <div class="col-md-12 text-center text-section pt-4 text-to-speech">
@@ -560,7 +573,7 @@
             </div>
 
             <div class="row pt-3">
-                <a class="col" href="#what-we-do">Services</a>
+                <a class="col" href="home.html#what-we-do">Services</a>
                 <a class="col" href="#faqs-info">FAQs</a>
                 <a class="col" href="#contact-us">Press</a>
             </div>

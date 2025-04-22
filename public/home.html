@@ -185,10 +185,22 @@
         <li><a href="home.html" class="active">Home</a></li>
         <li><a href="#what-we-do">Services</a></li>
         <li><a href="about-us.html">About Us</a></li>
-        <li><a href="#">Career</a></li>
+        <li><a href="#">Careers</a></li>
         <li class="contact-button"><a href="#contact-us">Contact Us →</a></li>
     </ul>
 </nav>
+
+<div id="loadingOverlayWrapper" class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+    <div id="loadingOverlay" class="text-center p-4 bg-white rounded shadow">
+        <div class="spinner-border text-primary mb-3" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div>
+            <strong>Saving your details and sending the email...</strong>
+            <p class="text-muted small mb-0">This may take few seconds</p>
+        </div>
+    </div>
+</div>
 
 <section id="hero-section" class="row block-section build-ai left pt-5">
     <div class="row">

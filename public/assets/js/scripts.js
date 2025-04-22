@@ -1,3 +1,7 @@
+const loadingOverlay = document.getElementById('loadingOverlayWrapper');
+loadingOverlay.classList.remove('d-flex');
+loadingOverlay.style.display = 'none';
+
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
@@ -124,6 +128,10 @@ form.addEventListener('submit', function (e) {
     successMessage.innerHTML = '';
 
     if (isValid) {
+        const loadingOverlay = document.getElementById('loadingOverlayWrapper');
+        loadingOverlay.classList.add('d-flex');
+        loadingOverlay.style.display = 'block';
+
         const formData = {
             firstname: document.getElementById('firstName').value,
             lastname: document.getElementById('lastName').value,
@@ -145,14 +153,20 @@ form.addEventListener('submit', function (e) {
                     throw new Error(data.message || 'Something went wrong');
                 }
 
+                const loadingOverlay = document.getElementById('loadingOverlayWrapper');
+                loadingOverlay.classList.remove('d-flex');
+                loadingOverlay.style.display = 'none';
+
                 return data;
             })
             .then(data => {
-                successMessage.innerHTML = `<div class="alert alert-success">Enquiry successfully submitted! ✅</div>`;
+                successMessage.innerHTML = `<div id="successAlert" class="alert alert-success">Enquiry successfully submitted!</div>`;
+                autoDismissAlert("successAlert");
                 form.reset();
             })
             .catch(error => {
-                successMessage.innerHTML = `<div class="alert alert-danger">${error.message}</div>`;
+                successMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
+                autoDismissAlert("errorAlert");
             });
 
         setTimeout(() => {
@@ -337,4 +351,16 @@ function getCurrentSection() {
     button.style.pointerEvents = "auto";
 
     return section ? section.id : null;
+}
+
+function autoDismissAlert(alertId, timeout = 2000) {
+    const alert = document.getElementById(alertId);
+    if (alert) {
+        setTimeout(() => {
+            alert.classList.add("fade-out");
+            setTimeout(() => {
+                alert.style.display = "none";
+            }, 500); // Wait for fade transition
+        }, timeout);
+    }
 }
