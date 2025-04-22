@@ -1079,15 +1079,4 @@
             resetSpeech();
         }
     });
-
-    // Helper to check if video audio is playing
-    function isVideoAudioPlaying() {
-        const videos = document.querySelectorAll('video');
-        for (let video of videos) {
-            if (!video.paused && !video.muted && video.readyState >= 2 && video.volume > 0) {
-                return true;
-            }
-        }
-        return false;
-    }
 </script>

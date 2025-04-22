@@ -299,13 +299,25 @@ window.onbeforeunload = () => {
     speechSynthesis.cancel();
 };
 
-// Cancel speech when scrolling to a different section
+// Stop speech when scrolling to a different section
 window.addEventListener('scroll', () => {
     if (activeSectionId && getCurrentSection() !== activeSectionId) {
         speechSynthesis.cancel();
         resetSpeech();
     }
 });
+
+// To check if video audio is playing
+function isVideoAudioPlaying() {
+    const videos = document.querySelectorAll('video');
+    for (let video of videos) {
+        if (!video.paused && !video.muted && video.readyState >= 2 && video.volume > 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 // Check if speech is playing
 function isSpeechPlaying() {
