@@ -190,7 +190,8 @@
     </ul>
 </nav>
 
-<div id="loadingOverlayWrapper" class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+<div id="loadingOverlayWrapper"
+     class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
     <div id="loadingOverlay" class="text-center p-4 bg-white rounded shadow">
         <div class="spinner-border text-primary mb-3" role="status">
             <span class="visually-hidden">Loading...</span>
@@ -561,7 +562,9 @@
 
             <div class="row justify-content pt-4">
                 <div class="col-auto">
-                    <a href="#contact-us"><button class="round-button">Join the AI Revolution</button></a>
+                    <a href="#contact-us">
+                        <button class="round-button">Join the AI Revolution</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1003,28 +1006,34 @@
     </div>
 </section>
 
-    <!-- Floating Button -->
-    <button id="voiceButton" class="btn btn-primary floating-btn d-flex align-items-center justify-content-center">
-        <i id="voiceBtnIcon" class="fa-solid fa-volume-xmark"></i>
-    </button>
+<!-- Floating Voice Button -->
+<button id="voiceButton" class="btn btn-primary floatingVoiceBtn d-flex align-items-center justify-content-center">
+    <i id="voiceBtnIcon" class="fa-solid fa-volume-xmark"></i>
+</button>
 
-    <!-- Toggle Button -->
-    <button id="chatbot-toggle"><i class="fas fa-comment"></i></button>
+<!-- Floating Chat Button -->
+<button id="chatToggleBtn" class="floatingChatBtn btn btn-primary d-flex align-items-center justify-content-center"
+        onclick="openChat()">
+    <i class="fa-solid fa-comments"></i>
+</button>
 
-    <!-- Chatbot Window -->
-    <div id="chatbot-window">
-        <div id="chatbot-header">
-            ChatBot
-            <i id="minimize-chat" class="fas fa-times" style="cursor: pointer;"></i>
+<!-- Chat Assistant -->
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="chat-header-left">
+            <img src="./assets/images/bot.png" alt="bot icon" />
+            <strong>II Smart Assistant</strong>
         </div>
-        <div id="chatbot-body">
-            <div class="chat-message chat-bot">Hi! How can I help you today?</div>
-        </div>
-        <div id="chatbot-input">
-            <input type="text" id="chat-input" placeholder="Type a message..." />
-            <button id="chat-send"><i class="fas fa-paper-plane"></i></button>
-        </div>
+        <button class="close-btn" onclick="closeChat()">&times;</button>
     </div>
+    <div id="chat-box" class="chat-box">
+        <div class="message bot-message">Hi there! You've reached II Smart Assistant.</div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-query" placeholder="Type a message..." />
+        <button onclick="loadChatWindow();"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+</div>
 </body>
 </html>
 

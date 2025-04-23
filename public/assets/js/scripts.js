@@ -365,42 +365,84 @@ function autoDismissAlert(alertId, timeout = 2000) {
     }
 }
 
-/********Chat bot *********/
-const toggleBtn = document.getElementById("chatbot-toggle");
-const chatbotWindow = document.getElementById("chatbot-window");
-const minimizeBtn = document.getElementById("minimize-chat");
-const sendBtn = document.getElementById("chat-send");
-const chatInput = document.getElementById("chat-input");
-const chatBody = document.getElementById("chatbot-body");
+const chatContainer = document.querySelector('.chat-container');
+const floatingBtn = document.getElementById('chatToggleBtn');
+const chatBox = document.getElementById("chat-box");
+const userMsg = document.getElementById("user-query");
 
-toggleBtn.addEventListener("click", () => {
-    chatbotWindow.style.display = "flex";
-    toggleBtn.style.display = "none";
-});
-
-minimizeBtn.addEventListener("click", () => {
-    chatbotWindow.style.display = "none";
-    toggleBtn.style.display = "block";
-});
-
-sendBtn.addEventListener("click", () => {
-    const userMsg = chatInput.value.trim();
-    if (userMsg !== "") {
-        appendMessage("You", userMsg, "chat-user");
-        respondToMessage(userMsg);
-        chatInput.value = "";
-    }
-});
-
-function appendMessage(sender, message, className) {
-    const msgDiv = document.createElement("div");
-    msgDiv.classList.add("chat-message", className);
-    msgDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
-    chatBody.appendChild(msgDiv);
-    chatBody.scrollTop = chatBody.scrollHeight;
+function openChat() {
+    chatContainer.style.display = 'flex';
+    floatingBtn.style.cssText = 'background-color: #000434; border: #000434';
+    userMsg.focus();
 }
 
-function respondToMessage(userMsg) {
+function closeChat() {
+    chatContainer.style.display = 'none';
+    floatingBtn.style.cssText = 'background-color: #0d6efd';
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    userMsg.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            if (userMsg.value !== "") {
+                loadChatWindow();
+            }
+        }
+    });
+});
+
+function loadChatWindow() {
+    let message = userMsg.value;
+    appendUserMessage(message);
+    appendLoader();
+    generateResponse(message);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function appendUserMessage(message) {
+    const userMessage = document.createElement("div");
+    userMessage.className = "message user-message";
+    userMessage.textContent = message;
+
+    chatBox.appendChild(userMessage);
+    userMsg.value = "";
+}
+
+function appendLoader(message) {
+    const typingIndicator = document.createElement("div");
+    typingIndicator.className = "typing-indicator";
+
+    const dot1 = document.createElement("div");
+    dot1.className = "dot";
+    const dot2 = document.createElement("div");
+    dot2.className = "dot";
+    const dot3 = document.createElement("div");
+    dot3.className = "dot";
+
+    typingIndicator.appendChild(dot1);
+    typingIndicator.appendChild(dot2);
+    typingIndicator.appendChild(dot3);
+
+    chatBox.appendChild(typingIndicator);
+}
+
+function removeLoader() {
+    const typingIndicator = document.querySelector(".typing-indicator");
+
+    if (typingIndicator) {
+        typingIndicator.remove();
+    }
+}
+
+function appendBotMessage(message) {
+    const userMessage = document.createElement("div");
+    userMessage.className = "message user-message";
+    userMessage.textContent = message;
+
+    chatBox.appendChild(userMessage);
+}
+
+function generateResponse(userMsg) {
     let botResponse = "I'm still learning it.";
     if (userMsg.toLowerCase().includes("hello") || userMsg.toLowerCase().includes("hi") || userMsg.toLowerCase().includes("hey")) {
         botResponse = "Hello! How can I assist you today?";
@@ -415,7 +457,14 @@ function respondToMessage(userMsg) {
     } else if (userMsg.toLowerCase().includes("AI") || userMsg.toLowerCase().includes("Agents")) {
         botResponse = "AI agents automate tasks and boost productivity by up to 50%. ";
     }
+
     setTimeout(() => {
-        appendMessage("Bot", botResponse, "chat-bot");
+        const botMessage = document.createElement("div");
+        botMessage.className = "message bot-message";
+        botMessage.textContent = botResponse;
+
+        removeLoader();
+        chatBox.appendChild(botMessage);
     }, 600);
 }
+
