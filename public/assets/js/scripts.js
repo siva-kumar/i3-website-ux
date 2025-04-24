@@ -396,7 +396,6 @@ function loadChatWindow() {
     appendUserMessage(message);
     appendLoader();
     generateResponse(message);
-    chatBox.scrollTop = chatBox.scrollHeight;
 }
 
 function appendUserMessage(message) {
@@ -443,20 +442,65 @@ function appendBotMessage(message) {
 }
 
 function generateResponse(userMsg) {
-    let botResponse = "I'm still learning it.";
-    if (userMsg.toLowerCase().includes("hello") || userMsg.toLowerCase().includes("hi") || userMsg.toLowerCase().includes("hey")) {
-        botResponse = "Hello! How can I assist you today?";
-    } else if (userMsg.toLowerCase().includes("help")) {
-        botResponse = "Sure, I'm here to help. Please describe your issue.";
-    } else if (userMsg.toLowerCase().includes("what you do") || userMsg.toLowerCase().includes("what you build")) {
-        botResponse = "We Build Systems That Endure and Deliver Value.";
-    } else if (userMsg.toLowerCase().includes("what we build") || userMsg.toLowerCase().includes("how we build")) {
-        botResponse = "Solutions designed to drive efficiency and empower growth.";
-    } else if (userMsg.toLowerCase().includes("who we work") || userMsg.toLowerCase().includes("how you work")) {
-        botResponse = "Business leaders, operators, founders and project managers";
-    } else if (userMsg.toLowerCase().includes("AI") || userMsg.toLowerCase().includes("Agents")) {
-        botResponse = "AI agents automate tasks and boost productivity by up to 50%. ";
+    let botResponse = "I'm still learning it. Can you rephrase or ask something else?";
+
+    const message = userMsg.toLowerCase();
+
+    // Greetings
+    if (message.includes("hello") || message.includes("hi") || message.includes("hey")) {
+        botResponse = "Hello! Welcome to i3. How can I help you today?";
     }
+
+    // Help or assistance
+    else if (message.includes("help") || message.includes("support")) {
+        botResponse = "Absolutely — I’m here to assist. Please tell me more about what you need help with.";
+    }
+
+    // What i3 does
+    else if (message.includes("what you do") || message.includes("what do you do") || message.includes("services")) {
+        botResponse = "We build strategic AI systems and enterprise solutions that scale, endure, and deliver value. Over 30 years of engineering, billions in transactions.";
+    }
+
+    // What you build / Solutions
+    else if (message.includes("what you build") || message.includes("what we build") || message.includes("how you build") || message.includes("your solutions")) {
+        botResponse = "We design long-term, scalable systems that align technology with business strategy — from AI agents to enterprise architectures.";
+    }
+
+    // Who you work with
+    else if (message.includes("who you work") || message.includes("who we work") || message.includes("your clients") || message.includes("types of companies")) {
+        botResponse = "We work with enterprise leaders, operators, founders, and project managers who value clarity, precision, and long-term growth.";
+    }
+
+    // AI agents
+    else if (message.includes("ai agents") || message.includes("ai") || message.includes("intelligent agents")) {
+        botResponse = "Our AI agents can automate up to 80% of routine tasks — streamlining support, decision-making, and workflows across your business.";
+    }
+
+    // Valley-Proof
+    else if (message.includes("valley-proof") || message.includes("founders") || message.includes("cash flow")) {
+        botResponse = "Valley-Proof is our 2025 toolkit and book to help founders stay liquid, scale smart, and survive tough years. Want early access?";
+    }
+
+    // SmashSupport.AI
+    else if (message.includes("smashsupport") || message.includes("support ai")) {
+        botResponse = "SmashSupport.AI is our AI support agent that reduced ticket volume by 90% for startups like Smash Your Fitness — fast, branded, and efficient.";
+    }
+
+    // Strategic systems
+    else if (message.includes("strategic system") || message.includes("enterprise architecture") || message.includes("long-term solutions")) {
+        botResponse = "Our Strategic Systems align IT and business goals — ideal for enterprises needing scalable, integrated, and future-proof architecture.";
+    }
+
+    // Custom AI
+    else if (message.includes("custom ai") || message.includes("tailored ai") || message.includes("ai project")) {
+        botResponse = "We take on a select number of high-impact AI projects each year — from healthcare to finance. Need scale, clarity, or speed? Let’s talk.";
+    }
+
+    // Not a fit
+    else if (message.includes("mvp") || message.includes("quick solution") || message.includes("bolt-on")) {
+        botResponse = "We focus on long-term, strategic impact. If you're seeking quick-flip MVPs or bolt-on tools, we might not be the best fit.";
+    }
+
 
     setTimeout(() => {
         const botMessage = document.createElement("div");
@@ -465,6 +509,10 @@ function generateResponse(userMsg) {
 
         removeLoader();
         chatBox.appendChild(botMessage);
+        chatBox.scrollTo({
+            top: chatBox.scrollHeight,
+            behavior: 'smooth'
+        });
     }, 600);
 }
 
