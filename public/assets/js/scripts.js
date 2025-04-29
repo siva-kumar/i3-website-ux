@@ -1,6 +1,8 @@
 const loadingOverlay = document.getElementById('loadingOverlayWrapper');
-loadingOverlay.classList.remove('d-flex');
-loadingOverlay.style.display = 'none';
+if(loadingOverlay) {
+    loadingOverlay.classList.remove('d-flex');
+    loadingOverlay.style.display = 'none';
+}
 
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
@@ -121,65 +123,67 @@ function validateForm() {
 
 const form = document.getElementById('contact-form');
 
-form.addEventListener('submit', function (e) {
-    e.preventDefault();
+if (form) {
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-    const isValid = validateForm();
-    successMessage.innerHTML = '';
+        const isValid = validateForm();
+        successMessage.innerHTML = '';
 
-    if (isValid) {
-        const loadingOverlay = document.getElementById('loadingOverlayWrapper');
-        loadingOverlay.classList.add('d-flex');
-        loadingOverlay.style.display = 'block';
+        if (isValid) {
+            const loadingOverlay = document.getElementById('loadingOverlayWrapper');
+            loadingOverlay.classList.add('d-flex');
+            loadingOverlay.style.display = 'block';
 
-        const formData = {
-            firstname: document.getElementById('firstName').value,
-            lastname: document.getElementById('lastName').value,
-            email: document.getElementById('email').value,
-            message: document.getElementById('message').value
-        };
+            const formData = {
+                firstname: document.getElementById('firstName').value,
+                lastname: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
 
-        fetch('http://localhost:5000/api/enquiry', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-            .then(async response => {
-                const data = await response.json();
-
-                if (!response.ok) {
-                    throw new Error(data.message || 'Something went wrong');
-                }
-
-                const loadingOverlay = document.getElementById('loadingOverlayWrapper');
-                loadingOverlay.classList.remove('d-flex');
-                loadingOverlay.style.display = 'none';
-
-                return data;
+            fetch('http://localhost:5000/api/enquiry', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
             })
-            .then(data => {
-                successMessage.innerHTML = `<div id="successAlert" class="alert alert-success">Enquiry successfully submitted!</div>`;
-                autoDismissAlert("successAlert");
-                form.reset();
-            })
-            .catch(error => {
-                successMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
-                autoDismissAlert("errorAlert");
-            });
+                .then(async response => {
+                    const data = await response.json();
 
-        setTimeout(() => {
-            successMessage.innerHTML = "";
-        }, 5000);
-    }
-});
+                    if (!response.ok) {
+                        throw new Error(data.message || 'Something went wrong');
+                    }
 
-form.querySelectorAll('input, textarea').forEach(input => {
-    input.addEventListener('keyup', function () {
-        validateForm();
+                    const loadingOverlay = document.getElementById('loadingOverlayWrapper');
+                    loadingOverlay.classList.remove('d-flex');
+                    loadingOverlay.style.display = 'none';
+
+                    return data;
+                })
+                .then(data => {
+                    successMessage.innerHTML = `<div id="successAlert" class="alert alert-success">Enquiry successfully submitted!</div>`;
+                    autoDismissAlert("successAlert");
+                    form.reset();
+                })
+                .catch(error => {
+                    successMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
+                    autoDismissAlert("errorAlert");
+                });
+
+            setTimeout(() => {
+                successMessage.innerHTML = "";
+            }, 5000);
+        }
     });
-});
+
+    form.querySelectorAll('input, textarea').forEach(input => {
+        input.addEventListener('keyup', function () {
+            validateForm();
+        });
+    });
+}
 
 const voiceButton = document.getElementById('voiceButton');
 const voiceBtnIcon = document.getElementById('voiceBtnIcon');

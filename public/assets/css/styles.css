@@ -929,6 +929,17 @@ h2, h3, p {
         }
     }
 
+    .sitemap-heading {
+        cursor: default !important;
+        font-weight: bold;
+        font-size: 18px !important;
+    }
+
+    .sitemap-inactive {
+        cursor: default !important;
+        color: gray !important;
+    }
+
     .sitemap a {
         text-decoration: none;
         color: #E4E4E4;
@@ -1097,70 +1108,6 @@ h2, h3, p {
     z-index: 999;
 }
 
-/* Chatbot window
-#chatbot-window {
-    position: fixed;
-    bottom: 120px;
-    right: 20px;
-    width: 300px;
-    height: 400px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    display: none;
-    flex-direction: column;
-    z-index: 998;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-#chatbot-header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#chatbot-body {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    font-size: 14px;
-}
-
-#chatbot-input {
-    display: flex;
-    border-top: 1px solid #ccc;
-}
-
-#chat-input {
-    flex: 1;
-    border: none;
-    padding: 10px;
-}
-
-#chat-send {
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-}
-
-.chat-message {
-    margin-bottom: 10px;
-}
-
-.chat-bot {
-    color: #007bff;
-}
-
-.chat-user {
-    color: #28a745;
-} */
-
 /* Chat Assistant */
 .chat-container {
     width: 400px;
@@ -1309,4 +1256,85 @@ h2, h3, p {
 
 .chat-input input:focus {
     outline: none;
+}
+
+/* Terms and Conditions */
+#terms {
+    padding-left: 200px;
+    padding-right: 200px;
+
+    .block-section {
+        padding: 0px 100px !important;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h2, h3, h4 {
+        padding: 15px 0px !important;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    h4 {
+        font-size: 22px;
+    }
+
+    p, li {
+        font-size: 18px;
+        font-family: 'DM Sans', sans-serif
+    }
+
+    li {
+        line-height: 2 !important;
+    }
+}
+
+/* Privacy and Policy */
+#privacy {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+
+    .wrapper {
+        display: flex;
+        flex-wrap: nowrap; /* prevent wrapping */
+    }
+
+    .sidebar {
+        min-width: 300px;
+        max-width: 300px;
+        background-color: #f8f9fa;
+        padding: 1rem;
+        height: 100%;
+    }
+
+    .content {
+        flex-grow: 1;
+        padding: 0rem 2rem;
+    }
+
+    h2 {
+        font-size: 40px;
+        padding-bottom: 0px !important;
+    }
+
+    h4 {
+        font-size: 22px;
+        padding: 15px 0px !important;
+    }
+
+    h2, h4 {
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    p, li {
+        font-size: 18px;
+        font-family: 'DM Sans', sans-serif
+    }
+
+    .content li {
+        line-height: 2 !important;
+    }
 }
