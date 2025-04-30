@@ -1403,6 +1403,40 @@ h2, h3, p {
         border-radius: 15px;
     }
 }
+.open-positions {
+    background-color: #000434;
+    color: #FFFFFF;
+    .row, .col-md-5, .col-md-7 {
+        margin-top: 0px;
+    }
+
+    h2 {
+        font-size: 50px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    p {
+        font-size: 20px;
+        font-family: 'DM Sans', sans-serif;
+        color: #E4E4E4 !important;
+    }
+    p1 {
+        font-size: 20px;
+        font-family: 'DM Sans', sans-serif;
+        padding-top: 10px;
+    }
+    img {
+        width: 100%;
+        border-radius: 15px;
+    }
+    .openings{
+        border: 1.5px solid #E4E4E4;
+        padding-bottom: 20px;
+        font-size: 30px;
+        font-family: 'DM Sans', sans-serif;
+        text-align: center;
+    }
+}
 
 .careers-benefits {
     border-bottom: 1px solid #000000;
@@ -1450,6 +1484,9 @@ h2, h3, p {
         p {
             text-align: left !important;
             font-size: 16px;
+        }
+        .forSpace{
+            padding-right: 5px;
         }
     }
 }
