@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i3</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="./assets/css/styles.css" rel="stylesheet"/>
+</head>
+
+<style>
+    @media (max-width: 1064px) {
+        .nav-links {
+            display: none !important;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+
+            li {
+                margin: 10px 0;
+            }
+        }
+
+        .nav-links.active {
+            display: flex !important;
+        }
+
+        .hamburger {
+            display: block !important;
+        }
+
+        #careers {
+            padding-top: 100px !important;
+        }
+
+        .block-section {
+            padding: 30px 30px 30px 30px !important;
+        }
+
+        .career-path {
+            h2 {
+                margin-top: 15px !important;
+            }
+
+            p {
+                padding: 5px !important;
+            }
+        }
+
+        .careers-benefits-container, .careers-benefits-slide {
+            margin-left: 0px !important;
+        }
+
+        .careers-benefits-container {
+            .col {
+                flex: auto !important;
+            }
+        }
+
+        .footer {
+            height: fit-content !important;
+        }
+    }
+</style>
+
+<body>
+<nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <a href="home.html"><img src="./assets/images/i3-logo.png" alt="Company Logo"></a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="home.html#what-we-do">Services</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="careers.html" class="active">Careers</a></li>
+        <li class="contact-button"><a href="home.html#contact-us">Contact Us →</a></li>
+    </ul>
+</nav>
+
+<section id="careers" class="block-section pt-10">
+    <div class="row text-section text-center text-to-speech">
+        <h2>Join Improvement Interactive<br/>
+            Where People & Family Come First
+        </h2>
+        <p class="introduction">Work with the latest technology and best tools, gain access to cutting-edge training
+            resources,
+            and enjoy benefits designed for your lifestyle.
+        </p>
+    </div>
+
+    <div class="row work-from-home-container mx-15 g-3 mt-3 text-to-speech">
+        <div class="work-from-home-slide col">
+            <img src="./assets/images/work-from-home/hybrid-work.png" alt="Hybrid Work"/>
+            <h3>Work From Home</h3>
+            <p>Be with your family, children and pets</p>
+        </div>
+
+        <div class="work-from-home-slide col">
+            <img src="./assets/images/work-from-home/flexible-hrs.png" alt="Flexible Hours"/>
+            <h3>Flexible Working Hours</h3>
+            <p>and flexible paid time-off schedule</p>
+        </div>
+
+        <div class="work-from-home-slide col">
+            <img src="./assets/images/work-from-home/latest-tech.png" alt="Latest tech">
+            <h3>Work with Latest Technologies</h3>
+            <p>and flexible paid time-off schedule</p>
+        </div>
+    </div>
+
+    <div class="row justify-content-center pt-4">
+        <div class="col-auto">
+            <button class="round-button">View Open Positions</button>
+        </div>
+    </div>
+</section>
+
+<section id="career-path" class="row block-section career-path">
+    <div class="row">
+        <div class="col-md-5 pl-0">
+            <img src="./assets/images/career-success.png" alt="Career Success"/>
+        </div>
+        <div class="col-md-7 pr-0 text-to-speech">
+            <h2>Choose your career path</h2>
+
+            <p class="pt-4">Select a technical, creative or managerial path for your career. Let the Improvement
+                Interactive mentoring program help you achieve success more effectively. Flexible work hours, half-day
+                Fridays and the ability to work virtually will further enhance your work experience.</p>
+
+            <div class="row justify-content pt-4">
+                <div class="col-auto">
+                    <a>
+                        <button class="round-button">View Open Positions</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="careers-benefits" class="row block-section careers-benefits">
+    <div class="row text-section text-center text-to-speech">
+        <h2>Benefits</h2>
+    </div>
+
+    <div class="row careers-benefits-container mx-15 g-3">
+        <div class="careers-benefits-slide col text-to-speech">
+            <img class="mx-auto" src="./assets/images/careers-benefits/work-from-anywhere.png"
+                 alt="Work From anywhere"/>
+            <h3 class="with-line">Work From Anywhere</h3>
+            <p><i class="fa-solid fa-clock"></i> Spend meaningful time with family.</p>
+            <p><i class="fa-solid fa-clock"></i> Schedule breaks around personal needs</p>
+            <p><i class="fa-solid fa-clock"></i> Eliminate the need for a childcare provider</p>
+            <p><i class="fa-solid fa-clock"></i> Work from coffee shop, home, or on the go.</p>
+            <p><i class="fa-solid fa-clock"></i> Relocate freely—your job moves with you.</p>
+
+        </div>
+
+        <div class="careers-benefits-slide text-center col text-to-speech">
+            <img class="mx-auto" src="./assets/images/careers-benefits/flexible-work-hours.png"
+                 alt="Flexible Work hours"/>
+            <h3 class="with-line">Flexible work hours</h3>
+            <p><i class="fa-solid fa-clock"></i> Take your children to and from school</p>
+            <p><i class="fa-solid fa-clock"></i> Attend parent-teacher conferences</p>
+            <p><i class="fa-solid fa-clock"></i> Attend to important appointments</p>
+            <p><i class="fa-solid fa-clock"></i> Enhanced work–life balance</p>
+            <p><i class="fa-solid fa-clock"></i> Better work–life balance</p>
+
+        </div>
+
+        <div class="careers-benefits-slide text-center col text-to-speech">
+            <img class="mx-auto" src="./assets/images/careers-benefits/flexible-time-off.png" alt="Flexible Time Off"/>
+            <h3 class="with-line">Flexible Paid Time Off</h3>
+            <p><i class="fa-solid fa-clock"></i> Accrue up to 5 weeks of PTO annually</p>
+            <p><i class="fa-solid fa-clock"></i> Select the days you want to take off</p>
+            <p><i class="fa-solid fa-clock"></i> Manage & schedule your time off schedule</p>
+            <p><i class="fa-solid fa-clock"></i> Carry over unused days or convert to cash</p>
+            <p><i class="fa-solid fa-clock"></i> Auto approved up to nine days of PTO</p>
+
+        </div>
+    </div>
+</section>
+
+<section id="faqs-info" class="row block-section faq">
+    <div class="row text-section text-center">
+        <h2 class="text-to-speech">FAQs</h2>
+        <p class="text-to-speech">Find answers to commonly asked questions about jobs @ i3</p>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span class="text-to-speech">Do you offer remote or flexible work options?</span>
+                <span class="faq-toggle">-</span>
+            </div>
+            <div class="faq-answer text-to-speech" style="display: block;">
+                Yes. We support fully remote roles, and flexible hours to help you balance work, family, and personal
+                commitments.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span class="text-to-speech">What benefits does i3 provide?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer text-to-speech" style="display: none;">
+                Work‑from‑home, flexible hours, professional development, and a supportive family‑first culture.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span class="text-to-speech">What is your company culture like?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer text-to-speech" style="display: none;">
+                Collaborative, innovation‑driven, and people‑first-where every voice matters and continuous learning is
+                encouraged.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span class="text-to-speech">How does i3 support career growth?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer text-to-speech" style="display: none;">
+                Through ongoing training, mentorship programs, and opportunities to work on cutting-edge AI and
+                enterprise projects, we empower you to advance your skills and career.
+            </div>
+        </div>
+
+        <div class="col-md-12 faq-item">
+            <div class="faq-question">
+                <span class="text-to-speech">How does i3 promote work–life balance?</span>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer text-to-speech" style="display: none;">
+                With flexible schedules, remote work options, and a supportive culture that encourages you to take the
+                time you need-whether for family, wellness, or personal pursuits.
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="footer-section" class="row block-section footer">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="offset-md-1 col-md-11">
+                <div class="footer-logo">
+                    <img src="./assets/images/i3-logo.png" alt="i3 logo"/>
+                </div>
+
+                <p class="pt-2">Improvement Interactive combines software development and process improvement to
+                    provide solution for your business Improvement Interactive stays with you for the long-haul helping
+                    you to manage change and achieve success.</p>
+
+                <div class="social-icons pt-2">
+                    <a href="https://www.facebook.com/Improvement-Interactive-LLC-180472716265/" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.github.com/yourpage" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/company/improvement-interactive" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <!--a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a-->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 sitemap">
+            <div class="row pt-10">
+                <a class="col sitemap-heading">Quick links</a>
+                <a class="col sitemap-heading">Support</a>
+                <a class="col sitemap-heading">Company</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="about-us.html">About Us</a>
+                <a class="col" href="terms.html">Terms & Conditions</a>
+                <a class="col" href="#contact-us">Careers</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="about-us.html#our-ceo">Team</a>
+                <a class="col" href="privacy.html">Privacy Policy</a>
+                <a class="col sitemap-inactive">Updates</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="home.html#what-we-do">Services</a>
+                <a class="col" href="#faqs-info">FAQs</a>
+                <a class="col sitemap-inactive">Press</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="#contact-us">Contact Us</a>
+                <a class="col" href="#contact-us">Support Center</a>
+                <a class="col sitemap-inactive">Announcement</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Floating Voice Button -->
+<button id="voiceButton" class="btn btn-primary floatingVoiceBtn d-flex align-items-center justify-content-center">
+    <i id="voiceBtnIcon" class="fa-solid fa-volume-xmark"></i>
+</button>
+
+<!-- Floating Chat Button -->
+<button id="chatToggleBtn" class="floatingChatBtn btn btn-primary d-flex align-items-center justify-content-center"
+        onclick="openChat()">
+    <i class="fa-solid fa-comments"></i>
+</button>
+
+<!-- Chat Assistant -->
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="chat-header-left">
+            <img src="./assets/images/bot.png" alt="bot icon"/>
+            <strong>II Smart Assistant</strong>
+        </div>
+        <button class="close-btn" onclick="closeChat()">&times;</button>
+    </div>
+    <div id="chat-box" class="chat-box">
+        <div class="message bot-message">Hi there! You've reached II Smart Assistant.</div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-query" placeholder="Type a message..."/>
+        <button onclick="loadChatWindow();"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="./assets/js/scripts.js"></script>
