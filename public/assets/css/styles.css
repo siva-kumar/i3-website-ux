@@ -101,7 +101,11 @@ h2, h3, p {
 
 .floatingVoiceBtn {
     position: fixed;
+<<<<<<< Updated upstream
     bottom: 10px;
+=======
+    bottom: 100px;
+>>>>>>> Stashed changes
     right: 100px;
     z-index: 9999;
     width: 60px;
@@ -123,7 +127,11 @@ h2, h3, p {
 
 .floatingChatBtn {
     position: fixed;
+<<<<<<< Updated upstream
     bottom: 10px;
+=======
+    bottom: 100px;
+>>>>>>> Stashed changes
     right: 20px;
     z-index: 1000;
     width: 60px;
@@ -632,6 +640,7 @@ h2, h3, p {
 }
 
 .ai-agent {
+    border-bottom: 1.5px solid #000434;
     .row, .col-md-5, .col-md-7 {
         margin-top: 0px;
     }
@@ -1488,5 +1497,73 @@ h2, h3, p {
         .forSpace{
             padding-right: 5px;
         }
+    }
+}
+
+#blogs {
+    .blog-post {
+        border-bottom: 1px solid #000000;
+        padding: 1rem 0;
+    }
+    .post-meta {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #6c757d;
+    }
+    .post-meta .badge {
+        background-color: #e9ecef;
+        color: #212529;
+        font-size: 0.75rem;
+        margin-right: 0.5rem;
+    }
+    .post-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 0.5rem;
+    }
+    .post-desc {
+        margin: 0.5rem 0 1rem;
+        color: #495057;
+    }
+    .read-more {
+        color: #007bff;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .subscribe-section {
+        background-color: #020243;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+
+    .form-control:focus {
+        box-shadow: none;
+    }
+
+    .subscribe-input-group .form-control {
+        border-top-left-radius: 0.375rem;
+        border-bottom-left-radius: 0.375rem;
+    }
+
+    .subscribe-input-group .btn {
+        border-top-right-radius: 0.375rem;
+        border-bottom-right-radius: 0.375rem;
+        background-color: #2D9CDB;
+        color: white;
+    }
+
+    .subscribe-input-group .btn:hover {
+        background-color: #1c82c4;
+    }
+}
+
+@media screen and (max-width: 1064px) {
+    .floatingVoiceBtn, .floatingChatBtn {
+        bottom: 30px !important;
     }
 }

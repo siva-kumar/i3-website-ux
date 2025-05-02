@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i3</title>
+    <link rel="shortcut icon" href="./../assets/images/favicon.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="./../assets/css/styles.css" rel="stylesheet"/>
+</head>
+
+<style>
+    @media (max-width: 1064px) {
+        .nav-links {
+            display: none !important;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+
+            li {
+                margin: 10px 0;
+            }
+        }
+
+        .nav-links.active {
+            display: flex !important;
+        }
+
+        .hamburger {
+            display: block !important;
+        }
+
+        .block-section {
+            padding: 30px !important;
+            margin-top: 70px !important;
+        }
+
+        .chat-container {
+            height: fit-content !important;
+            width: fit-content !important;
+            padding: 0px 10px;
+        }
+
+        .footer {
+            margin-top: 0px !important;
+            height: fit-content !important;
+        }
+    }
+</style>
+
+<body>
+<nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <a href="home.html"><img src="./../assets/images/i3-logo.png" alt="Company Logo"></a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+        <li><a href="/home.html">Home</a></li>
+        <li><a href="/home.html#what-we-do">Services</a></li>
+        <li><a href="/about-us.html">About Us</a></li>
+        <li><a href="blogs/index.html" class="active">Blogs</a></li>
+        <li><a href="/careers.html">Careers</a></li>
+        <li class="contact-button"><a href="/home.html#contact-us">Contact Us →</a></li>
+    </ul>
+</nav>
+
+<section id="blogs" class="block-section pt-10 text-to-speech">
+    <h2 class="fw-bold text-center">The i3 Blog: Insights & Innovation</h2>
+
+    <div class="row blog-post align-items-center mt-2">
+        <div class="col-md-8">
+            <div class="post-meta">
+                <span class="badge">Founders & Leadership</span> March 8, 2025
+            </div>
+            <div class="post-title">Valleyproof: A Founder’s Guide to Cash-Flow Resilience</div>
+            <p class="post-desc">Excerpts from our upcoming book: strategies and tools for maintaining liquidity and
+                momentum during market downturns.</p>
+            <a href="#" class="read-more">Read More »</a>
+        </div>
+        <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+            <img src="./../assets/images/blogs/post-thumbnail-1.png" alt="Valleyproof" class="img-fluid rounded">
+        </div>
+    </div>
+
+    <div class="row blog-post align-items-center">
+        <div class="col-md-8">
+            <div class="post-meta">
+                <span class="badge">AI Agents</span> May 1, 2025
+            </div>
+            <div class="post-title">Ways AI Is Revolutionizing Customer Support</div>
+            <p class="post-desc">Discover how AI-driven support agents reduce response times, lower costs, and boost
+                satisfaction—featuring real-world examples from leading brands.</p>
+            <a href="#" class="read-more">Read More »</a>
+        </div>
+        <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+            <img src="./../assets/images/blogs/post-thumbnail-2.png" alt="AI Agent" class="img-fluid rounded">
+        </div>
+    </div>
+
+    <div class="row blog-post align-items-center">
+        <div class="col-md-8">
+            <div class="post-meta">
+                <span class="badge">Case Studies</span> April 5, 2025
+            </div>
+            <div class="post-title">Optimizing Healthcare Logistics with Machine Learning</div>
+            <p class="post-desc">Learn how i3’s custom AI systems are streamlining resource allocation in hospital
+                networks, cutting patient wait times by 30%.</p>
+            <a href="#" class="read-more">Read More »</a>
+        </div>
+        <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+            <img src="./../assets/images/blogs/post-thumbnail-3.png" alt="Healthcare Logistics"
+                 class="img-fluid rounded">
+        </div>
+    </div>
+
+    <div class="row blog-post align-items-center">
+        <div class="col-md-8">
+            <div class="post-meta">
+                <span class="badge">Enterprise Systems</span> May 1, 2025
+            </div>
+            <div class="post-title">A Roadmap for Deploying AI Agents in Your Organization</div>
+            <p class="post-desc">From pilot to full rollout, follow our six-step approach to integrate AI agents
+                seamlessly into your business processes.</p>
+            <a href="#" class="read-more">Read More »</a>
+        </div>
+        <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
+            <img src="./../assets/images/blogs/post-thumbnail-4.png" alt="Enterprise Systems"
+                 class="img-fluid rounded">
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="subscribe-section col-md-8">
+            <h4 class="mb-4 fw-bold">Subscribe to i3 blog.</h4>
+            <form>
+                <div class="offset-md-3 col-md-6">
+                    <div class="input-group subscribe-input-group">
+                        <input type="email" class="form-control" placeholder="Email address" aria-label="Email">
+                        <button class="btn" type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section id="footer-section" class="row block-section footer">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="offset-md-1 col-md-11">
+                <div class="footer-logo">
+                    <img src="./../assets/images/i3-logo.png" alt="i3 logo"/>
+                </div>
+
+                <p class="pt-2">Improvement Interactive combines software development and process improvement to
+                    provide solution for your business Improvement Interactive stays with you for the long-haul helping
+                    you to manage change and achieve success.</p>
+
+                <div class="social-icons pt-2">
+                    <a href="https://www.facebook.com/Improvement-Interactive-LLC-180472716265/" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://github.com/orgs/i3io/dashboard" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/company/improvement-interactive" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <!--a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a-->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 sitemap">
+            <div class="row pt-10">
+                <a class="col sitemap-heading">Quick links</a>
+                <a class="col sitemap-heading">Support</a>
+                <a class="col sitemap-heading">Company</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="about-us.html">About Us</a>
+                <a class="col" href="terms.html">Terms & Conditions</a>
+                <a class="col" href="careers.html#open-positions">Careers</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="about-us.html#our-ceo">Team</a>
+                <a class="col" href="privacy.html">Privacy Policy</a>
+                <a class="col sitemap-inactive">Updates</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="home.html#what-we-do">Services</a>
+                <a class="col" href="#faqs-info">FAQs</a>
+                <a class="col sitemap-inactive">Press</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="#contact-us">Contact Us</a>
+                <a class="col" href="#contact-us">Support Center</a>
+                <a class="col sitemap-inactive">Announcement</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Floating Voice Button -->
+<button id="voiceButton" class="btn btn-primary floatingVoiceBtn d-flex align-items-center justify-content-center">
+    <i id="voiceBtnIcon" class="fa-solid fa-volume-xmark"></i>
+</button>
+
+<!-- Floating Chat Button -->
+<button id="chatToggleBtn" class="floatingChatBtn btn btn-primary d-flex align-items-center justify-content-center"
+        onclick="openChat()">
+    <i class="fa-solid fa-comments"></i>
+</button>
+
+<!-- Chat Assistant -->
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="chat-header-left">
+            <img src="./../assets/images/bot.png" alt="bot icon" />
+            <strong>II Smart Assistant</strong>
+        </div>
+        <button class="close-btn" onclick="closeChat()">&times;</button>
+    </div>
+    <div id="chat-box" class="chat-box">
+        <div class="message bot-message">Hi there! You've reached II Smart Assistant.</div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-query" placeholder="Type a message..." />
+        <button onclick="loadChatWindow();"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./../assets/js/scripts.js"></script>

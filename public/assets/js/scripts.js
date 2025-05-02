@@ -44,15 +44,6 @@ class ContentSlider {
         this.currentIndex = 0;
         this.timer = null;
 
-        const slide = document.getElementById('slide-1');
-        if (slide) {
-            const height = slide.offsetHeight;
-
-            this.slides.forEach(slide => {
-                slide.style.height = height + 'px';
-            });
-        }
-
         this.tabs.forEach(tab => tab.addEventListener('click', () => {
             this.stopAutoSlide();
             this.showSlide(parseInt(tab.dataset.index));
