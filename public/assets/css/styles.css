@@ -101,11 +101,8 @@ h2, h3, p {
 
 .floatingVoiceBtn {
     position: fixed;
-<<<<<<< Updated upstream
     bottom: 10px;
-=======
     bottom: 100px;
->>>>>>> Stashed changes
     right: 100px;
     z-index: 9999;
     width: 60px;
@@ -127,11 +124,8 @@ h2, h3, p {
 
 .floatingChatBtn {
     position: fixed;
-<<<<<<< Updated upstream
     bottom: 10px;
-=======
     bottom: 100px;
->>>>>>> Stashed changes
     right: 20px;
     z-index: 1000;
     width: 60px;
@@ -640,7 +634,8 @@ h2, h3, p {
 }
 
 .ai-agent {
-    border-bottom: 1.5px solid #000434;
+    position: relative;
+
     .row, .col-md-5, .col-md-7 {
         margin-top: 0px;
     }
@@ -659,6 +654,16 @@ h2, h3, p {
         width: 100%;
         border-radius: 15px;
     }
+}
+
+.ai-agent::after {
+    content: '';
+    position: absolute;
+    left: 96px;
+    right: 96px;
+    bottom: 0;
+    height: 1px;
+    background: black;
 }
 
 .valley-proof {
