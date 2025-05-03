@@ -102,7 +102,6 @@ h2, h3, p {
 .floatingVoiceBtn {
     position: fixed;
     bottom: 10px;
-    bottom: 100px;
     right: 100px;
     z-index: 9999;
     width: 60px;
@@ -125,7 +124,6 @@ h2, h3, p {
 .floatingChatBtn {
     position: fixed;
     bottom: 10px;
-    bottom: 100px;
     right: 20px;
     z-index: 1000;
     width: 60px;
