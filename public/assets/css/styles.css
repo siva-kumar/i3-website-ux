@@ -1508,32 +1508,38 @@ h2, h3, p {
         border-bottom: 1px solid #000000;
         padding: 1rem 0;
     }
+
     .post-meta {
         font-size: 0.85rem;
         text-transform: uppercase;
         font-weight: 600;
         color: #6c757d;
     }
+
     .post-meta .badge {
         background-color: #e9ecef;
         color: #212529;
         font-size: 0.75rem;
         margin-right: 0.5rem;
     }
+
     .post-title {
         font-size: 1.5rem;
         font-weight: 700;
         margin-top: 0.5rem;
     }
+
     .post-desc {
         margin: 0.5rem 0 1rem;
         color: #495057;
     }
+
     .read-more {
         color: #007bff;
         font-weight: 600;
         text-decoration: none;
     }
+}
 
 .subscribe-section {
     background-color: #020243;
@@ -1571,7 +1577,7 @@ h2, h3, p {
 }
 
 /* Blog Detailed */
-.blog {
+#blog-detailed {
     img {
         border-radius: 15px;
         height: 600px;
