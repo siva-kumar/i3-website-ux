@@ -1022,7 +1022,7 @@ h2, h3, p {
     }
 
     .company-legacy-slide {
-        display: flex;
+        display: flex;`
         flex-direction: column;
         justify-content: space-between;
         border: 2px solid #FFFFFF;
@@ -1535,172 +1535,38 @@ h2, h3, p {
         text-decoration: none;
     }
 
-.subscribe-section {
-    background-color: #020243;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 30px;
-    border-radius: 10px;
-}
+    .subscribe-section {
+        background-color: #020243;
+        color: white;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
 
-.form-control:focus {
-    box-shadow: none;
-}
+    .form-control:focus {
+        box-shadow: none;
+    }
 
-.subscribe-input-group .form-control {
-    border-top-left-radius: 0.375rem;
-    border-bottom-left-radius: 0.375rem;
-}
+    .subscribe-input-group .form-control {
+        border-top-left-radius: 0.375rem;
+        border-bottom-left-radius: 0.375rem;
+    }
 
-.subscribe-input-group .btn {
-    border-top-right-radius: 0.375rem;
-    border-bottom-right-radius: 0.375rem;
-    background-color: #0d6efd;
-    color: white;
-}
+    .subscribe-input-group .btn {
+        border-top-right-radius: 0.375rem;
+        border-bottom-right-radius: 0.375rem;
+        background-color: #2D9CDB;
+        color: white;
+    }
 
-.subscribe-input-group .btn:hover {
-    background-color: #1c82c4;
+    .subscribe-input-group .btn:hover {
+        background-color: #1c82c4;
+    }
 }
 
 @media screen and (max-width: 1064px) {
     .floatingVoiceBtn, .floatingChatBtn {
         bottom: 30px !important;
-    }
-}
-
-/* Blog Detailed */
-.blog {
-    img {
-        border-radius: 15px;
-        height: 600px;
-    }
-
-    .circle-icon {
-        width: 30px;
-        height: 30px;
-        background-color: #0b5ed7;
-        color: #fff;
-        border-radius: 50%;
-        border: none;
-    }
-
-    .dual-badge {
-        display: inline-flex;
-        border-radius: 10px;
-        overflow: hidden;
-        font-size: 0.75rem;
-        font-weight: 600;
-        margin-left: 0.75rem;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e2e8f0;
-        height: 30px;
-    }
-
-    .dual-badge span {
-        padding: 0.4rem 0.75rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        white-space: nowrap;
-    }
-
-    .dual-badge .left {
-        background-color: #ffffff;
-        color: #1e293b;
-        font-weight: 700;
-    }
-
-    .dual-badge .right {
-        background-color: #0b5ed7;
-        color: #ffffff;
-    }
-
-    h2 {
-        text-transform: uppercase;
-    }
-
-    p, li {
-        font-size: 20px;
-    }
-
-    .italic {
-        font-style: italic;
-    }
-
-    h3 {
-        text-transform: uppercase;
-    }
-
-    .founder-card {
-        border-top: 5px solid #0d6efd;
-        background-color: #f0f5ff;
-        margin-top: 20px;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-    }
-
-    .founder-title {
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 1.25rem;
-    }
-
-    a {
-        text-decoration: none;
-    }
-}
-
-#similar-blog {
-    background-color: #dceeff;
-    padding: 30px 96px;
-
-    .dual-badge {
-        display: inline-flex;
-        border-radius: 10px;
-        overflow: hidden;
-        font-size: 0.75rem;
-        font-weight: 600;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
-    }
-
-    .dual-badge span {
-        padding: 0.4rem 0.75rem;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: #1e293b;
-        white-space: nowrap;
-    }
-
-    .dual-badge .left {
-        background-color: #f3f5ff;
-        font-weight: 700;
-    }
-
-    .dual-badge .right {
-        background-color: #ffffff;
-        font-weight: 600;
-    }
-
-    .post-title {
-        font-weight: bold;
-        font-size: 28px;
-        color: #1a1a1a;
-    }
-
-    .post-description {
-        color: #4a4a4a;
-    }
-
-    .post-image {
-        border-radius: 0.5rem;
-        max-width: 100%;
-        height: auto;
-    }
-
-    a {
-        text-decoration: none;
     }
 }

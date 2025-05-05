@@ -1,4 +1,6 @@
 const loadingOverlay = document.getElementById('loadingOverlayWrapper');
+const successMessage = document.getElementById('successMessage');
+
 if(loadingOverlay) {
     loadingOverlay.classList.remove('d-flex');
     loadingOverlay.style.display = 'none';
@@ -147,18 +149,20 @@ if (form) {
                         throw new Error(data.message || 'Something went wrong');
                     }
 
-                    const loadingOverlay = document.getElementById('loadingOverlayWrapper');
-                    loadingOverlay.classList.remove('d-flex');
-                    loadingOverlay.style.display = 'none';
-
                     return data;
                 })
                 .then(data => {
+                    loadingOverlay.classList.remove('d-flex');
+                    loadingOverlay.style.display = 'none';
+
                     successMessage.innerHTML = `<div id="successAlert" class="alert alert-success">Enquiry successfully submitted!</div>`;
                     autoDismissAlert("successAlert");
                     form.reset();
                 })
                 .catch(error => {
+                    loadingOverlay.classList.remove('d-flex');
+                    loadingOverlay.style.display = 'none';
+                    
                     successMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
                     autoDismissAlert("errorAlert");
                 });
@@ -173,6 +177,71 @@ if (form) {
         input.addEventListener('keyup', function () {
             validateForm();
         });
+    });
+}
+
+const subscribeForm = document.getElementById('subscribe-form');
+
+if (subscribeForm) {
+    subscribeForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        successMessage.innerHTML = '';
+        let isValid = true;
+
+        const email = document.getElementById('subscribe-email');
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email.value || !emailPattern.test(email.value)) {
+            email.classList.add('is-invalid');
+            isValid = false
+        }
+
+        if(!isValid) {
+            return false;
+        } else {
+            loadingOverlay.classList.add('d-flex');
+            loadingOverlay.style.display = 'block';
+
+            const formData = {
+                email: email.value
+            };
+
+            fetch('http://localhost:5000/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(async response => {
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.message || 'Something went wrong');
+                    }
+
+                    return data;
+                })
+                .then(data => {
+                    loadingOverlay.classList.remove('d-flex');
+                    loadingOverlay.style.display = 'none';
+
+                    successMessage.innerHTML = `<div id="successAlert" class="alert alert-success">Successfully subscribed!</div>`;
+                    autoDismissAlert("successAlert");
+                    email.value = '';
+                })
+                .catch(error => {
+                    loadingOverlay.classList.remove('d-flex');
+                    loadingOverlay.style.display = 'none';
+
+                    successMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
+                    autoDismissAlert("errorAlert");
+                });
+
+            setTimeout(() => {
+                successMessage.innerHTML = "";
+            }, 5000);
+        }
     });
 }
 

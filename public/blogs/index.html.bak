@@ -80,31 +80,18 @@
     </ul>
 </nav>
 
-<div id="loadingOverlayWrapper"
-     class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
-    <div id="loadingOverlay" class="text-center p-4 bg-white rounded shadow">
-        <div class="spinner-border text-primary mb-3" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
-        <div>
-            <strong>Saving your details and sending the email...</strong>
-            <p class="text-muted small mb-0">This may take few seconds</p>
-        </div>
-    </div>
-</div>
-
-<section id="blogs" class="block-section pt-10">
-    <h2 class="fw-bold text-center text-to-speech">The i3 Blog: Insights & Innovation</h2>
+<section id="blogs" class="block-section pt-10 text-to-speech">
+    <h2 class="fw-bold text-center">The i3 Blog: Insights & Innovation</h2>
 
     <div class="row blog-post align-items-center mt-2">
-        <div class="col-md-8 text-to-speech">
+        <div class="col-md-8">
             <div class="post-meta">
                 <span class="badge">Founders & Leadership</span> March 8, 2025
             </div>
             <div class="post-title">Valleyproof: A Founder’s Guide to Cash-Flow Resilience</div>
             <p class="post-desc">Excerpts from our upcoming book: strategies and tools for maintaining liquidity and
                 momentum during market downturns.</p>
-            <a href="/blogs/valley-proof.html" class="read-more">Read More »</a>
+            <a href="#" class="read-more">Read More »</a>
         </div>
         <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
             <img src="./../assets/images/blogs/post-thumbnail-1.png" alt="Valleyproof" class="img-fluid rounded">
@@ -112,14 +99,14 @@
     </div>
 
     <div class="row blog-post align-items-center">
-        <div class="col-md-8 text-to-speech">
+        <div class="col-md-8">
             <div class="post-meta">
                 <span class="badge">AI Agents</span> May 1, 2025
             </div>
             <div class="post-title">Ways AI Is Revolutionizing Customer Support</div>
             <p class="post-desc">Discover how AI-driven support agents reduce response times, lower costs, and boost
                 satisfaction—featuring real-world examples from leading brands.</p>
-            <a href="/blogs/ai-support-blog.html" class="read-more">Read More »</a>
+            <a href="#" class="read-more">Read More »</a>
         </div>
         <div class="col-md-4 text-center text-md-end mt-3 mt-md-0">
             <img src="./../assets/images/blogs/post-thumbnail-2.png" alt="AI Agent" class="img-fluid rounded">
@@ -127,7 +114,7 @@
     </div>
 
     <div class="row blog-post align-items-center">
-        <div class="col-md-8 text-to-speech">
+        <div class="col-md-8">
             <div class="post-meta">
                 <span class="badge">Case Studies</span> April 5, 2025
             </div>
@@ -143,7 +130,7 @@
     </div>
 
     <div class="row blog-post align-items-center">
-        <div class="col-md-8 text-to-speech">
+        <div class="col-md-8">
             <div class="post-meta">
                 <span class="badge">Enterprise Systems</span> May 1, 2025
             </div>
@@ -161,16 +148,14 @@
     <div class="row justify-content-center">
         <div class="subscribe-section col-md-8">
             <h4 class="mb-4 fw-bold">Subscribe to i3 blog.</h4>
-            <div id="successMessage" class="row mt-3"></div>
-            <div class="offset-md-3 col-md-6">
-                <form id="subscribe-form">
+            <form>
+                <div class="offset-md-3 col-md-6">
                     <div class="input-group subscribe-input-group">
-                        <input type="text" id="subscribe-email" class="form-control" placeholder="Email address"
-                               aria-label="Email">
+                        <input type="email" class="form-control" placeholder="Email address" aria-label="Email">
                         <button class="btn" type="submit">Subscribe</button>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </section>

@@ -3,6 +3,7 @@ import path from 'path';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import enquiryRoutes from './routes/EnquiryRoutes';
+import subscribeRoutes from "./routes/SubscribeRoutes";
 
 const app = express();
 
@@ -34,6 +35,7 @@ app.get('/', (_req, res) => {
 
 // Route
 app.use('/api/enquiry', enquiryRoutes);
+app.use('/api/subscribe', subscribeRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
