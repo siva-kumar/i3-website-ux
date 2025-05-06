@@ -46,7 +46,7 @@
             font-size: 44px !important;
         }
 
-        .round-button{
+        .round-button {
             font-size: 18px !important;
         }
 
@@ -78,11 +78,13 @@
         .our-beliefs-container {
             margin: 0px !important;
         }
-        .chat-container{
+
+        .chat-container {
             height: fit-content !important;
             width: fit-content !important;
             padding: 0px 10px;
         }
+
         .engineering {
             height: fit-content !important;
 
@@ -163,6 +165,10 @@
             img {
                 width: 100%;
             }
+
+            #early-access-email {
+                width: 100%;
+            }
         }
 
         .client-testimonial {
@@ -184,7 +190,7 @@
         }
     }
 
-    .floatingVoiceBtn , .floatingChatBtn {
+    .floatingVoiceBtn, .floatingChatBtn {
         bottom: 100px;
     }
 </style>
@@ -770,10 +776,17 @@
     </div>
 
     <div class="row justify-content pt-4">
-        <div class="col-auto pl-0">
-            <button class="round-button">Sign up for early access &#10140;</button>
-        </div>
+        <div id="signupMessage" class="row mt-3"></div>
     </div>
+
+    <form id="early-access-form" class="d-flex flex-wrap flex-md-row flex-column align-items-stretch">
+        <div class="col-auto pl-0 mb-2 mb-md-0">
+            <input type="text" id="early-access-email" class="form-control" placeholder="Enter your email" />
+        </div>
+        <div class="col-auto pl-0">
+            <button type="submit" class="round-button">Sign up for early access &#10140;</button>
+        </div>
+    </form>
 </section>
 
 <section id="clients-section" class="row block-section clients">
@@ -1046,7 +1059,7 @@
 <div class="chat-container">
     <div class="chat-header">
         <div class="chat-header-left">
-            <img src="./assets/images/bot.png" alt="bot icon" />
+            <img src="./assets/images/bot.png" alt="bot icon"/>
             <strong>II Smart Assistant</strong>
         </div>
         <button class="close-btn" onclick="closeChat()">&times;</button>
@@ -1055,7 +1068,7 @@
         <div class="message bot-message">Hi there! You've reached II Smart Assistant.</div>
     </div>
     <div class="chat-input">
-        <input type="text" id="user-query" placeholder="Type a message..." />
+        <input type="text" id="user-query" placeholder="Type a message..."/>
         <button onclick="loadChatWindow();"><i class="fa-solid fa-paper-plane"></i></button>
     </div>
 </div>
@@ -1143,7 +1156,7 @@
 
     // Show overlay when video is paused
     video.addEventListener('pause', function () {
-    //    overlay.classList.remove('hidden');
+        //    overlay.classList.remove('hidden');
     });
 
     // Mute video if speech is playing

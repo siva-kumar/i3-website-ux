@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import enquiryRoutes from './routes/EnquiryRoutes';
 import subscribeRoutes from "./routes/SubscribeRoutes";
+import earlyAccessRoutes from "./routes/EarlyAccessRoutes";
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.get('/', (_req, res) => {
 // Route
 app.use('/api/enquiry', enquiryRoutes);
 app.use('/api/subscribe', subscribeRoutes);
+app.use('/api/early-access', earlyAccessRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

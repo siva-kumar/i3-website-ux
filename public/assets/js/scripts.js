@@ -1,5 +1,6 @@
 const loadingOverlay = document.getElementById('loadingOverlayWrapper');
 const successMessage = document.getElementById('successMessage');
+const signupMessage = document.getElementById('signupMessage');
 
 if(loadingOverlay) {
     loadingOverlay.classList.remove('d-flex');
@@ -162,7 +163,7 @@ if (form) {
                 .catch(error => {
                     loadingOverlay.classList.remove('d-flex');
                     loadingOverlay.style.display = 'none';
-                    
+
                     successMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
                     autoDismissAlert("errorAlert");
                 });
@@ -235,6 +236,71 @@ if (subscribeForm) {
                     loadingOverlay.style.display = 'none';
 
                     successMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
+                    autoDismissAlert("errorAlert");
+                });
+
+            setTimeout(() => {
+                successMessage.innerHTML = "";
+            }, 5000);
+        }
+    });
+}
+
+const earlyAccessForm = document.getElementById('early-access-form');
+
+if (earlyAccessForm) {
+    earlyAccessForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        signupMessage.innerHTML = '';
+        let isValid = true;
+
+        const email = document.getElementById('early-access-email');
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!email.value || !emailPattern.test(email.value)) {
+            email.classList.add('is-invalid');
+            isValid = false
+        }
+
+        if(!isValid) {
+            return false;
+        } else {
+            loadingOverlay.classList.add('d-flex');
+            loadingOverlay.style.display = 'block';
+
+            const formData = {
+                email: email.value
+            };
+
+            fetch('http://localhost:5000/api/early-access', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(async response => {
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.message || 'Something went wrong');
+                    }
+
+                    return data;
+                })
+                .then(data => {
+                    loadingOverlay.classList.remove('d-flex');
+                    loadingOverlay.style.display = 'none';
+
+                    signupMessage.innerHTML = `<div id="successAlert" class="alert alert-success">Successfully signed up for early access.</div>`;
+                    autoDismissAlert("successAlert");
+                    email.value = '';
+                })
+                .catch(error => {
+                    loadingOverlay.classList.remove('d-flex');
+                    loadingOverlay.style.display = 'none';
+
+                    signupMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
                     autoDismissAlert("errorAlert");
                 });
 

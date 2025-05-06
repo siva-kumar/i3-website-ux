@@ -1714,3 +1714,7 @@ h2, h3, p {
         text-decoration: none;
     }
 }
+
+#early-access-email {
+    width: 280px;
+}
