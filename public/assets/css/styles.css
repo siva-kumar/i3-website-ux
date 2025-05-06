@@ -1303,8 +1303,8 @@ h2, h3, p {
     }
 }
 
-/* Privacy and Policy */
-#privacy {
+/* Legal section */
+#legal {
     padding-left: 50px !important;
     padding-right: 50px !important;
 
@@ -1580,7 +1580,7 @@ h2, h3, p {
 #blog-detailed {
     img {
         border-radius: 15px;
-        height: 600px;
+        width: 100%;
     }
 
     .circle-icon {
@@ -1659,8 +1659,12 @@ h2, h3, p {
 }
 
 #similar-blog {
-    background-color: #dceeff;
-    padding: 30px 96px;
+
+    .similar-blog-content {
+        background-color: #dceeff;
+        padding: 30px 45px;
+        border-radius: 15px;
+    }
 
     .dual-badge {
         display: inline-flex;
