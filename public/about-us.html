@@ -87,6 +87,9 @@
             img {
                 width: 100%;
             }
+            #early-access-email {
+                width: 100%;
+            }
         }
 
         .contact-us {
@@ -230,10 +233,16 @@
     </div>
 
     <div class="row justify-content pt-4">
-        <div class="col-auto pl-0">
-            <button class="round-button">Sign up for early access &#10140;</button>
-        </div>
+        <div id="signupMessage" class="row mt-3"></div>
     </div>
+    <form id="early-access-form" class="d-flex flex-wrap flex-md-row flex-column align-items-stretch">
+        <div class="col-auto pl-0 mb-2 mb-md-0">
+            <input type="text" id="early-access-email" class="form-control" placeholder="Enter your email" />
+        </div>
+        <div class="col-auto pl-0">
+            <button type="submit" class="round-button">Sign up for early access &#10140;</button>
+        </div>
+    </form>
 </section>
 
 <section id="testimonial-section" class="block-section testimonial">
@@ -582,7 +591,7 @@
 
             <div class="row pt-3">
                 <a class="col" href="home.html#what-we-do">Services</a>
-                <a class="col" href="#faqs-info">FAQs</a>
+                <a class="col" href="home.html#faqs-info">FAQs</a>
                 <a class="col sitemap-inactive">Press</a>
             </div>
 
