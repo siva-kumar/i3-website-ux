@@ -1001,6 +1001,7 @@ h2, h3, p {
     img {
         margin-top: 20px;
         border-radius: 15px;
+        width: 100%;
     }
 }
 
