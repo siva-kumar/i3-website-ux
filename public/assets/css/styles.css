@@ -743,6 +743,7 @@ h2, h3, p {
             padding: 0px !important;
             margin-left: 15px;
             border-radius: 20px;
+            height: 250px;
         }
     }
 
