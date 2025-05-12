@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "dev": "ts-node src/server.ts",
-  "build": "tsc",
-  "start": "node dist/server.js"
-},
+    "dev": "ts-node src/server.ts",           // For local development (TypeScript)
+    "build": "tsc",                           // For TypeScript compilation
+    "start": "node dist/server.js"            // For starting the app after build (compiled JS)
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -29,8 +29,5 @@
     "@types/nodemailer": "^6.4.17",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
-  },
-  "devScripts": {
-    "start": "npx ts-node src/index.ts"
   }
 }
