@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node src/server.ts",           // For local development (TypeScript)
-    "build": "tsc",                           // For TypeScript compilation
-    "start": "node dist/server.js"            // For starting the app after build (compiled JS)
+    "dev": "ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
