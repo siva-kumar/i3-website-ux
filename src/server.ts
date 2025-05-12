@@ -17,11 +17,12 @@ app.use(cors({
   allowedHeaders: ['Content-Type'],
 })); */
 
-// MongoDB connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/your-local-db')
+// MongoDB connection using the correct connection string
+const mongodbURI = process.env.MONGODB_URI || 'mongodb+srv://root:Mongo%402025@cluster0.qzdjcg1.mongodb.net/i3?retryWrites=true&w=majority&appName=Cluster0';
+
+mongoose.connect(mongodbURI)
   .then(() => console.log('MongoDB connected'))
   .catch((error) => console.error('MongoDB connection error:', error));
-;
 
 // Middleware
 app.use(express.json());
