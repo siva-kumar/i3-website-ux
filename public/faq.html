@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i3</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.jpg" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="./assets/css/styles.css" rel="stylesheet"/>
+</head>
+
+<style>
+
+    .faq {
+        p {
+            margin-top: 0px;
+            margin-bottom: 22px;
+            color: #000000;
+        }
+
+        .faq-item {
+            border: none;
+            border-bottom: 1.5px solid #000000;
+            border-radius: unset;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 10px;
+            font-size: 22px;
+        }
+
+        .faq-answer {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 1064px) {
+        .nav-links {
+            display: none !important;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+
+            li {
+                margin: 10px 0;
+            }
+        }
+
+        .nav-links.active {
+            display: flex !important;
+        }
+
+        .hamburger {
+            display: block !important;
+        }
+
+        #faq {
+            padding: 100px 30px 30px 30px !important;
+        }
+
+        .chat-container {
+            height: fit-content !important;
+            width: fit-content !important;
+            padding: 0px 10px;
+        }
+
+        .footer {
+            height: fit-content !important;
+        }
+    }
+</style>
+
+<body>
+<nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+        <a href="home.html"><img src="./assets/images/i3-logo.png" alt="Company Logo"></a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="home.html#what-we-do">Services</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="blogs/index.html">Blogs</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li class="contact-button"><a href="home.html#contact-us">Contact Us →</a></li>
+    </ul>
+</nav>
+<section id="legal" class="pt-10">
+    <h2 class="fw-bold text-center pt-3">Frequently Asked Questions</h2>
+
+    <button class="btn btn-secondary d-md-none mb-3"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu"
+            aria-expanded="false"
+            aria-controls="sidebarMenu">
+        Toggle Menu
+    </button>
+
+    <div class="wrapper pt-5">
+        <nav id="sidebarMenu" class="collapse d-md-block sidebar">
+            <h4 class="fw-bold mb-3">FAQs</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="#general">General Questions</a></li>
+                <li class="nav-item"><a class="nav-link" href="#ai-questions">AI Questions</a></li>
+                <li class="nav-item"><a class="nav-link" href="#deployment">Deployment & Integration</a></li>
+                <li class="nav-item"><a class="nav-link" href="#pricing">Pricing & ROI</a></li>
+                <li class="nav-item"><a class="nav-link" href="#support">Support & Maintenance</a></li>
+                <li class="nav-item"><a class="nav-link" href="#careers">Careers & Culture</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact & Getting Started</a></li>
+            </ul>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-9 content text-to-speech faq">
+            <section id="general">
+                <h3>General Questions</h3>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Improvement Interactive (i3)?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Improvement Interactive is a strategic engineering studio with over 30 years of experience
+                        delivering mission-critical enterprise systems and custom AI solutions.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">What industries does i3 serve?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        We work across various industries including healthcare, finance, logistics, e-commerce, and
+                        manufacturing-helping organizations automate, innovate, and optimize their operations.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How can i3’s AI solutions help my business?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Our AI solutions, such as SmashSupport.AI, Fitness AI Coach, and i3 LingoBridge, help businesses
+                        automate customer support, enhance user engagement, and break down communication
+                        barriers-ultimately saving costs and improving efficiency.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How long has i3 been in business?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        We’ve been delivering innovative technology solutions since 1993, with over three decades of
+                        experience in creating systems that scale, endure, and deliver real-world impact.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Who are your typical clients?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        We work with founders, operators, product leaders, and enterprise decision-makers across
+                        industries including healthcare, finance, logistics, and tech.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How can I get started with i3?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Simply reach out through our contact page or email info@improvementinteractive.com to start a
+                        conversation.
+                    </div>
+                </div>
+            </section>
+
+            <section id="ai-questions" class="pt-5">
+                <h3>AI Questions</h3>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">What AI products does i3 offer?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        We offer several AI-driven solutions, including:
+                        <ul>
+                            <li><strong>SmashSupport.AI</strong>: A customer support agent that reduces ticket volume by
+                                90%.
+                            </li>
+                            <li><strong>Fitness AI Coach</strong>: A personalized virtual coach for fitness brands.</li>
+                            <li><strong>i3 LingoBridge</strong>: A universal language translator that enables real-time
+                                communication across languages.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How can I integrate AI solutions into my business?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        We follow a structured, six-step process to deploy AI agents, which includes identifying
+                        high-impact use cases, securing executive buy-in, and scaling solutions over time.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Can I customize an AI solution to match my business needs?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Yes. Our solutions are modular and can be tailored to your workflow, tone of voice, and system
+                        integrations.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How is your AI different from generic chatbots?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        i3 AI agents are purpose-built with advanced learning models, deep integrations, and real-time
+                        adaptability—not simple scripts or templates.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Do your AI agents support multiple languages?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Yes. Our AI models support real-time translation for global communication across text and voice.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Can AI agents replace human employees?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        AI agents are designed to handle repetitive and low-complexity tasks, freeing human employees to
+                        focus on higher-level work. They enhance productivity, but humans remain essential for strategic
+                        decision-making and complex problem-solving.
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="deployment" class="pt-5">
+                <h3>Deployment & Integration</h3>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">What’s involved in a typical deployment process?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        We start with discovery and planning, followed by a pilot rollout, feedback loop, and scaling in
+                        phases.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Can your systems work with legacy software?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Yes. We specialize in bridging new AI layers with legacy platforms through custom adapters and
+                        middleware.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Is ongoing training needed after deployment?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        We provide guided training and system updates, but many solutions are designed for low-lift
+                        upkeep after launch.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Do you offer customization for AI solutions?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Absolutely! Our AI products are highly customizable to match your unique business needs,
+                        including branding, workflow, and integration with existing systems.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Do I need a tech team to maintain your solution?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Our systems are built to be admin-friendly. However, we offer managed support or co-development
+                        if needed.
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing" class="pt-5">
+                <h3>Pricing & ROI</h3>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How is your pricing structured?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Pricing varies based on scope, features, and usage. We offer monthly subscriptions, annual
+                        licensing, and enterprise packages.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">What kind of ROI can I expect?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Clients typically see 30–90% gains in efficiency, reduced support loads, and measurable cost
+                        savings within the first 3–6 months.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Do you offer volume or enterprise discounts?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Yes. We offer scaled pricing for multi-agent deployments or larger enterprise contracts.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">What if I want to scale usage later?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Our solutions are designed to scale. You can increase users, features, or usage volume anytime.
+                    </div>
+                </div>
+            </section>
+
+            <section id="support" class="pt-5">
+                <h3>Support & Maintenance</h3>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">What support options are available?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        We offer 24/7 support, issue tracking, regular check-ins, and quarterly reviews to ensure your
+                        systems stay optimized.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Will I need developer access to make changes?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        No. Most updates can be made through admin dashboards or with minimal technical guidance.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How do you handle sensitive data?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Sensitive data is always encrypted in transit and at rest. We limit data access to authorized
+                        users only and ensure that your information is handled with the utmost care.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How do you ensure data privacy and security?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        We follow best practices in data security, including encryption, secure access controls, and
+                        compliance with industry standards.
+                    </div>
+                </div>
+            </section>
+
+            <section id="careers" class="pt-5">
+                <h3>Careers & Culture</h3>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">Do you offer remote work options?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Yes, we support fully remote positions, hybrid work, and flexible hours to accommodate the needs
+                        of our team members.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">What benefits do employees receive?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Our employees enjoy competitive compensation, flexible paid time off, work-from-home options,
+                        health benefits, and opportunities for professional development.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How can I apply for a job at i3?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Visit our Careers page to view current job openings and submit your resume to <a
+                            href="mailto:career@i3.io">career@i3.io</a>.
+                        We’re always looking for passionate, driven individuals to join our growing team.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">What is the work culture like at i3?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        At i3, we value collaboration, innovation, and work-life balance. We offer a flexible,
+                        family-friendly environment where every employee is empowered to contribute to cutting-edge
+                        solutions.
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="contact" class="pt-5 pb-5">
+                <h3>Contact & Getting Started</h3>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How can I contact i3 for more information?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Email us at <a href="mailto:hq@i3.io">hq@i3.io</a> or use the form on our Contact page.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How do I get a quote?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        Just reach out through our contact form or email. We’ll schedule a discovery call and send a
+                        tailored proposal.
+                    </div>
+                </div>
+
+                <div class="col-md-12 faq-item">
+                    <div class="faq-question">
+                        <span class="text-to-speech">How quickly can I get a response?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer text-to-speech" style="display: none;">
+                        We typically respond to inquiries within 24–48 hours of receiving your request.
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+</section>
+
+<section id="footer-section" class="row block-section footer">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="offset-md-1 col-md-11">
+                <div class="footer-logo">
+                    <img src="./assets/images/i3-logo.png" alt="i3 logo"/>
+                </div>
+
+                <p class="pt-2">Improvement Interactive combines software development and process improvement to
+                    provide solution for your business Improvement Interactive stays with you for the long-haul helping
+                    you to manage change and achieve success.</p>
+
+                <div class="social-icons pt-2">
+                    <a href="https://www.facebook.com/Improvement-Interactive-LLC-180472716265/" target="_blank"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a href="https://github.com/orgs/i3io/dashboard" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/company/improvement-interactive" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <!--a href="https://www.instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com/yourpage" target="_blank"><i class="fab fa-twitter"></i></a-->
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 sitemap">
+            <div class="row pt-10">
+                <a class="col sitemap-heading">Quick links</a>
+                <a class="col sitemap-heading">Support</a>
+                <a class="col sitemap-heading">Company</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="about-us.html">About Us</a>
+                <a class="col" href="terms.html">Terms & Conditions</a>
+                <a class="col" href="careers.html#open-positions">Careers</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="about-us.html#our-ceo">Team</a>
+                <a class="col" href="privacy.html">Privacy Policy</a>
+                <a class="col sitemap-inactive">Updates</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="home.html#what-we-do">Services</a>
+                <a class="col" href="home.html#faqs-info">FAQs</a>
+                <a class="col sitemap-inactive">Press</a>
+            </div>
+
+            <div class="row pt-3">
+                <a class="col" href="home.html#contact-us">Contact Us</a>
+                <a class="col" href="home.html#contact-us">Support Center</a>
+                <a class="col sitemap-inactive">Announcement</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Floating Voice Button -->
+<button id="voiceButton" class="btn btn-primary floatingVoiceBtn d-flex align-items-center justify-content-center">
+    <i id="voiceBtnIcon" class="fa-solid fa-volume-xmark"></i>
+</button>
+
+<!-- Floating Chat Button -->
+<button id="chatToggleBtn" class="floatingChatBtn btn btn-primary d-flex align-items-center justify-content-center"
+        onclick="openChat()">
+    <i class="fa-solid fa-comments"></i>
+</button>
+
+<!-- Chat Assistant -->
+<div class="chat-container">
+    <div class="chat-header">
+        <div class="chat-header-left">
+            <img src="./assets/images/bot.png" alt="bot icon"/>
+            <strong>II Smart Assistant</strong>
+        </div>
+        <button class="close-btn" onclick="closeChat()">&times;</button>
+    </div>
+    <div id="chat-box" class="chat-box">
+        <div class="message bot-message">Hi there! You've reached II Smart Assistant.</div>
+    </div>
+    <div class="chat-input">
+        <input type="text" id="user-query" placeholder="Type a message..."/>
+        <button onclick="loadChatWindow();"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+</div>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/scripts.js"></script>
