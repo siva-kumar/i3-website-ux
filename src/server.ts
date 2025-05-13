@@ -33,7 +33,9 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Optional: Route to serve home.html directly for root
 app.get('/', (_req, res) => {
-  res.sendFile(path.join(__dirname, '../public/home.html'));
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+  res.send(`Your IP is ${ip}`);
+  //res.sendFile(path.join(__dirname, '../public/home.html'));
 });
 
 // Route
