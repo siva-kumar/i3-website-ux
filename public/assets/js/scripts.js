@@ -136,7 +136,7 @@ if (form) {
                 message: document.getElementById('message').value
             };
 
-            fetch('http://localhost:5000/api/enquiry', {
+            fetch('https://i3-6sp9.onrender.com/api/enquiry', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -207,7 +207,7 @@ if (subscribeForm) {
                 email: email.value
             };
 
-            fetch('http://localhost:5000/api/subscribe', {
+            fetch('https://i3-6sp9.onrender.com/api/subscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -272,7 +272,7 @@ if (earlyAccessForm) {
                 email: email.value
             };
 
-            fetch('http://localhost:5000/api/early-access', {
+            fetch('https://i3-6sp9.onrender.com/api/early-access', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
