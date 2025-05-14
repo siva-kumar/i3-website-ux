@@ -5,6 +5,13 @@ function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
 }
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.' + 'j' + 's','ga');
+
+ga('create', 'UA-50247909-3', 'auto');
+ga('send', 'pageview');
 
 const faqs = document.querySelectorAll('.faq-item');
 
@@ -377,8 +384,9 @@ function startVoice() {
 
     if (sentences.length === 0) {
         elements.forEach(el => {
-            const text = el.textContent.trim();
+            let text = el.textContent.trim();
             if (text) {
+                text = text.replace(/\$10s of Billions/i, 'tens of billions');
                 sentences.push(text);
             }
         });
