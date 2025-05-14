@@ -1,11 +1,5 @@
-const loadingOverlay = document.getElementById('loadingOverlayWrapper');
 const successMessage = document.getElementById('successMessage');
 const signupMessage = document.getElementById('signupMessage');
-
-if(loadingOverlay) {
-    loadingOverlay.classList.remove('d-flex');
-    loadingOverlay.style.display = 'none';
-}
 
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
@@ -512,6 +506,12 @@ function closeChat() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    const loadingOverlay = document.getElementById('loadingOverlayWrapper');
+    if(loadingOverlay) {
+        loadingOverlay.classList.remove('d-flex');
+        loadingOverlay.style.display = 'none';
+    }
+
     userMsg.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             if (userMsg.value !== "") {
