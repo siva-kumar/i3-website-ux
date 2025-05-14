@@ -1729,4 +1729,8 @@ h2, h3, p {
     p {
         font-size: 18px !important;
     }
+
+    .faq-answer {
+        font-size: 18px !important;
+    }
 }
