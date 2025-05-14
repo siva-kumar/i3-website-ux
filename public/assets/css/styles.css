@@ -1720,3 +1720,13 @@ h2, h3, p {
 #early-access-email {
     width: 280px;
 }
+
+@media screen and (max-width: 1064px) {
+    h2 {
+        font-size: 40px !important;
+    }
+
+    p {
+        font-size: 18px !important;
+    }
+}
