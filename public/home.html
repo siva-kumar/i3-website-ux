@@ -220,7 +220,7 @@
 </nav>
 
 <div id="loadingOverlayWrapper"
-     class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+     class="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center d-none">
     <div id="loadingOverlay" class="text-center p-4 bg-white rounded shadow">
         <div class="spinner-border text-primary mb-3" role="status">
             <span class="visually-hidden">Loading...</span>
@@ -1115,15 +1115,6 @@
             nextSlide(index + 1);
         }, 3000);
 
-        const slide = document.getElementById('slide-1');
-        if (slide) {
-            const height = slide.offsetHeight;
-            this.slides = document.querySelectorAll('.slide');
-
-            this.slides.forEach(slide => {
-                slide.style.height = height + 'px';
-            });
-        }
     });
 
     const video = document.getElementById('video');
@@ -1166,4 +1157,26 @@
             resetSpeech();
         }
     });
+
+    function adjustSlideHeights() {
+        const slides = document.querySelectorAll('.slider-content .slide');
+
+        if (slides.length > 0) {
+            let maxHeight = 0;
+
+            slides.forEach(slide => {
+                slide.style.height = 'auto';
+                const height = slide.offsetHeight;
+                if (height > maxHeight) maxHeight = height;
+            });
+
+            slides.forEach(slide => {
+                slide.style.height = `${maxHeight + 10}px`;
+            });
+        }
+    }
+
+
+    window.addEventListener('load', adjustSlideHeights);
+    window.addEventListener('resize', adjustSlideHeights);
 </script>

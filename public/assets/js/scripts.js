@@ -126,9 +126,8 @@ if (form) {
         successMessage.innerHTML = '';
 
         if (isValid) {
-            const loadingOverlay = document.getElementById('loadingOverlayWrapper');
+            loadingOverlay.classList.remove('d-none');
             loadingOverlay.classList.add('d-flex');
-            loadingOverlay.style.display = 'block';
 
             const formData = {
                 firstname: document.getElementById('firstName').value,
@@ -155,7 +154,7 @@ if (form) {
                 })
                 .then(data => {
                     loadingOverlay.classList.remove('d-flex');
-                    loadingOverlay.style.display = 'none';
+                    loadingOverlay.classList.add('d-none');
 
                     successMessage.innerHTML = `<div id="successAlert" class="alert alert-success">Enquiry successfully submitted!</div>`;
                     autoDismissAlert("successAlert");
@@ -163,7 +162,7 @@ if (form) {
                 })
                 .catch(error => {
                     loadingOverlay.classList.remove('d-flex');
-                    loadingOverlay.style.display = 'none';
+                    loadingOverlay.classList.add('d-none');
 
                     successMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
                     autoDismissAlert("errorAlert");
@@ -201,8 +200,8 @@ if (subscribeForm) {
         if(!isValid) {
             return false;
         } else {
+            loadingOverlay.classList.remove('d-none');
             loadingOverlay.classList.add('d-flex');
-            loadingOverlay.style.display = 'block';
 
             const formData = {
                 email: email.value
@@ -226,7 +225,7 @@ if (subscribeForm) {
                 })
                 .then(data => {
                     loadingOverlay.classList.remove('d-flex');
-                    loadingOverlay.style.display = 'none';
+                    loadingOverlay.classList.add('d-none');
 
                     successMessage.innerHTML = `<div id="successAlert" class="alert alert-success">Successfully subscribed!</div>`;
                     autoDismissAlert("successAlert");
@@ -234,7 +233,7 @@ if (subscribeForm) {
                 })
                 .catch(error => {
                     loadingOverlay.classList.remove('d-flex');
-                    loadingOverlay.style.display = 'none';
+                    loadingOverlay.classList.add('d-none');
 
                     successMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
                     autoDismissAlert("errorAlert");
@@ -266,8 +265,8 @@ if (earlyAccessForm) {
         if(!isValid) {
             return false;
         } else {
+            loadingOverlay.classList.remove('d-none');
             loadingOverlay.classList.add('d-flex');
-            loadingOverlay.style.display = 'block';
 
             const formData = {
                 email: email.value
@@ -291,7 +290,7 @@ if (earlyAccessForm) {
                 })
                 .then(data => {
                     loadingOverlay.classList.remove('d-flex');
-                    loadingOverlay.style.display = 'none';
+                    loadingOverlay.classList.add('d-none');
 
                     signupMessage.innerHTML = `<div id="successAlert" class="alert alert-success">Successfully signed up for early access.</div>`;
                     autoDismissAlert("successAlert");
@@ -299,7 +298,7 @@ if (earlyAccessForm) {
                 })
                 .catch(error => {
                     loadingOverlay.classList.remove('d-flex');
-                    loadingOverlay.style.display = 'none';
+                    loadingOverlay.classList.add('d-none');
 
                     signupMessage.innerHTML = `<div id="errorAlert" class="alert alert-danger">${error.message}</div>`;
                     autoDismissAlert("errorAlert");
