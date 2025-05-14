@@ -1171,12 +1171,11 @@
             });
 
             slides.forEach(slide => {
-                slide.style.height = `${maxHeight + 50}px`;
+                slide.style.height = `${maxHeight}px`;
             });
         }
     }
 
 
     window.addEventListener('load', adjustSlideHeights);
-    window.addEventListener('resize', adjustSlideHeights);
 </script>
