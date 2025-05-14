@@ -392,8 +392,7 @@ function startVoice() {
     }
 
     if (!selectedVoice) {
-        const voices = speechSynthesis.getVoices();
-        selectedVoice = voices.find(voice => voice.lang === 'en-US') || voices[0];
+        selectedVoice = selectMaleVoice();
     }
 
     function speakNext() {
@@ -427,6 +426,33 @@ function startVoice() {
     speechSynthesis.cancel();
     isPaused = false;
     speakNext();
+}
+
+const preferredMaleVoices = [
+    'Google US English',        // Chrome (male)
+    'Microsoft David Desktop',  // Windows
+    'Alex',                     // macOS
+    'Daniel',                   // macOS
+    'en-US-Wavenet-D',          // Chrome on some devices (Google TTS male)
+    'en-US-Wavenet-B',
+];
+
+function selectMaleVoice() {
+    const voices = speechSynthesis.getVoices();
+
+    // Try to find one from the preferred list
+    for (let preferred of preferredMaleVoices) {
+        const match = voices.find(v => v.name === preferred);
+        if (match) return match;
+    }
+
+    // Fallback: try to find an English male-sounding voice by name heuristics
+    const fallback = voices.find(v =>
+        v.lang.startsWith('en') &&
+        /male|david|alex|daniel|wavenet-[bd]/i.test(v.name)
+    );
+
+    return fallback || voices[0]; // final fallback
 }
 
 function resetSpeech() {
