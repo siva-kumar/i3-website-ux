@@ -24,6 +24,7 @@
             flex-direction: column;
             align-items: center;
             margin-top: 10px;
+            padding-left: 0px;
 
             li {
                 margin: 10px 0;
@@ -929,7 +930,7 @@
                 <span class="text-to-speech">Who should consider Strategic Systems?</span>
                 <span class="faq-toggle">+</span>
             </div>
-            <div class="faq-answer text-to-speech" style="display: block;">
+            <div class="faq-answer text-to-speech" style="display: none;">
                 Enterprises seeking future‑proof, holistic solutions; organizations needing tight alignment between
                 IT
                 and business strategy; and leaders focused on sustainable, data‑driven growth.
@@ -941,7 +942,7 @@
                 <span class="text-to-speech">Can Strategic Systems integrate with our existing platforms?</span>
                 <span class="faq-toggle">+</span>
             </div>
-            <div class="faq-answer text-to-speech" style="display: block;">
+            <div class="faq-answer text-to-speech" style="display: none;">
                 Yes - our modular, API‑first approach allows seamless integration with legacy systems, cloud
                 services, and
                 third‑party tools.
@@ -953,7 +954,7 @@
                 <span class="text-to-speech">Can you scale for large enterprises?</span>
                 <span class="faq-toggle">+</span>
             </div>
-            <div class="faq-answer text-to-speech" style="display: block;">
+            <div class="faq-answer text-to-speech" style="display: none;">
                 Absolutely. Our architecture handles millions of transactions per day and grows seamlessly with your
                 business-no massive infrastructure changes required.
             </div>
@@ -964,7 +965,7 @@
                 <span class="text-to-speech">How do you deploy AI agents?</span>
                 <span class="faq-toggle">+</span>
             </div>
-            <div class="faq-answer text-to-speech" style="display: block;">
+            <div class="faq-answer text-to-speech" style="display: none;">
                 We follow a streamlined roadmap: assess requirements, pilot deployment, integration with existing
                 systems, training, then full rollout.
             </div>
@@ -1160,18 +1161,23 @@
         if (slides.length > 0) {
             let maxHeight = 0;
 
+            // Temporarily reset heights to 'auto' before measuring
             slides.forEach(slide => {
                 slide.style.height = 'auto';
+            });
+
+            // Find the max height based on current slide content
+            slides.forEach(slide => {
                 const height = slide.offsetHeight;
                 if (height > maxHeight) maxHeight = height;
             });
 
+            // Apply max height to all slides
             slides.forEach(slide => {
                 slide.style.height = `${maxHeight}px`;
             });
         }
     }
-
 
     window.addEventListener('load', adjustSlideHeights);
 

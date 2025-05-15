@@ -1224,7 +1224,6 @@ h2, h3, p {
     height: 6px;
     background-color: #555;
     border-radius: 50%;
-    animation: bounce 1.3s infinite ease-in-out;
 }
 
 .dot:nth-child(2) {
