@@ -324,8 +324,8 @@ let activeSectionId = null;
 if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = () => {
         if (!selectedVoice) {
-            const voices = speechSynthesis.getVoices();
-            selectedVoice = voices.find(voice => voice.lang === 'en-US') || voices[0];
+            selectedVoice = selectMaleVoice();
+            console.log(selectedVoice);
         }
     };
 }
@@ -425,11 +425,11 @@ function startVoice() {
 
     speechSynthesis.cancel();
     isPaused = false;
-    speakNext(); 
+    speakNext();
 }
 
 const preferredMaleVoices = [
-    'Google US English',        // Chrome (male)
+    'Microsoft Mark Desktop',        // Chrome (male)
     'Microsoft David Desktop',  // Windows
     'Alex',                     // macOS
     'Daniel',                   // macOS
@@ -449,7 +449,7 @@ function selectMaleVoice() {
     // Fallback: try to find an English male-sounding voice by name heuristics
     const fallback = voices.find(v =>
         v.lang.startsWith('en') &&
-        /male|david|alex|daniel|wavenet-[bd]/i.test(v.name)
+        /male|mark|alex|daniel|wavenet-[bd]/i.test(v.name)
     );
 
     return fallback || voices[0]; // final fallback
