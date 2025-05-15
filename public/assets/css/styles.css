@@ -529,7 +529,7 @@ h2, h3, p {
         padding: 0px;
 
         p {
-            font-size: 24px;
+            font-size: 20px;
         }
 
         li {
@@ -588,7 +588,7 @@ h2, h3, p {
 
     p {
         margin-top: 0px;
-        font-size: 24px;
+        font-size: 20px;
         color: #FFFFFF;
     }
 
@@ -644,7 +644,7 @@ h2, h3, p {
     }
 
     p {
-        font-size: 22px;
+        font-size: 20px;
         font-family: 'DM Sans', sans-serif;
     }
 
@@ -901,7 +901,7 @@ h2, h3, p {
         padding: 0px 22px 15px 22px;
         background: white;
         text-align: left;
-        font-size: 23px;
+        font-size: 22px;
         font-family: 'DM Sans', sans-serif;
     }
 

@@ -1174,4 +1174,10 @@
 
 
     window.addEventListener('load', adjustSlideHeights);
+
+    const mobileBreakpoint = 1064;
+
+    if (window.innerWidth > mobileBreakpoint) {
+        window.addEventListener('resize', adjustSlideHeights);
+    }
 </script>
