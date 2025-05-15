@@ -425,7 +425,7 @@ function startVoice() {
 
     speechSynthesis.cancel();
     isPaused = false;
-    speakNext();
+    speakNext(); 
 }
 
 const preferredMaleVoices = [
