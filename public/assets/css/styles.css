@@ -723,7 +723,7 @@ h2, h3, p {
     .client-testimonial {
         background: linear-gradient(350deg, #2997FF 1%, #000327 15%);
         border-radius: 15px;
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;

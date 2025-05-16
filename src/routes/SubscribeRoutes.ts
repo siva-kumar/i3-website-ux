@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
     auth: {
         user: process.env.MAILTRAP_USER!,
         pass: process.env.MAILTRAP_PASS!,
-    },
+    }
 });
 
 router.post(
@@ -63,7 +63,7 @@ router.post(
       </div>
 
       <footer style="text-align: center; margin-top: 20px; font-size: 12px; color: #888;">
-        <p>All rights reserved. &copy; Improvement Interactive 2025</p>
+        <p>All rights reserved. &copy; Improvement Interactive ${new Date().getFullYear()}</p>
       </footer>
     </div>
   `

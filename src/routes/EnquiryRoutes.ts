@@ -105,7 +105,7 @@ router.post(
       </div>
 
       <footer style="text-align: center; margin-top: 20px; font-size: 12px; color: #888;">
-        <p>All rights reserved. &copy; Improvement Interactive 2020</p>
+        <p>All rights reserved. &copy; Improvement Interactive ${new Date().getFullYear()}</p>
       </footer>
     </div>
   `,

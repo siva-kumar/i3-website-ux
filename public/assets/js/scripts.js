@@ -1,10 +1,39 @@
+const loadingOverlay = document.getElementById('loadingOverlayWrapper');
 const successMessage = document.getElementById('successMessage');
 const signupMessage = document.getElementById('signupMessage');
 
+const navLinks = document.querySelector('.nav-links');
+const hamburger = document.querySelector('.hamburger');
+
 function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active');
+
+    const isActive = navLinks.classList.contains('active');
+
+    // Only add event listener when menu is open
+    if (isActive) {
+        document.addEventListener('click', handleOutsideClick);
+    } else {
+        document.removeEventListener('click', handleOutsideClick);
+    }
 }
+
+function handleOutsideClick(event) {
+    // If click is outside both navLinks and hamburger, close the menu
+    if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) {
+        navLinks.classList.remove('active');
+        document.removeEventListener('click', handleOutsideClick);
+    }
+}
+
+// Close on clicking any menu item
+document.querySelectorAll('.nav-links li').forEach(li => {
+    li.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        document.removeEventListener('click', handleOutsideClick);
+    });
+});
+
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -325,7 +354,6 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
     speechSynthesis.onvoiceschanged = () => {
         if (!selectedVoice) {
             selectedVoice = selectMaleVoice();
-            console.log(selectedVoice);
         }
     };
 }
@@ -386,6 +414,7 @@ function startVoice() {
             let text = el.textContent.trim();
             if (text) {
                 text = text.replace(/\$10s of Billions/i, 'tens of billions');
+                text = text.replace(/\Join the AI Revolution/i, '');
                 sentences.push(text);
             }
         });
