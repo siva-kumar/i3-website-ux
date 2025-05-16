@@ -347,6 +347,7 @@ let isPaused = false;
 let sentences = [];
 let speechIndex = 0;
 let selectedVoice = null;
+let lastSectionId = null;
 let activeSectionId = null;
 
 // Load voice options
@@ -383,14 +384,18 @@ function startVoice() {
         return;
     }
 
+    lastSectionId = activeSectionId;
+    let sectionId = getCurrentSection();
+    activeSectionId = sectionId;
+
     if (speechSynthesis.paused) {
         speechSynthesis.resume();
         isPaused = false;
-        //return;
+        
+        if(lastSectionId != null && lastSectionId === activeSectionId) {
+            return;
+        }
     }
-
-    let sectionId = getCurrentSection();
-    activeSectionId = sectionId;
 
     const parentElement = document.getElementById(sectionId);
     const elements = parentElement.querySelectorAll(".text-to-speech");
