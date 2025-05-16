@@ -386,7 +386,7 @@ function startVoice() {
     if (speechSynthesis.paused) {
         speechSynthesis.resume();
         isPaused = false;
-        return;
+        //return;
     }
 
     let sectionId = getCurrentSection();
