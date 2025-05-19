@@ -1191,11 +1191,15 @@
     // Call on load
     window.addEventListener('load', adjustSlideHeights);
 
-    // Always adjust on resize
-    window.addEventListener('resize', debounce(adjustSlideHeights));
+    const mobileBreakpoint = 1064;
 
-    // Also listen to zoom-level changes using visualViewport
-    if (window.visualViewport) {
-        window.visualViewport.addEventListener('resize', debounce(adjustSlideHeights));
+    if (window.innerWidth > mobileBreakpoint) {
+        // Always adjust on resize
+        window.addEventListener('resize', debounce(adjustSlideHeights));
+
+        // Also listen to zoom-level changes using visualViewport
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener('resize', debounce(adjustSlideHeights));
+        }
     }
 </script>
