@@ -391,7 +391,7 @@ function startVoice() {
     if (speechSynthesis.paused) {
         speechSynthesis.resume();
         isPaused = false;
-        
+
         if(lastSectionId != null && lastSectionId === activeSectionId) {
             return;
         }
@@ -650,27 +650,125 @@ function generateResponse(userMsg) {
 
     // Help or assistance
     else if (message.includes("help") || message.includes("support")) {
-        botResponse = "Absolutely — I’m here to assist. Please tell me more about what you need help with.";
+        botResponse = "Absolutely - I’m here to assist. Please tell me more about what you need help with.";
     }
 
-    // What i3 does
-    else if (message.includes("what you do") || message.includes("what do you do") || message.includes("services")) {
-        botResponse = "We build strategic AI systems and enterprise solutions that scale, endure, and deliver value. Over 30 years of engineering, billions in transactions.";
+    // General - What is i3
+    else if (message.includes("what is i3") || message.includes("improvement interactive")) {
+        botResponse = "Improvement Interactive is a strategic engineering studio with 30+ years of experience delivering mission-critical systems and custom AI.";
     }
 
-    // What you build / Solutions
-    else if (message.includes("what you build") || message.includes("what we build") || message.includes("how you build") || message.includes("your solutions")) {
-        botResponse = "We design long-term, scalable systems that align technology with business strategy — from AI agents to enterprise architectures.";
+    // General - Industries
+    else if (message.includes("industries") || message.includes("who do you serve") || message.includes("what industries")) {
+        botResponse = "We work across healthcare, finance, logistics, e-commerce, and manufacturing — helping organizations automate, innovate, and scale.";
     }
 
-    // Who you work with
-    else if (message.includes("who you work") || message.includes("who we work") || message.includes("your clients") || message.includes("types of companies")) {
-        botResponse = "We work with enterprise leaders, operators, founders, and project managers who value clarity, precision, and long-term growth.";
+    // General - Years in business
+    else if (message.includes("how long") || message.includes("years in business") || message.includes("since when")) {
+        botResponse = "We’ve been building technology solutions since 1993 - that’s over 30 years of engineering experience.";
+    }
+
+    // General - Typical clients
+    else if (message.includes("typical clients") || message.includes("who are your clients")) {
+        botResponse = "We work with founders, product leaders, and enterprise teams across industries like healthcare, finance, and tech.";
+    }
+
+    // Getting started
+    else if (message.includes("get started") || message.includes("how to start") || message.includes("contact")) {
+        botResponse = "You can reach us via our contact page or by emailing info@improvementinteractive.com. We'd love to talk.";
+    }
+
+    // AI products
+    else if (message.includes("ai products") || message.includes("ai offerings")) {
+        botResponse = "We offer SmashSupport.AI, Fitness AI Coach, and i3 LingoBridge - all designed to automate, engage, and translate at scale.";
+    }
+
+    // Customization
+    else if (message.includes("customize") || message.includes("tailored") || message.includes("match my business")) {
+        botResponse = "Yes! Our AI solutions are modular and customizable to fit your brand, workflows, and systems.";
+    }
+
+    // AI vs generic bots
+    else if (message.includes("difference between your ai") || message.includes("generic chatbot")) {
+        botResponse = "i3 AI agents are built for deep integration and real-time adaptability - far beyond simple scripts or plug-and-play bots.";
+    }
+
+    // Languages
+    else if (message.includes("multiple languages") || message.includes("language support") || message.includes("translate")) {
+        botResponse = "Yes - our AI supports real-time translation across multiple languages for global communication.";
+    }
+
+    // AI replacing humans
+    else if (message.includes("replace employees") || message.includes("ai vs humans")) {
+        botResponse = "Our AI handles routine tasks, freeing up your team for strategic work. It supports — not replaces — human intelligence.";
+    }
+
+    // Deployment
+    else if (message.includes("deployment") || message.includes("how do you deploy") || message.includes("rollout")) {
+        botResponse = "We start with discovery, then pilot, test, and scale in phases. It’s structured and outcome-focused.";
+    }
+
+    // Legacy systems
+    else if (message.includes("legacy system") || message.includes("older software")) {
+        botResponse = "Absolutely - we integrate AI with legacy systems using adapters and middleware tailored to your environment.";
+    }
+
+    // Training after deployment
+    else if (message.includes("ongoing training") || message.includes("training after deployment")) {
+        botResponse = "We provide guided training and ongoing updates - most systems are low-maintenance after launch.";
+    }
+
+    // Tech team required?
+    else if (message.includes("tech team") || message.includes("developer needed") || message.includes("maintain system")) {
+        botResponse = "You don’t need a tech team. Our admin-friendly systems are easy to use, but we offer support if you want it.";
+    }
+
+    // Pricing
+    else if (message.includes("pricing") || message.includes("how much") || message.includes("cost")) {
+        botResponse = "Pricing depends on scope and scale. We offer monthly, annual, and enterprise plans — reach out for a tailored quote.";
+    }
+
+    // ROI
+    else if (message.includes("roi") || message.includes("return on investment") || message.includes("results")) {
+        botResponse = "Clients often see 30-90% efficiency gains and major support cost savings within 3–6 months.";
+    }
+
+    // Discounts
+    else if (message.includes("discounts") || message.includes("enterprise pricing") || message.includes("volume")) {
+        botResponse = "Yes — we offer scaled pricing for multi-agent and large enterprise deployments.";
+    }
+
+    // Scaling later
+    else if (message.includes("scale later") || message.includes("increase usage") || message.includes("add features")) {
+        botResponse = "Our solutions are built to grow with you. You can scale features, users, and integrations anytime.";
+    }
+
+    // Support
+    else if (message.includes("support options") || message.includes("maintenance")) {
+        botResponse = "We offer 24/7 support, regular check-ins, and quarterly reviews to keep your system running smoothly.";
+    }
+
+    // Data privacy
+    else if (message.includes("data privacy") || message.includes("data security") || message.includes("sensitive data")) {
+        botResponse = "We use encryption, access controls, and industry best practices to protect your data — always.";
+    }
+
+    // Careers
+    else if (message.includes("jobs") || message.includes("careers") || message.includes("apply for a job")) {
+        botResponse = "You can apply via our Careers page or email your resume to career@i3.io. We’re always hiring great minds.";
+    }
+
+    else if (message.includes("remote work") || message.includes("flexible hours")) {
+        botResponse = "Yes — we support remote, hybrid, and flexible roles. Balance matters here.";
+    }
+
+    else if (message.includes("culture") || message.includes("work culture")) {
+        botResponse = "We foster innovation, flexibility, and collaboration. i3 is a family-friendly place where people grow and build together.";
     }
 
     // AI agents
     else if (message.includes("ai agents") || message.includes("ai") || message.includes("intelligent agents")) {
-        botResponse = "Our AI agents can automate up to 80% of routine tasks — streamlining support, decision-making, and workflows across your business.";
+        botResponse = "Our AI agents can automate up to 80% of routine tasks - streamlining support, decision-making, and workflows across your business.";
     }
 
     // Valley-Proof
@@ -685,12 +783,12 @@ function generateResponse(userMsg) {
 
     // Strategic systems
     else if (message.includes("strategic system") || message.includes("enterprise architecture") || message.includes("long-term solutions")) {
-        botResponse = "Our Strategic Systems align IT and business goals — ideal for enterprises needing scalable, integrated, and future-proof architecture.";
+        botResponse = "Our Strategic Systems align IT and business goals - ideal for enterprises needing scalable, integrated, and future-proof architecture.";
     }
 
     // Custom AI
     else if (message.includes("custom ai") || message.includes("tailored ai") || message.includes("ai project")) {
-        botResponse = "We take on a select number of high-impact AI projects each year — from healthcare to finance. Need scale, clarity, or speed? Let’s talk.";
+        botResponse = "We take on a select number of high-impact AI projects each year - from healthcare to finance. Need scale, clarity, or speed? Let’s talk.";
     }
 
     // Not a fit
@@ -698,7 +796,7 @@ function generateResponse(userMsg) {
         botResponse = "We focus on long-term, strategic impact. If you're seeking quick-flip MVPs or bolt-on tools, we might not be the best fit.";
     }
 
-
+    // Response output
     setTimeout(() => {
         const botMessage = document.createElement("div");
         botMessage.className = "message bot-message";
