@@ -1158,28 +1158,29 @@
     function adjustSlideHeights() {
         const slides = document.querySelectorAll('.slider-content .slide');
 
-        if (slides.length > 0) {
+        if (slides.length === 0) return;
+
+        // Reset heights first to get natural layout
+        slides.forEach(slide => {
+            slide.style.height = '';
+            slide.style.minHeight = '';
+        });
+
+        // Wait one animation frame to let layout recalculate after zoom
+        requestAnimationFrame(() => {
             let maxHeight = 0;
 
-            // Reset heights to allow proper measuring
-            slides.forEach(slide => {
-                slide.style.height = 'auto';
-            });
-
-            // Find the maximum height
             slides.forEach(slide => {
                 const height = slide.offsetHeight;
                 if (height > maxHeight) maxHeight = height;
             });
 
-            // Apply the maximum height to all slides
             slides.forEach(slide => {
                 slide.style.minHeight = `${maxHeight}px`;
             });
-        }
+        });
     }
 
-    // Debounce helper to prevent too many rapid calls
     function debounce(func, wait = 100) {
         let timeout;
         return function () {
@@ -1188,16 +1189,14 @@
         };
     }
 
-    // Call on load
     window.addEventListener('load', adjustSlideHeights);
 
     const mobileBreakpoint = 1064;
 
     if (window.innerWidth > mobileBreakpoint) {
-        // Always adjust on resize
         window.addEventListener('resize', debounce(adjustSlideHeights));
 
-        // Also listen to zoom-level changes using visualViewport
+        // Handle zooming via visualViewport
         if (window.visualViewport) {
             window.visualViewport.addEventListener('resize', debounce(adjustSlideHeights));
         }
