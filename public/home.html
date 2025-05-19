@@ -1161,13 +1161,12 @@
         if (slides.length > 0) {
             let maxHeight = 0;
 
-            // Reset both height and minHeight to natural flow
+            // Reset heights to allow proper measuring
             slides.forEach(slide => {
-                slide.style.height = '';
-                slide.style.minHeight = '';
+                slide.style.height = 'auto';
             });
 
-            // Measure the tallest slide
+            // Find the maximum height
             slides.forEach(slide => {
                 const height = slide.offsetHeight;
                 if (height > maxHeight) maxHeight = height;
@@ -1180,6 +1179,7 @@
         }
     }
 
+    // Debounce helper to prevent too many rapid calls
     function debounce(func, wait = 100) {
         let timeout;
         return function () {
@@ -1188,9 +1188,13 @@
         };
     }
 
+    // Call on load
     window.addEventListener('load', adjustSlideHeights);
+
+    // Always adjust on resize
     window.addEventListener('resize', debounce(adjustSlideHeights));
 
+    // Also listen to zoom-level changes using visualViewport
     if (window.visualViewport) {
         window.visualViewport.addEventListener('resize', debounce(adjustSlideHeights));
     }
