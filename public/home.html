@@ -712,7 +712,7 @@
                         </div>
                     </div>
 
-                    <div class="row client-testimonial" id="last-testimonial">
+                    <div class="row client-testimonial">
                         <div class="col-md-3">
                             <div class="row justify-content-center mt-4 mb-4">
                                 <img class="client-profile" src="./assets/images/testimonials/doyle-lexmark.png"
@@ -1183,7 +1183,7 @@
 
     function adjustTestimonialSlideHeights() {
         const slides = document.querySelectorAll('.testimonial-container .client-testimonial');
-        
+
         if (slides.length === 0) return;
 
         // Reset heights first to get natural layout
@@ -1202,7 +1202,7 @@
             });
 
             slides.forEach(slide => {
-                slide.style.minHeight = `${maxHeight}px`;
+                slide.style.height = `${maxHeight}px`;
             });
         });
     }
