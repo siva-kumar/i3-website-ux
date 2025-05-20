@@ -1183,17 +1183,28 @@
 
     function adjustTestimonialSlideHeights() {
         const slides = document.querySelectorAll('.testimonial-container .client-testimonial');
-        const lastTestimonial = document.getElementById('last-testimonial');
+        
+        if (slides.length === 0) return;
 
-        if (slides.length > 0) {
+        // Reset heights first to get natural layout
+        slides.forEach(slide => {
+            slide.style.height = '';
+            slide.style.minHeight = '';
+        });
+
+        // Wait one animation frame to let layout recalculate after zoom
+        requestAnimationFrame(() => {
             let maxHeight = 0;
 
-            maxHeight = lastTestimonial.offsetHeight;
+            slides.forEach(slide => {
+                const height = slide.offsetHeight;
+                if (height > maxHeight) maxHeight = height;
+            });
 
             slides.forEach(slide => {
                 slide.style.minHeight = `${maxHeight}px`;
             });
-        }
+        });
     }
 
     function debounce(func, wait = 100) {
