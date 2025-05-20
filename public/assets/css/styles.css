@@ -716,17 +716,12 @@ h2, h3, p {
 
     .testimonial-container {
         position: relative;
-        display: flex;
-        align-items: center;
     }
 
     .client-testimonial {
         background: linear-gradient(350deg, #2997FF 1%, #000327 15%);
         border-radius: 15px;
         display: none;
-        align-items: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
         transition: transform 0.5s ease-in-out;
 
         h3 {
