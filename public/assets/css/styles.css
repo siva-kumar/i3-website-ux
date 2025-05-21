@@ -296,7 +296,7 @@ h2, h3, p {
 .engineering {
     background: #000434;
     color: #FFFFFF;
-    background-image: url("././../images/mesh-bg.png");
+    background-image: url("././../images/mesh-bg.webp");
     background-repeat: no-repeat;
     background-position-x: left;
     background-position-y: bottom;
@@ -386,7 +386,7 @@ h2, h3, p {
 .what-we-do {
     background: #000434;
     color: #FFFFFF;
-    background-image: url("././../images/mesh-bg.png");
+    background-image: url("././../images/mesh-bg.webp");
     background-repeat: no-repeat;
     background-position-x: left;
     background-position-y: bottom;
@@ -580,11 +580,11 @@ h2, h3, p {
 .who-we-work {
     background: #000434;
     color: #FFFFFF;
-    background-image: url("././../images/mesh-bg.png");
+    background-image: url("././../images/mesh-bg.webp");
     background-repeat: no-repeat;
     background-position: bottom center;
     background-position-x: left;
-    ` background-position-y: bottom;
+    background-position-y: bottom;
 
     p {
         margin-top: 0px;
@@ -667,7 +667,7 @@ h2, h3, p {
 .valley-proof {
     background: #000434;
     color: #FFFFFF;
-    background-image: url("././../images/mesh-bg.png");
+    background-image: url("././../images/mesh-bg.webp");
     background-repeat: no-repeat;
     background-position: bottom center;
     background-position-x: left;
@@ -707,7 +707,7 @@ h2, h3, p {
 }
 
 .testimonial {
-    background-image: url("././../images/testimonial-background.jpg");
+    background-image: url("././../images/testimonial-background.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 20% 25%;
@@ -764,7 +764,7 @@ h2, h3, p {
 .contact-us {
     background: #000434;
     color: #FFFFFF;
-    background-image: url("././../images/mesh-bg.png");
+    background-image: url("././../images/mesh-bg.webp");
     background-repeat: no-repeat;
     background-position: bottom center;
     background-position-x: left;
@@ -916,7 +916,7 @@ h2, h3, p {
 .footer {
     background: #000434;
     color: #FFFFFF;
-    background-image: url("././../images/mesh-bg.png");
+    background-image: url("././../images/mesh-bg.webp");
     background-repeat: no-repeat;
     background-position: bottom center;
     background-position-x: left;
@@ -1003,7 +1003,7 @@ h2, h3, p {
 .company-legacy {
     background: #000434;
     color: #FFFFFF;
-    background-image: url("././../images/mesh-bg.png");
+    background-image: url("././../images/mesh-bg.webp");
     background-repeat: no-repeat;
     background-position: bottom center;
     background-position-x: left;
@@ -1126,8 +1126,8 @@ h2, h3, p {
     display: none;
     flex-direction: column;
     position: fixed;
-    bottom: 75px;
-    right: 10px;
+    bottom: 15px;
+    right: 165px;
     z-index: 999;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
@@ -1566,12 +1566,6 @@ h2, h3, p {
     background-color: #1c82c4;
 }
 
-@media screen and (max-width: 1064px) {
-    .floatingVoiceBtn, .floatingChatBtn {
-        bottom: 30px !important;
-    }
-}
-
 /* Blog Detailed */
 #blog-detailed {
     img {
@@ -1716,6 +1710,15 @@ h2, h3, p {
 }
 
 @media screen and (max-width: 1064px) {
+    .floatingVoiceBtn, .floatingChatBtn {
+        bottom: 15px !important;
+    }
+
+    .chat-container {
+        right: 0px;
+        bottom: 80px;
+    }
+
     h2 {
         font-size: 40px !important;
     }
