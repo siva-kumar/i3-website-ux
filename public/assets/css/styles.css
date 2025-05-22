@@ -1126,8 +1126,8 @@ h2, h3, p {
     display: none;
     flex-direction: column;
     position: fixed;
-    bottom: 15px;
-    right: 165px;
+    bottom: 75px;
+    right: 20px;
     z-index: 999;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
