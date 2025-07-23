@@ -730,7 +730,7 @@ h2, h3, p {
 
         p {
             color: #FFFFFF;
-            font-size: 20px;
+            font-size: 22px;
             line-height: 1.5;
         }
 
@@ -738,7 +738,8 @@ h2, h3, p {
             padding: 0px !important;
             margin-left: 15px;
             border-radius: 20px;
-            height: 200px;
+            height: auto;
+            width: auto;
         }
     }
 
